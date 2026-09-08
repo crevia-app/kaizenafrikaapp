@@ -1,13 +1,13 @@
 import { Helmet } from "react-helmet-async";
 
-const BASE_URL      = "https://crevia.app";
+const BASE_URL      = "https://kaizenafrika.app";
 const DEFAULT_IMAGE = `${BASE_URL}/og-image.jpg`;
 const OG_IMAGE_W    = 1200;
 const OG_IMAGE_H    = 630;
 
-const DEFAULT_TITLE       = "Crevia | The infrastructure to scale your business operations";
-const DEFAULT_DESCRIPTION = "Crevia gives creatives and founders the infrastructure to scale business operations — invoicing, AI, and link pages in one place.";
-const DEFAULT_KEYWORDS    = "invoicing software, invoice generator, business management, AI business assistant, Dira AI, link in bio, client workspace, team collaboration, creative business tools, Crevia";
+const DEFAULT_TITLE       = "Kaizen Afrika | The infrastructure to scale your business operations";
+const DEFAULT_DESCRIPTION = "Kaizen Afrika gives creatives and founders the infrastructure to scale business operations — invoicing, AI, and link pages in one place.";
+const DEFAULT_KEYWORDS    = "invoicing software, invoice generator, business management, AI business assistant, Dira AI, link in bio, client workspace, team collaboration, creative business tools, Kaizen Afrika";
 
 interface SEOProps {
   title?:       string;
@@ -34,7 +34,7 @@ export const SEO = ({
   jsonLd,
   noIndex     = false,
 }: SEOProps) => {
-  const fullTitle = title === DEFAULT_TITLE ? title : `${title} | Crevia`;
+  const fullTitle = title === DEFAULT_TITLE ? title : `${title} | Kaizen Afrika`;
   const canonical = url ? `${BASE_URL}${url}` : `${BASE_URL}/`;
 
   return (
@@ -50,7 +50,7 @@ export const SEO = ({
 
       {/* Open Graph */}
       <meta property="og:type"         content={type} />
-      <meta property="og:site_name"    content="Crevia" />
+      <meta property="og:site_name"    content="Kaizen Afrika" />
       <meta property="og:locale"       content="en_US" />
       <meta property="og:url"          content={canonical} />
       <meta property="og:title"        content={fullTitle} />
@@ -63,10 +63,10 @@ export const SEO = ({
 
       {/* Twitter / X */}
       <meta name="twitter:card"        content="summary_large_image" />
-      <meta name="twitter:domain"      content="crevia.app" />
+      <meta name="twitter:domain"      content="kaizenafrika.app" />
       <meta name="twitter:url"         content={canonical} />
-      <meta name="twitter:site"        content="@creviahq" />
-      <meta name="twitter:creator"     content="@creviahq" />
+      <meta name="twitter:site"        content="@kaizenafrika" />
+      <meta name="twitter:creator"     content="@kaizenafrika" />
       <meta name="twitter:title"       content={fullTitle} />
       <meta name="twitter:description" content={description} />
       <meta name="twitter:image"       content={image} />

@@ -1,4 +1,4 @@
-const DB_NAME = "crevia-e2ee";
+const DB_NAME = "kaizen-e2ee";
 const STORE_NAME = "keys";
 // v2: stores CryptoKey objects directly instead of serialised JWK objects
 const DB_VERSION = 2;

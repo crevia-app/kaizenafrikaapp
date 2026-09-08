@@ -31,7 +31,7 @@ export function ThemeToggle() {
     <div className="space-y-4">
       <div>
         <Label className="text-base font-semibold">Theme Preference</Label>
-        <p className="text-sm text-muted-foreground mt-1">Choose how Crevia looks to you</p>
+        <p className="text-sm text-muted-foreground mt-1">Choose how Kaizen Afrika looks to you</p>
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
         {themes.map(({ value, label, icon: Icon }) => (

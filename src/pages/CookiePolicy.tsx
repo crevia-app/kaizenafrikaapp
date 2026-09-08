@@ -37,7 +37,7 @@ const CookiePolicy = () => {
   const navigate = useNavigate();
   return (
   <div className="max-w-3xl mx-auto px-4 py-12 sm:px-6">
-    <SEO title="Cookie Policy" description="Read Crevia's Cookie Policy. Learn how we use cookies to improve your experience on the platform." url="/cookie-policy" />
+    <SEO title="Cookie Policy" description="Read Kaizen Afrika's Cookie Policy. Learn how we use cookies to improve your experience on the platform." url="/cookie-policy" />
     {/* Back button */}
     <button
       onClick={() => navigate(-1)}
@@ -63,9 +63,9 @@ const CookiePolicy = () => {
         </p>
       </Section>
 
-      <Section title="How Crevia uses cookies">
+      <Section title="How Kaizen Afrika uses cookies">
         <p>
-          Crevia uses cookies strictly to operate the platform securely and provide you with the best
+          Kaizen Afrika uses cookies strictly to operate the platform securely and provide you with the best
           experience. We do <strong className="text-foreground">not</strong> use advertising cookies,
           third-party tracking pixels, or sell your data to anyone.
         </p>
@@ -75,12 +75,12 @@ const CookiePolicy = () => {
       <Section title="1. Essential cookies">
         <p>
           These are required for the platform to function. Without them you cannot log in, make
-          payments, or use any part of Crevia. You cannot opt out of essential cookies.
+          payments, or use any part of Kaizen Afrika. You cannot opt out of essential cookies.
         </p>
         <Table rows={[
           { name: "sb-*", type: "Essential", purpose: "Supabase auth session — keeps you securely signed in", duration: "Session / 1 year" },
-          { name: "crevia_cookie_consent", type: "Essential", purpose: "Remembers your cookie consent choice", duration: "1 year" },
-          { name: "crevia_e2ee_*", type: "Essential", purpose: "Encrypted key backup for secure messaging", duration: "Local storage" },
+          { name: "kaizen_cookie_consent", type: "Essential", purpose: "Remembers your cookie consent choice", duration: "1 year" },
+          { name: "kaizen-e2ee_*", type: "Essential", purpose: "Encrypted key backup for secure messaging", duration: "Local storage" },
         ]} />
       </Section>
 
@@ -90,24 +90,24 @@ const CookiePolicy = () => {
           visit. They are enabled by default but you can clear them at any time via your browser.
         </p>
         <Table rows={[
-          { name: "crevia_theme", type: "Functional", purpose: "Remembers your light/dark mode preference", duration: "1 year" },
-          { name: "crevia_notif_cleared_*", type: "Functional", purpose: "Tracks which notifications you have cleared", duration: "Local storage" },
-          { name: "crevia_chunk_reload", type: "Functional", purpose: "Prevents reload loops after app updates", duration: "Session" },
+          { name: "kaizen_theme", type: "Functional", purpose: "Remembers your light/dark mode preference", duration: "1 year" },
+          { name: "kaizen_notif_cleared_*", type: "Functional", purpose: "Tracks which notifications you have cleared", duration: "Local storage" },
+          { name: "kaizen_chunk_reload", type: "Functional", purpose: "Prevents reload loops after app updates", duration: "Session" },
         ]} />
       </Section>
 
       <Section title="3. Analytics cookies">
         <p>
-          Crevia uses minimal, privacy-friendly analytics to understand how the platform is used and
+          Kaizen Afrika uses minimal, privacy-friendly analytics to understand how the platform is used and
           improve it. No personally identifiable information is collected or shared.
         </p>
         <Table rows={[
-          { name: "link_visits / button_clicks", type: "Analytics", purpose: "Counts visits and clicks on your Crevia Link page (stored in your own database)", duration: "Persistent" },
+          { name: "link_visits / button_clicks", type: "Analytics", purpose: "Counts visits and clicks on your Kaizen Link page (stored in your own database)", duration: "Persistent" },
         ]} />
       </Section>
 
       <Section title="What we don't use">
-        <p>Crevia does <strong className="text-foreground">not</strong> use:</p>
+        <p>Kaizen Afrika does <strong className="text-foreground">not</strong> use:</p>
         <ul className="list-disc list-inside space-y-1 pl-2">
           <li>Google Analytics or similar third-party trackers</li>
           <li>Facebook Pixel or any social media tracking</li>
@@ -119,7 +119,7 @@ const CookiePolicy = () => {
       <Section title="Managing your cookies">
         <p>
           You can control or delete cookies through your browser settings. Note that disabling
-          essential cookies will prevent you from logging in and using Crevia.
+          essential cookies will prevent you from logging in and using Kaizen Afrika.
         </p>
         <ul className="list-disc list-inside space-y-1 pl-2">
           <li><a href="https://support.google.com/chrome/answer/95647" target="_blank" rel="noopener noreferrer" className="text-bronze hover:underline">Chrome</a></li>
@@ -132,7 +132,7 @@ const CookiePolicy = () => {
       <Section title="Changes to this policy">
         <p>
           We may update this Cookie Policy from time to time. When we do, we'll update the "Last
-          updated" date at the top of this page. Continued use of Crevia after changes means you
+          updated" date at the top of this page. Continued use of Kaizen Afrika after changes means you
           accept the updated policy.
         </p>
       </Section>
@@ -140,7 +140,7 @@ const CookiePolicy = () => {
       <Section title="Contact">
         <p>
           Questions about how we use cookies? Email us at{" "}
-          <a href="mailto:hi@crevia.app" className="text-bronze hover:underline">hi@crevia.app</a>.
+          <a href="mailto:hi@kaizenafrika.app" className="text-bronze hover:underline">hi@kaizenafrika.app</a>.
         </p>
       </Section>
 

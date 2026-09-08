@@ -174,8 +174,8 @@ const MobileBottomNav = () => {
     {
       id: "studio",
       label: "Studio",
-      path: "/crevia-studio",
-      prefetch: () => import("@/pages/CreviaStudio"),
+      path: "/kaizen-studio",
+      prefetch: () => import("@/pages/KaizenStudio"),
       Icon: StudioIcon,
     },
   ];
@@ -290,7 +290,7 @@ const MobileBottomNav = () => {
                   </Link>
                 )}
 
-                {/* Install Crevia — hidden once app is installed or prompt unavailable */}
+                {/* Install Kaizen Afrika — hidden once app is installed or prompt unavailable */}
                 {canInstall && (
                   <button
                     onClick={() => {
@@ -308,7 +308,7 @@ const MobileBottomNav = () => {
                       <Download className="h-4 w-4 text-bronze" />
                     </div>
                     <div className="text-left">
-                      <p className="font-poppins text-sm font-semibold">Install Crevia</p>
+                      <p className="font-poppins text-sm font-semibold">Install Kaizen Afrika</p>
                       <p className="text-xs text-muted-foreground leading-snug">Add to your home screen</p>
                     </div>
                   </button>

@@ -32,14 +32,10 @@ export function BiometricLockScreen({ credentialId, onUnlock }: Props) {
 
   return (
     <div className="fixed inset-0 z-[9999] bg-black flex flex-col items-center justify-center p-6 select-none">
-      <img
-        src="/crevia-logo.png"
-        alt="Crevia"
-        className="w-16 h-16 rounded-2xl bg-zinc-950 ring-1 ring-white/10 mb-8"
-      />
+      <span className="font-vollkorn text-2xl font-bold text-white mb-8">Kaizen Afrika</span>
       <h1 className="font-vollkorn text-2xl font-bold text-white mb-2">Welcome back</h1>
       <p className="text-white/50 text-sm mb-10 text-center max-w-xs">
-        Verify your identity to continue to Crevia
+        Verify your identity to continue to Kaizen Afrika
       </p>
 
       <Button

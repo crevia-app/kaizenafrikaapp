@@ -311,7 +311,7 @@ interface Project {
 type ViewMode = "chat" | "projects";
 
 function detectDiraIntent(_text: string): string | null {
-  // Action cards are disabled — users navigate to Crevia Studio directly.
+  // Action cards are disabled — users navigate to Kaizen Studio directly.
   return null;
 }
 

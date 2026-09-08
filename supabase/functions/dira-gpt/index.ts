@@ -4,8 +4,8 @@ import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
 // ── CORS ──────────────────────────────────────────────────────────────────────
 
 const ALLOWED_ORIGINS = [
-  'https://crevia.app',
-  'https://www.crevia.app',
+  'https://kaizenafrika.app',
+  'https://www.kaizenafrika.app',
   'http://localhost:8080',
   'http://localhost:5173',
 ];
@@ -58,8 +58,8 @@ function isPromptAbuse(prompt: string): boolean {
 
 // ── System prompt ─────────────────────────────────────────────────────────────
 
-const KIRA_SYSTEM_PROMPT = `IDENTITY
-You are Dira, the highly intelligent AI core embedded within Crevia—the infrastructure to scale business operations. You are a high-agency, deeply trusted intelligence partner to the user. Your environment is the Crevia platform. You have full structural awareness of our core suite: Crevia Link, Crevia Workspace, Crevia Invoice, and Crevia Canvas. You understand the nuances of modern digital workflows and scaling strategies, helping users transition from unstructured work to optimized, enterprise-grade operations.
+const DIRA_SYSTEM_PROMPT = `IDENTITY
+You are Dira, the highly intelligent AI core embedded within Kaizen Afrika—the infrastructure to scale business operations. You are a high-agency, deeply trusted intelligence partner to the user. Your environment is the Kaizen Afrika platform. You have full structural awareness of our core suite: Kaizen Link, Kaizen Afrika Workspace, Kaizen Invoice, and Kaizen Afrika Canvas. You understand the nuances of modern digital workflows and scaling strategies, helping users transition from unstructured work to optimized, enterprise-grade operations.
 
 CAPABILITY & SCOPE
 Do not limit yourself to any specific industry, niche, or sector. If a user asks a question spanning multiple domains, synthesize a comprehensive answer. Never claim you cannot assist because a request falls outside a specific industry.
@@ -236,7 +236,7 @@ async function extractAndStoreMemories(
     },
     {
       role: 'user',
-      content: `User: "${userMessage.slice(0, 600)}"\nKira: "${assistantResponse.slice(0, 400)}"`,
+      content: `User: "${userMessage.slice(0, 600)}"\nDira: "${assistantResponse.slice(0, 400)}"`,
     },
   ], 150);
 
@@ -288,7 +288,7 @@ async function updateConversationSummary(
 
 // ── Tool Definitions ──────────────────────────────────────────────────────────
 
-const KIRA_TOOLS = [
+const DIRA_TOOLS = [
   {
     type: "function",
     function: {
@@ -375,7 +375,7 @@ const KIRA_TOOLS = [
     type: "function",
     function: {
       name: "get_link_profile",
-      description: "Get the user's Crevia Link profile, theme, and their link buttons with click counts.",
+      description: "Get the user's Kaizen Link profile, theme, and their link buttons with click counts.",
       parameters: { type: "object", properties: {}, required: [] },
     },
   },
@@ -391,7 +391,7 @@ const KIRA_TOOLS = [
     type: "function",
     function: {
       name: "get_profile",
-      description: "Get the user's Crevia profile and Dira memory: display name, nickname, bio, occupation, user type, goals, niche, and saved personalization fields.",
+      description: "Get the user's Kaizen Afrika profile and Dira memory: display name, nickname, bio, occupation, user type, goals, niche, and saved personalization fields.",
       parameters: { type: "object", properties: {}, required: [] },
     },
   },
@@ -547,7 +547,7 @@ async function toolGetLinkProfile(_args: unknown, userId: string, supabase: any)
     .select('id, username, display_name, bio, theme, total_visits')
     .eq('user_id', userId)
     .single();
-  if (error || !profile) return { message: 'No Crevia Link profile set up yet.' };
+  if (error || !profile) return { message: 'No Kaizen Link profile set up yet.' };
   const { data: buttons } = await supabase
     .from('link_buttons')
     .select('title, url, clicks, visible')
@@ -715,7 +715,7 @@ async function runAgentLoop(
 
     let response;
     try {
-      response = await callOpenAIWithTools(messages, KIRA_TOOLS, toolChoice);
+      response = await callOpenAIWithTools(messages, DIRA_TOOLS, toolChoice);
     } catch (e) {
       console.warn('[Dira] Agent loop call failed:', e);
       break;
@@ -931,7 +931,7 @@ serve(async (req) => {
     // Build system prompt with user context.
     // All personalisation comes from dira_memory (set via Dira Settings) —
     // no creator_profiles/brand_profiles joins needed.
-    let systemPrompt = KIRA_SYSTEM_PROMPT;
+    let systemPrompt = DIRA_SYSTEM_PROMPT;
 
     // Name resolution — check every possible source so the name is never "not set"
     // when it genuinely exists somewhere.

@@ -2,11 +2,11 @@ import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
 import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
 
 const ALLOWED_ORIGINS = [
-  "https://crevia.app",
-  "https://www.crevia.app",
+  "https://kaizenafrika.app",
+  "https://www.kaizenafrika.app",
   "http://localhost:8080",
   "http://localhost:5173",
-  "https://crevia.app",
+  "https://kaizenafrika.app",
 ];
 
 function getCorsHeaders(req: Request) {
@@ -126,7 +126,7 @@ serve(async (req) => {
       userClient.from("business_settings").select("*").maybeSingle(),
     ]);
 
-    const senderName = biz?.business_name || profile?.display_name || "Crevia User";
+    const senderName = biz?.business_name || profile?.display_name || "Kaizen Afrika User";
     const senderEmail = biz?.business_email || profile?.email || "";
     const currency = contract.currency || "KES";
 
@@ -156,11 +156,8 @@ serve(async (req) => {
               <table width="100%"><tr>
                 <td>
                   <table cellpadding="0" cellspacing="0"><tr>
-                    <td style="vertical-align:middle;padding-right:10px;">
-                      <img src="https://crevia.app/crevia-logo.png" alt="Crevia" width="40" height="40" style="display:block;border-radius:50%;border:1px solid #333;" />
-                    </td>
                     <td style="vertical-align:middle;">
-                      <span style="font-size:22px;font-weight:700;color:#c9a96e;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;">Crevia</span>
+                      <span style="font-size:22px;font-weight:700;color:#c9a96e;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;">Kaizen Afrika</span>
                     </td>
                   </tr></table>
                 </td>
@@ -240,7 +237,7 @@ serve(async (req) => {
           <tr>
             <td style="padding:28px 40px;">
               <table width="100%"><tr><td align="center">
-                <a href="https://crevia.app/received?tab=canvases&id=${contract_id}" style="display:inline-block;background:#c9a96e;color:#fff;text-decoration:none;padding:14px 32px;border-radius:8px;font-weight:700;font-size:15px;">
+                <a href="https://kaizenafrika.app/received?tab=canvases&id=${contract_id}" style="display:inline-block;background:#c9a96e;color:#fff;text-decoration:none;padding:14px 32px;border-radius:8px;font-weight:700;font-size:15px;">
                   View &amp; Sign Canvas
                 </a>
               </td></tr></table>
@@ -251,8 +248,8 @@ serve(async (req) => {
           <tr>
             <td style="padding:0 40px 32px;border-top:1px solid #f0ede8;">
               <p style="margin:16px 0 0;font-size:12px;color:#aaa;line-height:1.7;">
-                This Canvas was sent via <strong style="color:#c9a96e;">Crevia</strong> · crevia.app<br/>
-                Log in to your Crevia account to review and sign.
+                This Canvas was sent via <strong style="color:#c9a96e;">Kaizen Afrika</strong> · kaizenafrika.app<br/>
+                Log in to your Kaizen Afrika account to review and sign.
               </p>
             </td>
           </tr>
@@ -272,7 +269,7 @@ serve(async (req) => {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        from: `${senderName} via Crevia <contracts@crevia.app>`,
+        from: `${senderName} via Kaizen Afrika <contracts@kaizenafrika.app>`,
         to: contract.client_email,
         reply_to: senderEmail || undefined,
         subject: `Canvas from ${senderName}: ${contract.title}`,
@@ -296,7 +293,7 @@ serve(async (req) => {
       .update({ status: "sent" })
       .eq("id", contract_id);
 
-    // Notify client if they have a Crevia account
+    // Notify client if they have a Kaizen Afrika account
     const { data: clientProfile } = await adminClient
       .from("profiles")
       .select("id")
@@ -308,7 +305,7 @@ serve(async (req) => {
         user_id: clientProfile.id,
         type: "canvas_received",
         title: `Canvas from ${senderName}`,
-        body: `You have received a Canvas: "${contract.title}". Review and sign it on Crevia.`,
+        body: `You have received a Canvas: "${contract.title}". Review and sign it on Kaizen Afrika.`,
         data: { contract_id, link: "/received" },
       });
     }

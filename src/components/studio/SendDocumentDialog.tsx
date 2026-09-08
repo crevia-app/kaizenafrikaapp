@@ -79,7 +79,7 @@ export function SendDocumentDialog({
       if (data?.error) throw new Error(data.error);
 
       toast.success(`${type === "invoice" ? "Invoice" : "Canvas"} sent!`, {
-        description: `Sent to ${trimmed}. They'll receive an email and an in-app notification if they have a Crevia account.`,
+        description: `Sent to ${trimmed}. They'll receive an email and an in-app notification if they have a Kaizen Afrika account.`,
       });
       onSent?.();
       onOpenChange(false);
@@ -122,7 +122,7 @@ export function SendDocumentDialog({
                 autoFocus
               />
               <p className="text-[11px] text-muted-foreground">
-                They'll receive a full copy by email. If they have a Crevia account, they'll also get an in-app notification and can view it under <strong>Received</strong>.
+                They'll receive a full copy by email. If they have a Kaizen Afrika account, they'll also get an in-app notification and can view it under <strong>Received</strong>.
               </p>
             </div>
 

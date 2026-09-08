@@ -15,7 +15,7 @@ import TextInput from "@/components/onboarding/TextInput";
 const creatorSteps = [
   {
     id: "welcome",
-    kiraMessage: (name: string, _?: string) => `Hi 👋 ${name || "there"}! I'm Dira, your creative companion at Crevia. I'm so excited to meet you! Let's go through a few quick steps so I can personalize your experience. Ready?`,
+    diraMessage: (name: string, _?: string) => `Hi 👋 ${name || "there"}! I'm Dira, your creative companion at Kaizen Afrika. I'm so excited to meet you! Let's go through a few quick steps so I can personalize your experience. Ready?`,
     options: [
       { label: "Let's do this! 🚀", value: "ready" },
       { label: "Sure thing! ✨", value: "ready" }
@@ -24,7 +24,7 @@ const creatorSteps = [
   },
   {
     id: "creator_type",
-    kiraMessage: (_?: string, __?: string) => "Amazing! First things first — what kind of creator are you? Pick all that fit you 🎨",
+    diraMessage: (_?: string, __?: string) => "Amazing! First things first — what kind of creator are you? Pick all that fit you 🎨",
     options: [
       { label: "Content Creator", value: "content_creator" },
       { label: "UGC Creator", value: "ugc_creator" },
@@ -41,7 +41,7 @@ const creatorSteps = [
   },
   {
     id: "goals",
-    kiraMessage: (_?: string, __?: string) => "Love it! 💪 Now tell me — what are you hoping to achieve with Crevia?",
+    diraMessage: (_?: string, __?: string) => "Love it! 💪 Now tell me — what are you hoping to achieve with Kaizen Afrika?",
     options: [
       { label: "Find brand deals 💰", value: "brand_deals" },
       { label: "Earn from my skills 💼", value: "earn_skills" },
@@ -55,21 +55,21 @@ const creatorSteps = [
   },
   {
     id: "handle",
-    kiraMessage: (_?: string, __?: string) => "Awesome goals! 🎯 Now let's set up your Crevia Link. What should your username be? This will be your public profile URL (crevia.app/yourname)",
+    diraMessage: (_?: string, __?: string) => "Awesome goals! 🎯 Now let's set up your Kaizen Link. What should your username be? This will be your public profile URL (kaizenafrika.app/yourname)",
     type: "text" as const,
     placeholder: "yourname",
-    prefix: "crevia.app/"
+    prefix: "kaizenafrika.app/"
   },
   {
     id: "bio",
-    kiraMessage: (_, handle: string) => `Nice choice, @${handle}! 🌟 Now write a short bio to introduce yourself to brands and other creators. Keep it snappy!`,
+    diraMessage: (_, handle: string) => `Nice choice, @${handle}! 🌟 Now write a short bio to introduce yourself to brands and other creators. Keep it snappy!`,
     type: "textarea" as const,
     placeholder: "I'm a creative soul who loves...",
     optional: true
   },
   {
     id: "complete",
-    kiraMessage: (name: string, _?: string) => `You're officially part of the Crevia family, ${name || "friend"}! 🎉\n\nI've set up your profile and I'm ready to help you find amazing opportunities, grow your audience, and make your creative dreams come true.\n\nLet's go make some magic happen! ✨🦁`,
+    diraMessage: (name: string, _?: string) => `You're officially part of the Kaizen Afrika family, ${name || "friend"}! 🎉\n\nI've set up your profile and I'm ready to help you find amazing opportunities, grow your audience, and make your creative dreams come true.\n\nLet's go make some magic happen! ✨🦁`,
     type: "final" as const
   }
 ];
@@ -78,7 +78,7 @@ const creatorSteps = [
 const brandSteps = [
   {
     id: "welcome",
-    kiraMessage: (name: string, _?: string) => `Hey there 👋 ${name || ""}! I'm Dira, and I'll be helping you discover amazing creators for your brand. Let's set up your profile real quick!`,
+    diraMessage: (name: string, _?: string) => `Hey there 👋 ${name || ""}! I'm Dira, and I'll be helping you discover amazing creators for your brand. Let's set up your profile real quick!`,
     options: [
       { label: "Let's get started! 🚀", value: "ready" },
       { label: "Sounds good! ✨", value: "ready" }
@@ -87,7 +87,7 @@ const brandSteps = [
   },
   {
     id: "business_type",
-    kiraMessage: (_?: string, __?: string) => "First up — what type of business are you? 🏢",
+    diraMessage: (_?: string, __?: string) => "First up — what type of business are you? 🏢",
     options: [
       { label: "Startup", value: "startup" },
       { label: "Agency", value: "agency" },
@@ -101,7 +101,7 @@ const brandSteps = [
   },
   {
     id: "goals",
-    kiraMessage: (_?: string, __?: string) => "Perfect! 💼 What are you hoping to achieve with Crevia?",
+    diraMessage: (_?: string, __?: string) => "Perfect! 💼 What are you hoping to achieve with Kaizen Afrika?",
     options: [
       { label: "Discover creators faster 🔍", value: "discover_creators" },
       { label: "Run organized campaigns 📊", value: "campaigns" },
@@ -115,27 +115,27 @@ const brandSteps = [
   },
   {
     id: "brand_name",
-    kiraMessage: (_?: string, __?: string) => "Exciting goals! 🎯 What's your brand name?",
+    diraMessage: (_?: string, __?: string) => "Exciting goals! 🎯 What's your brand name?",
     type: "text" as const,
     placeholder: "Your Brand Name"
   },
   {
     id: "handle",
-    kiraMessage: (_?: string, brandName?: string) => `${brandName || "Your brand"} — love it! 💜 Now let's pick your Crevia handle. This will be your public profile where creators can learn about you.`,
+    diraMessage: (_?: string, brandName?: string) => `${brandName || "Your brand"} — love it! 💜 Now let's pick your Kaizen Afrika handle. This will be your public profile where creators can learn about you.`,
     type: "text" as const,
     placeholder: "yourbrand",
-    prefix: "crevia.app/"
+    prefix: "kaizenafrika.app/"
   },
   {
     id: "description",
-    kiraMessage: (_?: string, __?: string) => "Almost there! Write a quick description about your brand so creators know who you are 📝",
+    diraMessage: (_?: string, __?: string) => "Almost there! Write a quick description about your brand so creators know who you are 📝",
     type: "textarea" as const,
     placeholder: "We're a brand that...",
     optional: true
   },
   {
     id: "complete",
-    kiraMessage: (name: string, _?: string) => `Welcome to Crevia, ${name || "friend"}! 🎉\n\nYour brand profile is all set up. I'm here to help you find the perfect creators for your campaigns and make collaboration seamless.\n\nLet's build something amazing together! 🦁✨`,
+    diraMessage: (name: string, _?: string) => `Welcome to Kaizen Afrika, ${name || "friend"}! 🎉\n\nYour brand profile is all set up. I'm here to help you find the perfect creators for your campaigns and make collaboration seamless.\n\nLet's build something amazing together! 🦁✨`,
     type: "final" as const
   }
 ];
@@ -250,15 +250,15 @@ const DiraOnboarding = () => {
     
     let messageContent = "";
     if (step.id === "welcome") {
-      messageContent = step.kiraMessage(userName);
+      messageContent = step.diraMessage(userName);
     } else if (step.id === "bio") {
-      messageContent = step.kiraMessage(userName, collectedData.handle || "");
+      messageContent = step.diraMessage(userName, collectedData.handle || "");
     } else if (step.id === "handle" && userType === "brand") {
-      messageContent = step.kiraMessage(userName, collectedData.brand_name || "");
+      messageContent = step.diraMessage(userName, collectedData.brand_name || "");
     } else if (step.id === "complete") {
-      messageContent = step.kiraMessage(userName);
+      messageContent = step.diraMessage(userName);
     } else {
-      messageContent = step.kiraMessage(userName);
+      messageContent = step.diraMessage(userName);
     }
 
     setMessages(prev => [...prev, {
@@ -434,7 +434,7 @@ const DiraOnboarding = () => {
         }
       }
 
-      toast({ title: "Welcome to Crevia! 🎉" });
+      toast({ title: "Welcome to Kaizen Afrika! 🎉" });
       navigate("/dashboard");
     } catch (error) {
       console.error("Error saving profile:", error);

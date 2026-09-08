@@ -7,7 +7,7 @@ interface BackButtonProps {
   label?: string;
 }
 
-export function BackButton({ fallback = "/crevia-link", className = "", label = "Back" }: BackButtonProps) {
+export function BackButton({ fallback = "/kaizen-link", className = "", label = "Back" }: BackButtonProps) {
   const navigate = useNavigate();
 
   const handleBack = () => {

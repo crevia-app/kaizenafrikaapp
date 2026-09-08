@@ -3,8 +3,8 @@ import { cn } from "@/lib/utils";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { VerifiedBadge } from "@/components/ui/VerifiedBadge";
 import { LINK_THEMES } from "@/lib/linkThemes";
-import { SocialBadgeRow } from "@/components/crevia-link/SocialBrandIcons";
-import { renderLinkIcon } from "@/components/crevia-link/LinkIconPicker";
+import { SocialBadgeRow } from "@/components/kaizen-link/SocialBrandIcons";
+import { renderLinkIcon } from "@/components/kaizen-link/LinkIconPicker";
 
 interface LivePreviewProps {
   linkProfile: any;

@@ -1,8 +1,8 @@
-# Crevia — Developer Documentation
+# Kaizen Afrika — Developer Documentation
 
-> Crevia is solving the chaotic fragmentation businesses and creatives experience by building a unified, AI-powered infrastructure where both businesses and creatives can scale their business operations.
+> Kaizen Afrika is solving the chaotic fragmentation businesses and creatives experience by building a unified, AI-powered infrastructure where both businesses and creatives can scale their business operations.
 
-**Production URL:** [crevia.app](https://crevia.app)  
+**Production URL:** [kaizenafrika.app](https://kaizenafrika.app)  
 **Stack:** React 18 · Vite 5 · TypeScript 5 · Supabase · Vercel  
 **Status:** Beta — deployed to production
 
@@ -31,15 +31,15 @@
 
 ## 1. Platform Overview
 
-Crevia is a unified portal serving two user types — **Independent Creatives** (photographers, designers, copywriters, developers) and **B2B Brands** — within a single multi-tenant architecture backed by Supabase Row Level Security.
+Kaizen Afrika is a unified portal serving two user types — **Independent Creatives** (photographers, designers, copywriters, developers) and **B2B Brands** — within a single multi-tenant architecture backed by Supabase Row Level Security.
 
 ### Core Modules
 
 | Module | Route | Purpose |
 |---|---|---|
 | **Dira AI** | `/dira` | Conversational AI hub for deal structuring, project management, and proactive suggestions |
-| **Crevia Link** | `/crevia-link` | Customisable link-in-bio with live preview, themed public profiles, and analytics |
-| **Crevia Invoice** | `/crevia-invoice` | Tiered PDF invoice generation with manual eTIMS compliance fields |
+| **Kaizen Link** | `/kaizen-link` | Customisable link-in-bio with live preview, themed public profiles, and analytics |
+| **Kaizen Invoice** | `/kaizen-invoice` | Tiered PDF invoice generation with manual eTIMS compliance fields |
 
 ### Architecture at a Glance
 
@@ -102,7 +102,7 @@ Browser (React SPA + PWA)
 ```
 creviamvp/
 ├── public/
-│   ├── crevia-logo.png
+│   ├── kaizen-logo.png
 │   ├── ffmpeg/               # FFmpeg WASM served from same origin
 │   └── robots.txt
 ├── src/
@@ -110,13 +110,12 @@ creviamvp/
 │   ├── components/
 │   │   ├── auth/             # Auth flows, MFA, BiometricLockScreen, RecoveryModal
 │   │   ├── chat/             # ChatBubble, AttachmentBubble
-│   │   ├── crevia-connect/
-│   │   │   └── shared/       # CreviaChat (shared messaging component)
-│   │   ├── crevia-link/      # LivePreview, LinkSidebarDesktop, ThemeSelector,
+│   │   ├── kaizen-connect/
+│   │   │   └── shared/       # KaizenChat (shared messaging component)
+│   │   ├── kaizen-link/      # LivePreview, LinkSidebarDesktop, ThemeSelector,
 │   │   │                     # AddButtonDialog, EditButtonDialog, SocialBrandIcons
 │   │   ├── dira/             # ProjectsView, ProjectDetailSheet, DiraSettingsPanel,
 │   │   │                     # CreateProjectDialog, ApproveActionDialog, DiraEmptyState
-│   │   ├── kira/             # Kira AI sub-components
 │   │   ├── navigation/       # AppLayout, MainSidebar, TopBar, MobileBottomNav,
 │   │   │                     # ProfileDrawer
 │   │   ├── notifications/
@@ -154,7 +153,7 @@ creviamvp/
 │   │   ├── e2e-crypto.ts     # WebCrypto primitives (RSA-OAEP + AES-GCM)
 │   │   ├── indexeddb-crypto.ts  # IDB key persistence
 │   │   ├── key-migration.ts  # V1 → V2 key migration
-│   │   ├── linkThemes.ts     # Crevia Link theme definitions
+│   │   ├── linkThemes.ts     # Kaizen Link theme definitions
 │   │   ├── utils.ts          # cn(), shared helpers
 │   │   └── videoConverter.ts # FFmpeg WASM wrapper
 │   ├── pages/
@@ -164,10 +163,10 @@ creviamvp/
 │   │   │                     # Settings, Help, Feedback
 │   │   ├── Home.tsx          # Landing page (eagerly loaded)
 │   │   ├── Dira.tsx
-│   │   ├── CreviaLink.tsx
-│   │   ├── CreviaStudio.tsx
-│   │   ├── CreviaInvoice.tsx
-│   │   ├── PublicProfile.tsx # Public Crevia Link (/:username)
+│   │   ├── KaizenLink.tsx
+│   │   ├── KaizenStudio.tsx
+│   │   ├── KaizenInvoice.tsx
+│   │   ├── PublicProfile.tsx # Public Kaizen Link (/:username)
 │   │   ├── Admin.tsx
 │   │   └── ...
 │   └── App.tsx               # Root: providers, routing, E2EE init
@@ -282,7 +281,7 @@ All routing is handled client-side by React Router v6. The Vercel config rewrite
 | `/privacy-policy` | `PrivacyPolicy` | Legal |
 | `/terms-of-service` | `TermsOfService` | Legal |
 | `/cookie-policy` | `CookiePolicy` | Legal |
-| `/:username` | `PublicProfile` | Public Crevia Link profile |
+| `/:username` | `PublicProfile` | Public Kaizen Link profile |
 
 ### Protected Routes (require auth)
 
@@ -291,9 +290,9 @@ Wrapped in `<ProtectedRoute>` — unauthenticated users are redirected to `/auth
 | Path | Component | Description |
 |---|---|---|
 | `/dira` | `Dira` | Dira AI dashboard (default post-login) |
-| `/crevia-link` | `CreviaLink` | Crevia Link editor |
-| `/crevia-studio` | `CreviaStudio` | Studio hub (Link, Invoice) |
-| `/crevia-invoice` | `CreviaInvoice` | Invoice manager |
+| `/kaizen-link` | `KaizenLink` | Kaizen Link editor |
+| `/kaizen-studio` | `KaizenStudio` | Studio hub (Link, Invoice) |
+| `/kaizen-invoice` | `KaizenInvoice` | Invoice manager |
 | `/received` | `ReceivedDocuments` | Documents received from others |
 | `/profile/payments-billing` | `PaymentsBilling` | Subscription management |
 | `/profile/notifications` | `Notifications` | Notification preferences |
@@ -392,11 +391,11 @@ Dira is the primary conversational interface and project management hub.
 
 ---
 
-### 8.2 Crevia Link
+### 8.2 Kaizen Link
 
-**Entry:** `src/pages/CreviaLink.tsx`  
+**Entry:** `src/pages/KaizenLink.tsx`  
 **Public view:** `src/pages/PublicProfile.tsx` (route `/:username`)  
-**Components:** `src/components/crevia-link/`
+**Components:** `src/components/kaizen-link/`
 
 A fully customisable link-in-bio with a live phone-frame preview that updates in real time as the user edits.
 
@@ -415,9 +414,9 @@ A fully customisable link-in-bio with a live phone-frame preview that updates in
 
 ---
 
-### 8.3 Crevia Invoice
+### 8.3 Kaizen Invoice
 
-**Entry:** `src/pages/CreviaInvoice.tsx` → `SmartInvoicesTab`  
+**Entry:** `src/pages/KaizenInvoice.tsx` → `SmartInvoicesTab`  
 **Components:** `src/components/studio/SmartInvoicesTab.tsx`, `InvoicePreviewDialog.tsx`
 
 PDF invoice generation with tiered output quality.
@@ -431,7 +430,7 @@ PDF invoice generation with tiered output quality.
 - Send invoice: `invoice-send` Edge Function delivers PDF to client email
 
 **Watermark logic:**
-- Free users: "Powered by Crevia" appended to invoice footer
+- Free users: "Powered by Kaizen Afrika" appended to invoice footer
 - Pro / Business: no watermark (gated on `!isProUser` in `InvoicePreviewDialog`)
 
 **Credit limits:**
@@ -461,7 +460,7 @@ Tables are grouped by domain below. All use UUID primary keys and `created_at`/`
 | `brand_profiles` | Extended data for brand users (company description, goals, logo) |
 | `business_settings` | Configuration for Business-tier workspace settings |
 
-#### Crevia Link
+#### Kaizen Link
 
 | Table | Description |
 |---|---|
@@ -470,7 +469,7 @@ Tables are grouped by domain below. All use UUID primary keys and `created_at`/`
 | `link_social_icons` | Social platform icons with URL and display order |
 | `link_featured_work` | Featured project/media cards |
 
-#### Crevia Invoice
+#### Kaizen Invoice
 
 | Table | Description |
 |---|---|
@@ -519,7 +518,7 @@ Tables are grouped by domain below. All use UUID primary keys and `created_at`/`
 
 ### 9.2 Edge Functions
 
-All functions are written in Deno and deployed via Supabase. Each enforces an origin allowlist (`crevia.app`, `localhost:8080`, `localhost:5173`).
+All functions are written in Deno and deployed via Supabase. Each enforces an origin allowlist (`kaizenafrika.app`, `localhost:8080`, `localhost:5173`).
 
 | Function | Trigger | Description |
 |---|---|---|
@@ -656,7 +655,7 @@ For limits enforcement on write operations, the `invoices-create` and other Edge
 
 ## 11. Payments — Paystack
 
-Crevia uses [Paystack](https://paystack.com) for all subscription billing (Kenya-first, supports M-Pesa, cards, bank transfer).
+Kaizen Afrika uses [Paystack](https://paystack.com) for all subscription billing (Kenya-first, supports M-Pesa, cards, bank transfer).
 
 ### Frontend Integration
 
@@ -858,4 +857,4 @@ Strict mode is enabled. Run `tsc --noEmit` before opening a PR — the build com
 
 ---
 
-*Crevia — Own Your Story.*
+*Kaizen Afrika — Progress, Every Day.*

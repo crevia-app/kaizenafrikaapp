@@ -8,7 +8,7 @@ interface State {
   stack: string;
 }
 
-const RELOAD_KEY = "crevia_chunk_reload";
+const RELOAD_KEY = "kaizen_chunk_reload";
 const DEBOUNCE_MS = 30_000; // 30 s — long enough to avoid loops, short enough to recover
 
 async function clearCachesAndReload() {
@@ -46,7 +46,7 @@ export class ErrorBoundary extends React.Component<
   }
 
   componentDidCatch(error: Error, info: React.ErrorInfo) {
-    console.error("[Crevia] Unhandled error:", error, info.componentStack);
+    console.error("[Kaizen Afrika] Unhandled error:", error, info.componentStack);
     logError(error.message, error.stack, "react_boundary", {
       componentStack: info.componentStack?.slice(0, 2000),
     });

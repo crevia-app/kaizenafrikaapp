@@ -331,7 +331,7 @@ const SmartInvoicesTab = ({ initialInvoiceId }: { initialInvoiceId?: string } = 
     const publicUrl = `${window.location.origin}/invoice/public/${invoice.id}`;
     if (typeof navigator.share === "function") {
       try {
-        await navigator.share({ title: `Invoice ${invoice.invoice_number}`, text: "View your invoice from Crevia securely online:", url: publicUrl });
+        await navigator.share({ title: `Invoice ${invoice.invoice_number}`, text: "View your invoice from Kaizen Afrika securely online:", url: publicUrl });
       } catch (err: any) {
         if (err?.name !== "AbortError") {
           await navigator.clipboard.writeText(publicUrl);

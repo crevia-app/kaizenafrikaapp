@@ -70,7 +70,7 @@ export const ProjectsView = ({
         .eq("project_id", projectToDelete.id);
 
       const { error } = await supabase
-        .from("kira_projects")
+        .from("dira_projects")
         .delete()
         .eq("id", projectToDelete.id);
 

@@ -53,17 +53,8 @@ export function CompleteProfileModal({ userId, onComplete }: CompleteProfileModa
           transition={{ type: "spring", stiffness: 340, damping: 30 }}
           className="relative w-full max-w-sm bg-background border border-border rounded-2xl shadow-2xl p-7"
         >
-          {/* Logo */}
-          <div className="flex justify-center mb-5">
-            <img
-              src="/crevia-logo.png"
-              alt="Crevia"
-              className="w-14 h-14 rounded-2xl bg-zinc-950 ring-1 ring-border object-cover"
-            />
-          </div>
-
           <h2 className="font-vollkorn text-2xl font-bold text-center mb-1">
-            Welcome to Crevia
+            Welcome to Kaizen Afrika
           </h2>
           <p className="text-sm text-muted-foreground text-center mb-6">
             What should we call you?

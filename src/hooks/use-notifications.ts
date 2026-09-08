@@ -12,7 +12,7 @@ export interface AppNotification {
 }
 
 const LIMIT = 40;
-const clearedKey = (uid: string) => `crevia_notif_cleared_${uid}`;
+const clearedKey = (uid: string) => `kaizen_notif_cleared_${uid}`;
 
 function getClearedAt(userId: string): string | null {
   return localStorage.getItem(clearedKey(userId));
@@ -55,7 +55,7 @@ export function useNotifications(userId: string | undefined, dnd = false) {
     refresh();
 
     const handleCleared = () => setNotifications([]);
-    window.addEventListener("crevia:notifications-cleared", handleCleared);
+    window.addEventListener("kaizen:notifications-cleared", handleCleared);
 
     const channel = supabase
       .channel(`notifications:${userId}`)
@@ -92,7 +92,7 @@ export function useNotifications(userId: string | undefined, dnd = false) {
 
     return () => {
       supabase.removeChannel(channel);
-      window.removeEventListener("crevia:notifications-cleared", handleCleared);
+      window.removeEventListener("kaizen:notifications-cleared", handleCleared);
     };
   }, [userId, refresh]);
 
@@ -125,7 +125,7 @@ export function useNotifications(userId: string | undefined, dnd = false) {
   const clearAll = useCallback(async () => {
     if (!userId) return;
     localStorage.setItem(clearedKey(userId), new Date().toISOString());
-    window.dispatchEvent(new Event("crevia:notifications-cleared"));
+    window.dispatchEvent(new Event("kaizen:notifications-cleared"));
     const { error } = await supabase.from("notifications").delete().eq("user_id", userId);
     if (error) {
       console.error("[notifications] Failed to clear:", error.message);

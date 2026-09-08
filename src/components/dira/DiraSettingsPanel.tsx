@@ -15,7 +15,7 @@ import { ScrollArea } from "@/components/ui/scroll-area";
 
 type PanelView = "main" | "memory" | "personalization" | "saved-memories";
 
-interface KiraMemory {
+interface DiraMemory {
   reference_chat_history: boolean;
   reference_saved_memories: boolean;
   nickname: string;
@@ -54,7 +54,7 @@ export function DiraSettingsPanel({ open, onOpenChange, userId }: Props) {
   const [isSaving, setIsSaving] = useState(false);
   const [displayName, setDisplayName] = useState("");
   const [email, setEmail] = useState("");
-  const [memory, setMemory] = useState<KiraMemory>({
+  const [memory, setMemory] = useState<DiraMemory>({
     reference_chat_history: false,
     reference_saved_memories: false,
     nickname: "",
@@ -93,7 +93,7 @@ export function DiraSettingsPanel({ open, onOpenChange, userId }: Props) {
     load();
   }, [open, userId]);
 
-  const persistMemory = useCallback(async (updated: KiraMemory): Promise<boolean> => {
+  const persistMemory = useCallback(async (updated: DiraMemory): Promise<boolean> => {
     const { data: current } = await supabase.from("profiles").select("dira_memory").eq("id", userId).single();
     const merged = {
       ...(current?.dira_memory as object || {}),
@@ -134,7 +134,7 @@ export function DiraSettingsPanel({ open, onOpenChange, userId }: Props) {
     setIsSaving(false);
   };
 
-  const deleteMemoryField = async (field: keyof KiraMemory) => {
+  const deleteMemoryField = async (field: keyof DiraMemory) => {
     const updated = { ...memory, [field]: "" };
     setMemory(updated);
     await persistMemory(updated);
@@ -144,7 +144,7 @@ export function DiraSettingsPanel({ open, onOpenChange, userId }: Props) {
   const loadLearnedMemories = useCallback(async () => {
     setIsLoadingLearned(true);
     const { data } = await supabase
-      .from("kira_memories")
+      .from("dira_memories")
       .select("id, content, created_at")
       .eq("user_id", userId)
       .order("created_at", { ascending: false })
@@ -154,7 +154,7 @@ export function DiraSettingsPanel({ open, onOpenChange, userId }: Props) {
   }, [userId]);
 
   const deleteLearnedMemory = async (memoryId: string) => {
-    await supabase.from("kira_memories").delete().eq("id", memoryId);
+    await supabase.from("dira_memories").delete().eq("id", memoryId);
     setLearnedMemories(prev => prev.filter(m => m.id !== memoryId));
     toast({ title: "Memory removed" });
   };
@@ -393,7 +393,7 @@ export function DiraSettingsPanel({ open, onOpenChange, userId }: Props) {
                               <p className="text-sm leading-snug break-words">{item.value}</p>
                             </div>
                             <button
-                              onClick={() => deleteMemoryField(item.key as keyof KiraMemory)}
+                              onClick={() => deleteMemoryField(item.key as keyof DiraMemory)}
                               className="flex-shrink-0 mt-0.5 p-1.5 rounded-lg hover:bg-destructive/10 text-muted-foreground hover:text-destructive transition-colors"
                             >
                               <Trash2 className="w-3.5 h-3.5" />
@@ -471,7 +471,7 @@ export function DiraSettingsPanel({ open, onOpenChange, userId }: Props) {
                       <div>
                         <p className="text-sm font-semibold">Custom instructions for Dira</p>
                         <p className="text-xs text-muted-foreground mt-1 leading-relaxed">
-                          Dira will follow these in every conversation on Crevia.
+                          Dira will follow these in every conversation on Kaizen Afrika.
                         </p>
                       </div>
                       <Textarea

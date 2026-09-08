@@ -9,7 +9,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { cn } from "@/lib/utils";
 import { useLanguage } from "@/i18n/LanguageContext";
 // Tab content
-import CreviaLink         from "./CreviaLink";
+import KaizenLink         from "./KaizenLink";
 import SmartInvoicesTab   from "@/components/studio/SmartInvoicesTab";
 
 /* ─────────────────────────────────────────────────────────────────────────────
@@ -19,7 +19,7 @@ const STUDIO_TABS = [
   {
     id:          "link",
     shortLabel:  "Link",
-    fullLabel:   "Crevia Link",
+    fullLabel:   "Kaizen Link",
     description: "Your public profile page",
     labelKey:    "studio.tab.link",
     icon:        Link2,
@@ -28,7 +28,7 @@ const STUDIO_TABS = [
   {
     id:          "invoices",
     shortLabel:  "Invoice",
-    fullLabel:   "Crevia Invoice",
+    fullLabel:   "Kaizen Invoice",
     description: "Smart billing system",
     labelKey:    "studio.tab.invoice",
     icon:        Receipt,
@@ -46,7 +46,7 @@ const LINK_SECTIONS = [
 /* ─────────────────────────────────────────────────────────────────────────────
    COMPONENT
 ───────────────────────────────────────────────────────────────────────────── */
-const CreviaStudio = () => {
+const KaizenStudio = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   const { t }                           = useLanguage();
   const [sidebarOpen, setSidebarOpen]   = useState(false);
@@ -200,7 +200,7 @@ const CreviaStudio = () => {
             exit={{ opacity: 0 }}
             transition={{ duration: 0.12 }}
           >
-            {activeTab === "link"     && <CreviaLink isEmbedded />}
+            {activeTab === "link"     && <KaizenLink isEmbedded />}
             {activeTab === "invoices" && <SmartInvoicesTab initialInvoiceId={activeInvoiceId} />}
           </motion.div>
         </AnimatePresence>
@@ -335,4 +335,4 @@ const CreviaStudio = () => {
   );
 };
 
-export default CreviaStudio;
+export default KaizenStudio;

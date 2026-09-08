@@ -65,8 +65,8 @@ const AppLayout = ({ children }: AppLayoutProps) => {
     }
   };
 
-  const isCrevidAI  = location.pathname === "/crevia-ai";
-  const isStudio    = location.pathname === "/crevia-studio";
+  const isKaizenAI  = location.pathname === "/kaizen-ai";
+  const isStudio    = location.pathname === "/kaizen-studio";
   const isChatRoute = location.pathname === "/dira";
   const isSubPage   = ["/profile/", "/privacy-policy", "/terms-of-service", "/app/about", "/admin2005"].some(
     (p) => location.pathname.startsWith(p)
@@ -78,7 +78,7 @@ const AppLayout = ({ children }: AppLayoutProps) => {
       <TopBar
         profile={profile}
         onProfileClick={() => setProfileDrawerOpen(true)}
-        hideRightElements={isCrevidAI}
+        hideRightElements={isKaizenAI}
       />
 
       <div className="flex flex-1 overflow-hidden pt-[calc(3.5rem+env(safe-area-inset-top,0px))]">

@@ -1,7 +1,7 @@
 {
   "redirects": [],
   "rewrites": [
-    { "source": "/favicon.ico", "destination": "/crevia-logo.png" },
+    { "source": "/favicon.ico", "destination": "/kaizen-logo.png" },
     {
       "source": "/:username([a-zA-Z0-9_.-]+)",
       "has": [

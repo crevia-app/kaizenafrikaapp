@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
-const CONSENT_KEY = "crevia_cookie_consent";
+const CONSENT_KEY = "kaizen_cookie_consent";
 
 export function CookieConsent() {
   const [visible, setVisible] = useState(false);

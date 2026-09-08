@@ -8,14 +8,14 @@ Disallow: /mfa-verify
 Disallow: /reset-password
 Disallow: /crv-9x4m2k
 Disallow: /studio
-Disallow: /crevia-link
-Disallow: /crevia-studio
-Disallow: /crevia-invoice
-Disallow: /crevia-contracts
+Disallow: /kaizen-link
+Disallow: /kaizen-studio
+Disallow: /kaizen-invoice
+Disallow: /kaizen-contracts
 Disallow: /dira
 Disallow: /profile/
 Disallow: /received
-Disallow: /crevia-ai
+Disallow: /kaizen-ai
 Disallow: /dashboard
 Disallow: /invite/
 Disallow: /admin2005
@@ -45,4 +45,4 @@ Disallow: /
 User-agent: PetalBot
 Disallow: /
 
-Sitemap: https://www.crevia.app/sitemap.xml
+Sitemap: https://www.kaizenafrika.app/sitemap.xml

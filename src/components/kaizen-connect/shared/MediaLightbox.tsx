@@ -8,7 +8,7 @@ interface MediaLightboxProps {
 
 /**
  * MediaLightbox — full-screen overlay for video and image media.
- * Images already have their own Dialog-based lightbox in CreviaChat;
+ * Images already have their own Dialog-based lightbox in KaizenChat;
  * this component is used specifically for the video expand path.
  */
 export function MediaLightbox({ media, onClose }: MediaLightboxProps) {

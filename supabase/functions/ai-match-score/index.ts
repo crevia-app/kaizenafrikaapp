@@ -3,11 +3,11 @@ import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
 import "https://deno.land/x/xhr@0.1.0/mod.ts";
 
 const ALLOWED_ORIGINS = [
-  'https://crevia.app',
-  'https://www.crevia.app',
+  'https://kaizenafrika.app',
+  'https://www.kaizenafrika.app',
   'http://localhost:8080',
   'http://localhost:5173',
-  'https://crevia.app',
+  'https://kaizenafrika.app',
 ];
 
 function getCorsHeaders(req: Request) {

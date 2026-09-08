@@ -72,7 +72,7 @@ export const useFeatureGate = (feature: string, requiredPlan: "pro" | "business"
 
 const PRO_HIGHLIGHTS = [
   "500 Monthly Power Credits for Dira AI",
-  "Unlimited customized invoices — no Crevia branding",
+  "Unlimited customized invoices — no Kaizen Afrika branding",
   "10 Collaborative Workspaces",
   "Premium themes, custom brand colors & analytics",
 ];
@@ -145,7 +145,7 @@ const UpgradeModalDialog = ({ state, onClose }: UpgradeModalDialogProps) => {
 
           <p className="text-sm text-muted-foreground mb-5 leading-relaxed">
             Upgrade to <strong className="text-foreground">{planLabel}</strong> to unlock{" "}
-            <strong className="text-foreground">{state.feature}</strong> and the full Crevia toolkit.
+            <strong className="text-foreground">{state.feature}</strong> and the full Kaizen Afrika toolkit.
           </p>
 
           {/* Highlights */}

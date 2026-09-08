@@ -27,11 +27,11 @@ export default defineConfig({
     react(),
     VitePWA({
       registerType: 'autoUpdate',
-      includeAssets: ['crevia-logo.png', 'apple-touch-icon.png', 'icon-192x192.png', 'icon-512x512.png', 'robots.txt'],
+      includeAssets: ['kaizen-logo.png', 'apple-touch-icon.png', 'icon-192x192.png', 'icon-512x512.png', 'robots.txt'],
       manifest: {
-        name: 'Crevia - Own Your Story',
-        short_name: 'Crevia',
-        description: 'Empowering creators to own their digital careers',
+        name: 'Kaizen Afrika - Progress, Every Day',
+        short_name: 'Kaizen Afrika',
+        description: 'Empowering businesses to make progress, every day.',
         theme_color: '#09090b',
         background_color: '#09090b',
         display: 'standalone',
@@ -87,7 +87,7 @@ export default defineConfig({
             },
           },
           {
-            // Crevia Link public profile tables — NetworkFirst with no timeout so
+            // Kaizen Link public profile tables — NetworkFirst with no timeout so
             // mobile users on slow connections always get real data rather than a
             // cache miss. fetch() rejects immediately when there is no connectivity,
             // so the cache fallback still kicks in instantly on offline devices.

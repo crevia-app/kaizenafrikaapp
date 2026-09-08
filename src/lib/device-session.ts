@@ -1,6 +1,6 @@
 import { supabase } from "@/integrations/supabase/client";
 
-const DEVICE_ID_KEY = "crevia_device_id";
+const DEVICE_ID_KEY = "kaizen_device_id";
 
 export function getOrCreateDeviceId(): string {
   let id = localStorage.getItem(DEVICE_ID_KEY);

@@ -28,7 +28,7 @@ async function sendEmail(to: string, subject: string, html: string): Promise<boo
   const res = await fetch("https://api.resend.com/emails", {
     method: "POST",
     headers: { Authorization: `Bearer ${RESEND_API_KEY}`, "Content-Type": "application/json" },
-    body: JSON.stringify({ from: "Crevia <invoices@crevia.app>", to, subject, html }),
+    body: JSON.stringify({ from: "Kaizen Afrika <invoices@kaizenafrika.app>", to, subject, html }),
   });
   return res.ok;
 }
@@ -52,7 +52,7 @@ function dueSoonTemplate(
     <tr><td align="center">
       <table width="580" cellpadding="0" cellspacing="0" style="background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 4px 24px rgba(0,0,0,.08);">
         <tr><td style="background:#111;padding:24px 32px;">
-          <p style="margin:0;font-size:20px;font-weight:700;color:#fff;">Crevia</p>
+          <p style="margin:0;font-size:20px;font-weight:700;color:#fff;">Kaizen Afrika</p>
         </td></tr>
         <tr><td style="padding:32px;">
           <p style="margin:0 0 8px;font-size:18px;font-weight:700;color:#111;">Payment Reminder</p>
@@ -81,7 +81,7 @@ function dueSoonTemplate(
           </p>
         </td></tr>
         <tr><td style="padding:16px 32px 24px;border-top:1px solid #f0ede8;">
-          <p style="margin:0;font-size:12px;color:#bbb;">Sent via <a href="https://www.crevia.app" style="color:#bbb;">Crevia</a></p>
+          <p style="margin:0;font-size:12px;color:#bbb;">Sent via <a href="https://www.kaizenafrika.app" style="color:#bbb;">Kaizen Afrika</a></p>
         </td></tr>
       </table>
     </td></tr>
@@ -106,7 +106,7 @@ function overdueTemplate(
     <tr><td align="center">
       <table width="580" cellpadding="0" cellspacing="0" style="background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 4px 24px rgba(0,0,0,.08);">
         <tr><td style="background:#111;padding:24px 32px;">
-          <p style="margin:0;font-size:20px;font-weight:700;color:#fff;">Crevia</p>
+          <p style="margin:0;font-size:20px;font-weight:700;color:#fff;">Kaizen Afrika</p>
         </td></tr>
         <tr><td style="padding:32px;">
           <p style="margin:0 0 8px;font-size:18px;font-weight:700;color:#c0392b;">Payment Overdue</p>
@@ -135,7 +135,7 @@ function overdueTemplate(
           </p>
         </td></tr>
         <tr><td style="padding:16px 32px 24px;border-top:1px solid #f0ede8;">
-          <p style="margin:0;font-size:12px;color:#bbb;">Sent via <a href="https://www.crevia.app" style="color:#bbb;">Crevia</a></p>
+          <p style="margin:0;font-size:12px;color:#bbb;">Sent via <a href="https://www.kaizenafrika.app" style="color:#bbb;">Kaizen Afrika</a></p>
         </td></tr>
       </table>
     </td></tr>

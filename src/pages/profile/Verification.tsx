@@ -127,7 +127,7 @@ const Verification = () => {
             <h1 className="font-vollkorn text-3xl font-bold">Verification</h1>
           </div>
           <p className="text-muted-foreground text-sm">
-            Get the verified badge on your public profile and Crevia Link.
+            Get the verified badge on your public profile and Kaizen Link.
           </p>
         </div>
       </div>
@@ -142,7 +142,7 @@ const Verification = () => {
               <div>
                 <h2 className="font-vollkorn text-xl font-bold">You're Verified</h2>
                 <p className="text-sm text-muted-foreground">
-                  Your verified badge is active on your public profile and Crevia Link.
+                  Your verified badge is active on your public profile and Kaizen Link.
                 </p>
               </div>
             </div>
@@ -292,9 +292,9 @@ const Verification = () => {
             <h2 className="font-vollkorn text-lg font-bold mb-4">Benefits of Verification</h2>
             <ul className="space-y-3">
               {[
-                "Bronze verified badge on your public profile and Crevia Link",
-                "Higher visibility in Crevia Connect brand discovery",
-                "Priority support from the Crevia team",
+                "Bronze verified badge on your public profile and Kaizen Link",
+                "Higher visibility in Kaizen Afrika Connect brand discovery",
+                "Priority support from the Kaizen Afrika team",
                 "Access to exclusive creator programs and brand deals",
               ].map((benefit) => (
                 <li key={benefit} className="flex items-start gap-2.5 text-sm">

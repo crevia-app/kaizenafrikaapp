@@ -1,11 +1,11 @@
 import { useState, useEffect } from "react";
-import { loadGoogleFont, CREVIA_LINK_FONTS } from "@/lib/loadFont";
+import { loadGoogleFont, KAIZEN_LINK_FONTS } from "@/lib/loadFont";
 import { useParams, useNavigate } from "react-router-dom";
 import { supabase } from "@/integrations/supabase/client";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Sparkles } from "lucide-react";
-import { SocialBadgeRow, getSocialSvg } from "@/components/crevia-link/SocialBrandIcons";
+import { SocialBadgeRow, getSocialSvg } from "@/components/kaizen-link/SocialBrandIcons";
 import { VerifiedBadge } from "@/components/ui/VerifiedBadge";
 import { BackButton } from "@/components/BackButton";
 import { SEO } from "@/components/SEO";
@@ -21,7 +21,7 @@ const PublicProfile = () => {
   const [session, setSession] = useState<any>(undefined); // undefined = not yet checked
   const [ownerIsVerified, setOwnerIsVerified] = useState(false);
 
-  useEffect(() => { loadGoogleFont(CREVIA_LINK_FONTS); }, []);
+  useEffect(() => { loadGoogleFont(KAIZEN_LINK_FONTS); }, []);
 
   useEffect(() => {
     loadProfile();
@@ -297,7 +297,7 @@ const PublicProfile = () => {
       <div className="min-h-dvh flex items-center justify-center bg-black text-white">
         <div className="text-center">
           <h1 className="font-vollkorn text-4xl font-bold mb-4">Page not found</h1>
-          <p className="font-poppins text-gray-400">This Crevia Link doesn't exist.</p>
+          <p className="font-poppins text-gray-400">This Kaizen Link doesn't exist.</p>
         </div>
       </div>
     );
@@ -307,14 +307,14 @@ const PublicProfile = () => {
   // sessionStorage throws in IABs (Instagram, LinkedIn) — always safe-guard it
   const isOwnerViewing = (() => {
     if (!profile?.user_id) return false;
-    try { return sessionStorage.getItem("crevia_uid") === profile.user_id; }
+    try { return sessionStorage.getItem("kaizen_uid") === profile.user_id; }
     catch { return false; }
   })();
 
   if (profile?.profile_public === false && !isOwnerViewing) {
     return (
       <div className="min-h-dvh flex flex-col items-center justify-center bg-black text-white px-6">
-        <img src="/crevia-logo.png" alt="Crevia" className="w-14 h-14 rounded-2xl bg-zinc-950 ring-1 ring-white/10 mb-6" />
+        <span className="font-vollkorn text-2xl font-bold mb-6">Kaizen Afrika</span>
         <h1 className="font-vollkorn text-3xl font-bold mb-3">This profile is private</h1>
         <p className="font-poppins text-white/50 text-sm text-center max-w-xs">
           The owner has made this profile private. Only they can view it.
@@ -344,13 +344,13 @@ const PublicProfile = () => {
   const hasCustomColor = !!customColor && !isCustomImage;
 
   const profileName = profile?.display_name || profile?.username || username || "Profile";
-  const profileDesc = profile?.bio || `Check out ${profileName}'s links on Crevia.`;
-  const profileAvatar = profile?.profile_picture || "https://crevia.app/crevia-logo.png";
+  const profileDesc = profile?.bio || `Check out ${profileName}'s links on Kaizen Afrika.`;
+  const profileAvatar = profile?.profile_picture || "https://kaizenafrika.app/kaizen-logo.png";
 
   return (
     <>
     <SEO
-      title={`${profileName} | crevia.app`}
+      title={`${profileName} | kaizenafrika.app`}
       description={profileDesc}
       image={profileAvatar}
       imageWidth={800}
@@ -372,7 +372,7 @@ const PublicProfile = () => {
       {bgExtras.overlayStyle && <div className="absolute inset-0" style={bgExtras.overlayStyle} />}
       {bgExtras.className && <div className={`absolute inset-0 ${bgExtras.className}`} />}
       <div className="absolute top-4 left-4 z-20">
-        <BackButton fallback="/crevia-studio?tab=link" className="text-white/70 hover:text-white drop-shadow" />
+        <BackButton fallback="/kaizen-studio?tab=link" className="text-white/70 hover:text-white drop-shadow" />
       </div>
       <div className={`${getPageWidth()} ${layoutClass} ${fadeAnimation ? 'animate-fade-in' : ''} relative z-10`}>
         {/* Profile Header */}
@@ -488,19 +488,19 @@ const PublicProfile = () => {
           <div className="relative inline-block">
             <div className="absolute inset-0 rounded-full bg-white/10 blur-xl animate-pulse pointer-events-none" />
             <a
-              href="https://crevia.app"
+              href="https://kaizenafrika.app"
               target="_blank"
               rel="noopener noreferrer"
               className="relative inline-flex items-center justify-center px-6 py-3 rounded-full font-medium text-sm transition-all duration-300 transform active:scale-95 bg-white text-black hover:bg-zinc-100 z-30 font-sans tracking-wide shadow-[0_0_20px_rgba(255,255,255,0.15)] hover:shadow-[0_0_25px_rgba(255,255,255,0.3)]"
             >
-              Get Crevia link
+              Get Kaizen Afrika link
             </a>
           </div>
 
-          {/* "powered by crevia" — free tier only */}
+          {/* "powered by Kaizen Afrika" — free tier only */}
           {profile?.show_crevia_branding !== false && (
             <span className="mt-3 text-xs tracking-widest uppercase font-mono font-medium text-zinc-400/80 hover:text-zinc-200 transition-colors duration-200 block text-center pb-8 z-30 cursor-default">
-              powered by crevia
+              powered by kaizen afrika
             </span>
           )}
         </div>

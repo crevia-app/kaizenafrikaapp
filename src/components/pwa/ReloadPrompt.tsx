@@ -61,7 +61,7 @@ export function ReloadPrompt() {
                 New version available
               </p>
               <p className="text-[11px] text-white/50 mt-0.5">
-                Crevia has been updated.
+                Kaizen Afrika has been updated.
               </p>
             </div>
 

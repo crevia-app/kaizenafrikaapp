@@ -316,7 +316,7 @@ const ReceiptPreviewDialog = ({ open, onOpenChange, invoice }: ReceiptPreviewDia
               {/* ── Footer ── */}
               <div className="mt-8 sm:mt-10 pt-4 border-t border-gray-100 text-center">
                 <p className="text-sm font-medium" style={{ color: accentColor }}>Thank you for your payment!</p>
-                <p className="text-gray-300 text-xs mt-1">Generated with Crevia Studio · {format(new Date(), "yyyy")}</p>
+                <p className="text-gray-300 text-xs mt-1">Generated with Kaizen Studio · {format(new Date(), "yyyy")}</p>
               </div>
 
             </div>

@@ -17,7 +17,7 @@ const ProtectedRoute = ({ children }: ProtectedRouteProps) => {
 
       // If localStorage flag is missing, check the database.
       // This is the source of truth — device-independent.
-      if (!localStorage.getItem("crevia_terms_v1")) {
+      if (!localStorage.getItem("kaizen_terms_v1")) {
         const { data: profile } = await supabase
           .from("profiles")
           .select("terms_accepted_at")
@@ -25,7 +25,7 @@ const ProtectedRoute = ({ children }: ProtectedRouteProps) => {
           .single();
 
         // Cache in localStorage regardless — DB has it or we set it now
-        localStorage.setItem("crevia_terms_v1", "1");
+        localStorage.setItem("kaizen_terms_v1", "1");
 
         if (!profile?.terms_accepted_at) {
           // Existing user whose record pre-dates this column — backfill silently

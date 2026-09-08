@@ -12,7 +12,7 @@ const de = {
 
   "nav.home": "Startseite",
   "nav.dashboard": "Dashboard",
-  "nav.connect": "Crevia Connect",
+  "nav.connect": "Kaizen Afrika Connect",
   "nav.studio": "Studio",
   "nav.dira": "Dira AI",
   "nav.pricing": "Preise",
@@ -103,7 +103,7 @@ const de = {
   "toast.languageChangedDesc": "Die Sprache der Benutzeroberfläche wurde aktualisiert",
 
   "sidebar.studio": "Studio",
-  "sidebar.connect": "Crevia Connect",
+  "sidebar.connect": "Kaizen Afrika Connect",
   "sidebar.dira": "Dira AI",
   "sidebar.wallet": "Geldbörse",
 };

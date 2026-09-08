@@ -19,7 +19,7 @@ const sw = {
   // Navigation
   "nav.home": "Nyumbani",
   "nav.dashboard": "Dashibodi",
-  "nav.connect": "Crevia Connect",
+  "nav.connect": "Kaizen Afrika Connect",
   "nav.studio": "Studio",
   "nav.dira": "Dira AI",
   "nav.pricing": "Bei",
@@ -35,8 +35,8 @@ const sw = {
   "nav.legal": "Kisheria",
   "nav.privacy": "Faragha",
   "nav.terms": "Masharti",
-  "nav.aboutCrevia": "Kuhusu Crevia",
-  "nav.creviaLink": "Crevia Link",
+  "nav.aboutCrevia": "Kuhusu Kaizen Afrika",
+  "nav.creviaLink": "Kaizen Link",
   "nav.logOut": "Ondoka",
 
   // Settings
@@ -116,10 +116,10 @@ const sw = {
   "payments.transactionHistory": "Historia ya Miamala",
   "payments.noTransactions": "Hakuna miamala bado",
   "payments.everythingInFree": "Kila kitu katika Bure",
-  "payments.basicProfile": "Wasifu wa msingi na Crevia Link",
+  "payments.basicProfile": "Wasifu wa msingi na Kaizen Link",
   "payments.browseCampaigns": "Vinjari na omba kampeni",
   "payments.postCampaigns": "Chapisha hadi kampeni 2",
-  "payments.creviaChat": "Ujumbe wa Crevia Chat",
+  "payments.creviaChat": "Ujumbe wa Kaizen Afrika Chat",
   "payments.priorityPlacement": "Nafasi ya kipaumbele ya kampeni",
   "payments.unlimitedCampaigns": "Kampeni zisizo na kikomo",
   "payments.advancedAnalytics": "Uchambuzi wa hali ya juu na maarifa ya Dira AI",
@@ -176,7 +176,7 @@ const sw = {
   "verification.expectedTime": "Muda unaotarajiwa wa uthibitisho: ~masaa 2",
 
   // Feedback
-  "feedback.heroTitle": "Tengeneza Mustakabali wa Crevia",
+  "feedback.heroTitle": "Tengeneza Mustakabali wa Kaizen Afrika",
   "feedback.heroSubtitle": "Kila maoni, kila wazo la kipengele—vyote vinasaidia kujenga jukwaa ambalo waundaji na chapa wanastahili.",
   "feedback.yourVoiceMatters": "Sauti Yako ni Muhimu",
   "feedback.thoughts": "Mawazo",
@@ -197,7 +197,7 @@ const sw = {
   "feedback.submitBug": "Tuma Ripoti ya Hitilafu",
   "feedback.submitFeedback": "Tuma Maoni",
   "feedback.requestFeature": "Omba Kipengele",
-  "feedback.requestFeatureDesc": "Una wazo ambalo lingeweza kuboresha Crevia?",
+  "feedback.requestFeatureDesc": "Una wazo ambalo lingeweza kuboresha Kaizen Afrika?",
   "feedback.featureTitle": "Jina la Kipengele",
   "feedback.featureTitlePlaceholder": "Kipe kipengele chako jina la kuvutia",
   "feedback.problemSolve": "Tatizo gani hili linatatua?",
@@ -211,12 +211,12 @@ const sw = {
   "feedback.tip2": "Jumuisha mifano halisi kutoka kazi yako",
   "feedback.tip3": "Eleza nani mwingine anaweza kufaidika",
   "feedback.togetherTitle": "Pamoja, Tunatengeneza Kitu Kizuri",
-  "feedback.togetherDesc": "Crevia si jukwaa tu—ni jumuiya inayoundwa na waundaji na chapa kama wewe.",
+  "feedback.togetherDesc": "Kaizen Afrika si jukwaa tu—ni jumuiya inayoundwa na waundaji na chapa kama wewe.",
   "feedback.poweredByFeedback": "Inaendeshwa na maoni yako",
   "feedback.bugSubmitted": "Ripoti ya hitilafu imetumwa! 🐛",
   "feedback.bugSubmittedDesc": "Timu yetu itashughulikia hii mara moja.",
   "feedback.feedbackSubmitted": "Asante kwa maoni yako! 🎉",
-  "feedback.feedbackSubmittedDesc": "Sauti yako inaunda mustakabali wa Crevia.",
+  "feedback.feedbackSubmittedDesc": "Sauti yako inaunda mustakabali wa Kaizen Afrika.",
   "feedback.featureSubmitted": "Ombi la kipengele limetumwa! 💡",
   "feedback.featureSubmittedDesc": "Wazo zuri! Tutalitathimini kwa mpango wetu.",
   "feedback.diraBugMsg": "Usijali—hitilafu hutokea! Timu yetu ya uhandisi inashughulikia kila ripoti kwa uzito.",
@@ -265,7 +265,7 @@ const sw = {
 
   // Sidebar
   "sidebar.studio": "Studio",
-  "sidebar.connect": "Crevia Connect",
+  "sidebar.connect": "Kaizen Afrika Connect",
   "sidebar.dira": "Dira AI",
   "sidebar.wallet": "Pochi",
 };

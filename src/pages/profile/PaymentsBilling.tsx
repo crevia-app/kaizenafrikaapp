@@ -176,7 +176,7 @@ const PaymentsBilling = () => {
   const starterFeatures = [
     "5 Dira AI credits per day",
     "2 standard invoices per month",
-    "Crevia Link — core profile & basic templates",
+    "Kaizen Link — core profile & basic templates",
     "Workspaces not included (Pro feature)",
   ];
 
@@ -185,7 +185,7 @@ const PaymentsBilling = () => {
     "500 Dira AI credits per month",
     "Unlimited customized invoices — remove branding, add your logo",
     "10 collaborative workspaces per month",
-    "Crevia Link — premium themes, custom brand colors & advanced analytics",
+    "Kaizen Link — premium themes, custom brand colors & advanced analytics",
   ];
 
   const businessFeatures = [
@@ -194,7 +194,7 @@ const PaymentsBilling = () => {
     "Unlimited Dira AI — priority processing",
     "Unlimited workspaces with RBAC",
     "Unlimited invoices — removed branding, add your logo & brand colors",
-    "Crevia Link — brand colors, logos & advanced visitor analytics",
+    "Kaizen Link — brand colors, logos & advanced visitor analytics",
     "Priority support",
   ];
 
@@ -206,7 +206,7 @@ const PaymentsBilling = () => {
 
         <div className="mb-10">
           <h1 className="font-vollkorn text-4xl font-bold mb-2">Payments & Billing</h1>
-          <p className="text-muted-foreground">Manage your Crevia subscription</p>
+          <p className="text-muted-foreground">Manage your Kaizen Afrika subscription</p>
         </div>
 
         {/* Current Plan */}

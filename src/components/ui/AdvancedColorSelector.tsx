@@ -62,7 +62,7 @@ export function AdvancedColorSelector({
   return (
     <div className={cn("space-y-4", className)}>
 
-      {/* ── Tab bar — Crevia Link only ────────────────────────────────────── */}
+      {/* ── Tab bar — Kaizen Link only ────────────────────────────────────── */}
       {variant === "link" && (
         <div className="inline-flex gap-0.5 p-1 rounded-xl bg-white/[0.04] border border-white/10">
           {(["solid", "gradient"] as const).map((t) => (
@@ -123,7 +123,7 @@ export function AdvancedColorSelector({
         </div>
       )}
 
-      {/* ── Gradient panel — Crevia Link only ────────────────────────────────── */}
+      {/* ── Gradient panel — Kaizen Link only ────────────────────────────────── */}
       {variant === "link" && tab === "gradient" && (
         <div className="space-y-4">
 

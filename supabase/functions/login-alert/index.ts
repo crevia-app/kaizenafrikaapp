@@ -2,11 +2,11 @@ import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
 import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
 
 const ALLOWED_ORIGINS = [
-  "https://crevia.app",
-  "https://www.crevia.app",
+  "https://kaizenafrika.app",
+  "https://www.kaizenafrika.app",
   "http://localhost:8080",
   "http://localhost:5173",
-  "https://crevia.app",
+  "https://kaizenafrika.app",
 ];
 
 function getCorsHeaders(req: Request) {
@@ -87,7 +87,7 @@ serve(async (req) => {
     }
 
     const signInTime = formatDateTime(new Date());
-    const settingsUrl = "https://crevia.app/profile/settings?tab=security";
+    const settingsUrl = "https://kaizenafrika.app/profile/settings?tab=security";
     const displayName = user.user_metadata?.display_name || user.user_metadata?.full_name || user.email;
 
     const html = `
@@ -96,7 +96,7 @@ serve(async (req) => {
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>New sign-in to your Crevia account</title>
+  <title>New sign-in to your Kaizen Afrika account</title>
 </head>
 <body style="margin:0;padding:0;background:#f9f9f7;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;">
   <table width="100%" cellpadding="0" cellspacing="0" style="background:#f9f9f7;padding:40px 16px;">
@@ -107,11 +107,8 @@ serve(async (req) => {
           <tr>
             <td style="background:#1a1a1a;padding:28px 40px;">
               <table cellpadding="0" cellspacing="0"><tr>
-                <td style="vertical-align:middle;padding-right:10px;">
-                  <img src="https://crevia.app/crevia-logo.png" alt="Crevia" width="40" height="40" style="display:block;border-radius:50%;border:1px solid #333;" />
-                </td>
                 <td style="vertical-align:middle;">
-                  <span style="font-size:22px;font-weight:700;color:#c9a96e;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;">Crevia</span>
+                  <span style="font-size:22px;font-weight:700;color:#c9a96e;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;">Kaizen Afrika</span>
                 </td>
               </tr></table>
             </td>
@@ -122,7 +119,7 @@ serve(async (req) => {
               <p style="margin:0 0 8px;font-size:20px;font-weight:700;color:#111;">New sign-in detected</p>
               <p style="margin:0 0 24px;font-size:14px;color:#555;line-height:1.6;">
                 Hi ${displayName},<br/>
-                We detected a new sign-in to your Crevia account.
+                We detected a new sign-in to your Kaizen Afrika account.
               </p>
 
               <table width="100%" cellpadding="0" cellspacing="0" style="background:#f5f4f0;border-radius:8px;padding:20px;margin-bottom:24px;">
@@ -167,9 +164,9 @@ serve(async (req) => {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        from: "Crevia Security <security@crevia.app>",
+        from: "Kaizen Afrika Security <security@kaizenafrika.app>",
         to: user.email,
-        subject: "New sign-in to your Crevia account",
+        subject: "New sign-in to your Kaizen Afrika account",
         html,
       }),
     });

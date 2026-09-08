@@ -110,10 +110,10 @@ export function RecoveryPasswordModal({ open, error, onSubmit }: RecoveryPasswor
         </form>
 
         <p className="text-center text-xs text-muted-foreground mt-2">
-          This is the password you set when you first activated Crevia&apos;s encrypted messaging.
+          This is the password you set when you first activated Kaizen Afrika&apos;s encrypted messaging.
           If you&apos;ve forgotten it, contact{" "}
-          <a href="mailto:support@crevia.app" className="underline underline-offset-2">
-            support@crevia.app
+          <a href="mailto:support@kaizenafrika.app" className="underline underline-offset-2">
+            support@kaizenafrika.app
           </a>
           .
         </p>

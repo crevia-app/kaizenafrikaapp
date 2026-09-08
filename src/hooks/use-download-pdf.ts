@@ -15,7 +15,7 @@ async function captureBlob(
   // display stays fully responsive.
   const prevMinWidth = el.style.minWidth;
   el.style.minWidth = `${MIN_CAPTURE_W}px`;
-  el.classList.add("crevia-print-capture");
+  el.classList.add("kaizen-print-capture");
 
   const captureW = Math.max(el.scrollWidth, MIN_CAPTURE_W);
 
@@ -45,7 +45,7 @@ async function captureBlob(
     });
   } finally {
     el.style.minWidth = prevMinWidth;
-    el.classList.remove("crevia-print-capture");
+    el.classList.remove("kaizen-print-capture");
   }
 
   const imgData = canvas.toDataURL("image/png");

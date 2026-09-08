@@ -12,7 +12,7 @@ const OnboardingHeader = ({ progress }: OnboardingHeaderProps) => {
         <div className="flex items-center justify-between mb-3">
           <Link to="/" className="flex items-center gap-2">
             <div className="w-8 h-8 bg-bronze rounded-lg" />
-            <span className="font-vollkorn text-xl font-bold">Crevia</span>
+            <span className="font-vollkorn text-xl font-bold">Kaizen Afrika</span>
           </Link>
           
           <span className="text-sm text-muted-foreground">

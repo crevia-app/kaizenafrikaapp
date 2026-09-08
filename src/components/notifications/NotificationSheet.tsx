@@ -53,14 +53,14 @@ function buildNavUrl(n: AppNotification): string {
   switch (n.type) {
     case "message":
       return n.data?.room_id
-        ? `/crevia-studio?tab=chat&roomId=${n.data.room_id}`
-        : "/crevia-studio?tab=chat";
+        ? `/kaizen-studio?tab=chat&roomId=${n.data.room_id}`
+        : "/kaizen-studio?tab=chat";
     case "invoice":
       return n.data?.invoice_id
-        ? `/crevia-studio?tab=invoices&invoiceId=${n.data.invoice_id}`
-        : "/crevia-studio?tab=invoices";
+        ? `/kaizen-studio?tab=invoices&invoiceId=${n.data.invoice_id}`
+        : "/kaizen-studio?tab=invoices";
     case "campaign":
-      return "/crevia-studio";
+      return "/kaizen-studio";
     case "billing":
       return "/profile/payments-billing";
     default:

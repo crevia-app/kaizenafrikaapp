@@ -452,7 +452,7 @@ const UsersSection = () => {
       subscription_expires_at: isFreeDowngrade ? null : expires.toISOString(),
       dira_actions_limit:      isFreeDowngrade ? 15 : diraLimit,
     }, `Plan changed to ${plan || "free"}`);
-    // Sync branding visibility on link_profiles — paid users hide "powered by crevia"
+    // Sync branding visibility on link_profiles — paid users hide "powered by Kaizen Afrika"
     await supabase
       .from("link_profiles")
       .update({ show_crevia_branding: !isPaid })
@@ -471,8 +471,8 @@ const UsersSection = () => {
     setActionLoad(true);
     const { error } = await supabase.from("notifications").insert({
       user_id: selected.id,
-      title: "Welcome to Crevia Pro 🎉",
-      body: "Welcome to Crevia Pro. Unrestricted access to your operational tools is now live.",
+      title: "Welcome to Kaizen Afrika Pro 🎉",
+      body: "Welcome to Kaizen Afrika Pro. Unrestricted access to your operational tools is now live.",
       type: "system",
     });
     if (error) { toast.error(error.message); } else { toast.success("Notification sent"); }
@@ -1111,7 +1111,7 @@ const BillingSection = () => {
             <div className="rounded-xl p-3 bg-white/[0.03]">
               <p className="text-[10px] text-white/30 uppercase tracking-wider font-semibold mb-2">Included features</p>
               <ul className="space-y-1.5">
-                {["5 invoices / month", "Basic CreviaLink profile", "Standard messaging"].map(f => (
+                {["5 invoices / month", "Basic Kaizen Link profile", "Standard messaging"].map(f => (
                   <li key={f} className="flex items-center gap-2 text-xs text-white/35">
                     <span className="w-1.5 h-1.5 rounded-full flex-shrink-0 bg-white/20" />
                     {f}
@@ -1129,7 +1129,7 @@ const BillingSection = () => {
               border: "border-emerald-500/20",
               bg: "bg-emerald-500/5",
               accent: "bg-emerald-500/10",
-              features: ["Unlimited invoices", "CreviaLink profile", "CreviaStudio access", "E2E encrypted messaging", "Escrow payments"],
+              features: ["Unlimited invoices", "Kaizen Link profile", "Kaizen Studio access", "E2E encrypted messaging", "Escrow payments"],
             },
             {
               key: "business" as const,
@@ -1674,7 +1674,7 @@ const SupportSection = ({ onTicketClosed, onVerificationResolved }: { onTicketCl
               {tk.admin_reply && (
                 <div className="bg-bronze/[0.06] border border-bronze/20 rounded-xl p-3.5">
                   <p className="text-[10px] text-bronze/70 font-semibold uppercase tracking-wider mb-1.5">
-                    Crevia reply · {tk.replied_at ? format(new Date(tk.replied_at), "dd MMM yyyy") : ""}
+                    Kaizen Afrika reply · {tk.replied_at ? format(new Date(tk.replied_at), "dd MMM yyyy") : ""}
                   </p>
                   <p className="text-sm text-white/60 whitespace-pre-wrap leading-relaxed">{tk.admin_reply}</p>
                 </div>
@@ -1765,7 +1765,7 @@ const TemplatesSection = () => {
     });
     setInvoiceColors(Object.entries(colorMap).sort((a, b) => b[1] - a[1]).map(([color, count]) => ({ color, count })));
 
-    // CreviaLink themes
+    // Kaizen Link themes
     const themeMap: Record<string, number> = {};
     const fontMap: Record<string, number> = {};
     (lpData ?? []).forEach((r: any) => {
@@ -1834,7 +1834,7 @@ const TemplatesSection = () => {
           {/* Theme distribution */}
           <div className="bg-[#111] border border-white/[0.06] rounded-2xl p-5">
             <p className="text-xs text-white/40 uppercase tracking-wider font-semibold mb-5">
-              CreviaLink Themes <span className="normal-case font-normal text-white/20 ml-1">({themes.length} used)</span>
+              Kaizen Link Themes <span className="normal-case font-normal text-white/20 ml-1">({themes.length} used)</span>
             </p>
             {themes.length === 0
               ? <p className="text-sm text-white/20 text-center py-8">No profiles yet</p>
@@ -1913,7 +1913,7 @@ const SettingsSection = () => {
   const [counts, setCounts]             = useState({ users: 0, invoices: 0 });
   const [maintenance, setMaintenance]   = useState(false);
   const [maintenanceSaving, setMaintenanceSaving] = useState(false);
-  const [emailFromName, setEmailFromName] = useState("Crevia");
+  const [emailFromName, setEmailFromName] = useState("Kaizen Afrika");
   const [emailReplyTo, setEmailReplyTo]   = useState("");
   const [emailSaving, setEmailSaving]     = useState(false);
   const [copied, setCopied]               = useState<string | null>(null);
@@ -1927,7 +1927,7 @@ const SettingsSection = () => {
       setCounts({ users: u ?? 0, invoices: i ?? 0 });
       const s: any[] = settings ?? [];
       setMaintenance(s.find(r => r.key === "maintenance_mode")?.value === "true");
-      setEmailFromName(s.find(r => r.key === "email_from_name")?.value || "Crevia");
+      setEmailFromName(s.find(r => r.key === "email_from_name")?.value || "Kaizen Afrika");
       setEmailReplyTo(s.find(r => r.key === "email_reply_to")?.value  || "");
     });
   }, []);
@@ -1970,7 +1970,7 @@ const SettingsSection = () => {
   const maskKey     = (k: string) => k ? `${k.slice(0, 10)}••••••••••••••••${k.slice(-4)}` : "—";
 
   const STORAGE_BUCKETS = [
-    { name: "avatars",     desc: "User profile & CreviaLink images", public: true },
+    { name: "avatars",     desc: "User profile & Kaizen Link images", public: true },
     { name: "deliverables",desc: "Campaign deliverable uploads",     public: false },
   ];
 
@@ -2007,7 +2007,7 @@ const SettingsSection = () => {
             </div>
             <div className="divide-y divide-white/[0.04]">
               {[
-                { label: "App",             value: "Crevia MVP" },
+                { label: "App",             value: "Kaizen Afrika MVP" },
                 { label: "Stack",           value: "React · Supabase · Tailwind" },
                 { label: "Auth",            value: "Supabase Auth + MFA" },
                 { label: "Total Users",     value: String(counts.users) },
@@ -2080,14 +2080,14 @@ const SettingsSection = () => {
             <div className="space-y-1">
               <label className="text-xs text-white/40">From name</label>
               <Input value={emailFromName} onChange={e => setEmailFromName(e.target.value)}
-                placeholder="Crevia"
+                placeholder="Kaizen Afrika"
                 className="bg-[#0d0d0d] border-white/[0.08] text-white placeholder:text-white/20 rounded-xl focus-visible:ring-bronze/30" />
               <p className="text-[11px] text-white/20">Displayed as the sender name in all outgoing emails</p>
             </div>
             <div className="space-y-1">
               <label className="text-xs text-white/40">Reply-to email</label>
               <Input value={emailReplyTo} onChange={e => setEmailReplyTo(e.target.value)}
-                placeholder="support@crevia.app"
+                placeholder="support@kaizenafrika.app"
                 className="bg-[#0d0d0d] border-white/[0.08] text-white placeholder:text-white/20 rounded-xl focus-visible:ring-bronze/30" />
               <p className="text-[11px] text-white/20">Users replying to emails will reach this address</p>
             </div>
@@ -2813,9 +2813,8 @@ const Admin = () => {
           onClick={() => { setSection("overview"); setSidebarOpen(false); }}
           className="flex items-center gap-3 px-5 py-5 border-b border-white/[0.05] w-full text-left hover:bg-white/[0.03] transition-colors group"
         >
-          <img src="/crevia-logo.png" alt="Crevia" className="w-8 h-8 rounded-2xl bg-zinc-950 ring-1 ring-white/10 flex-shrink-0 transition-transform duration-200 group-hover:scale-105" />
           <div>
-            <p className="font-vollkorn text-white font-bold text-sm leading-none">Crevia</p>
+            <p className="font-vollkorn text-white font-bold text-sm leading-none">Kaizen Afrika</p>
             <p className="text-[9px] text-white/25 font-poppins uppercase tracking-[0.12em] mt-0.5">Admin</p>
           </div>
         </button>
@@ -2891,12 +2890,7 @@ const Admin = () => {
               onClick={() => setSection("overview")}
               className="flex items-center gap-2 group lg:hidden"
             >
-              <img
-                src="/crevia-logo.png"
-                alt="Crevia"
-                className="w-7 h-7 rounded-2xl bg-zinc-950 ring-1 ring-white/10 transition-transform duration-200 group-hover:scale-105"
-              />
-              <span className="font-vollkorn text-sm font-bold text-white/70 group-hover:text-white transition-colors hidden sm:block">Crevia</span>
+              <span className="font-vollkorn text-sm font-bold text-white/70 group-hover:text-white transition-colors">Kaizen Afrika</span>
             </button>
             <div className="w-px h-4 bg-white/10 hidden sm:block lg:hidden" />
             <div>

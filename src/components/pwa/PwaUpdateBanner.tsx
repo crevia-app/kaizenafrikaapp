@@ -46,7 +46,7 @@ export function PwaUpdateBanner() {
                 Update available
               </p>
               <p className="text-[11px] text-white/50 mt-0.5">
-                A new version of Crevia is ready.
+                A new version of Kaizen Afrika is ready.
               </p>
             </div>
 

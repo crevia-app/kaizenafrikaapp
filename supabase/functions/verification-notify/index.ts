@@ -1,15 +1,15 @@
 import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
 import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
 
-const FROM_EMAIL  = "noreply@crevia.app";
+const FROM_EMAIL  = "noreply@kaizenafrika.app";
 const RESEND_URL  = "https://api.resend.com/emails";
 
 const ALLOWED_ORIGINS = [
-  "https://crevia.app",
-  "https://www.crevia.app",
+  "https://kaizenafrika.app",
+  "https://www.kaizenafrika.app",
   "http://localhost:8080",
   "http://localhost:5173",
-  "https://crevia.app",
+  "https://kaizenafrika.app",
 ];
 
 function getCorsHeaders(req: Request) {
@@ -134,7 +134,7 @@ serve(async (req: Request) => {
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>New Verification Request — Crevia</title>
+<title>New Verification Request — Kaizen Afrika</title>
 </head>
 <body style="margin:0;padding:32px 16px;background:#f5f4f0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;color:#1a1a1a;">
 <table width="100%" cellpadding="0" cellspacing="0"><tr><td align="center">
@@ -143,15 +143,12 @@ serve(async (req: Request) => {
   <!-- Header -->
   <tr><td style="background:#1a1a1a;padding:28px 32px;">
     <table cellpadding="0" cellspacing="0" style="margin-bottom:12px;"><tr>
-      <td style="vertical-align:middle;padding-right:10px;">
-        <img src="https://crevia.app/crevia-logo.png" alt="Crevia" width="36" height="36" style="display:block;border-radius:50%;border:1px solid #444;" />
-      </td>
       <td style="vertical-align:middle;">
-        <span style="font-size:20px;font-weight:700;color:#c9a96e;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;">Crevia</span>
+        <span style="font-size:20px;font-weight:700;color:#c9a96e;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;">Kaizen Afrika</span>
       </td>
     </tr></table>
     <p style="margin:0 0 4px;font-size:20px;font-weight:700;color:#fff;">New Verification Request</p>
-    <p style="margin:0;font-size:13px;color:#888;">Submitted via Crevia · ${submittedAt}</p>
+    <p style="margin:0;font-size:13px;color:#888;">Submitted via Kaizen Afrika · ${submittedAt}</p>
   </td></tr>
 
   <!-- Body -->
@@ -168,12 +165,12 @@ serve(async (req: Request) => {
     <p style="margin:0 0 8px;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.8px;color:#999;">Reason</p>
     <div style="background:#f9f8f5;border-left:3px solid #c8a876;padding:16px 20px;border-radius:0 8px 8px 0;font-size:14px;line-height:1.7;color:#333;white-space:pre-wrap;word-break:break-word;">${String(vr.reason ?? "").replace(/</g, "&lt;").replace(/>/g, "&gt;")}</div>
 
-    <p style="margin:24px 0 0;font-size:13px;color:#888;">Review this request in your <strong style="color:#1a1a1a;">Crevia Admin → Support</strong> dashboard.</p>
+    <p style="margin:24px 0 0;font-size:13px;color:#888;">Review this request in your <strong style="color:#1a1a1a;">Kaizen Afrika Admin → Support</strong> dashboard.</p>
   </td></tr>
 
   <!-- Footer -->
   <tr><td style="padding:16px 32px;background:#f9f8f5;border-top:1px solid #eee;">
-    <p style="margin:0;font-size:12px;color:#aaa;">Crevia Admin · Do not reply to this email</p>
+    <p style="margin:0;font-size:12px;color:#aaa;">Kaizen Afrika Admin · Do not reply to this email</p>
   </td></tr>
 
 </table>
@@ -185,9 +182,9 @@ serve(async (req: Request) => {
       method: "POST",
       headers: { Authorization: `Bearer ${resendKey}`, "Content-Type": "application/json" },
       body: JSON.stringify({
-        from: `Crevia Admin <${FROM_EMAIL}>`,
+        from: `Kaizen Afrika Admin <${FROM_EMAIL}>`,
         to:   [adminEmail],
-        subject: `[Crevia] Verification request from ${name}`,
+        subject: `[Kaizen Afrika] Verification request from ${name}`,
         html,
       }),
     });

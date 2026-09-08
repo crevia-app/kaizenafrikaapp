@@ -33,9 +33,9 @@ const NotFound         = lazy(() => import("./pages/NotFound"));
 const MFAVerify        = lazy(() => import("./components/auth/MFAVerify"));
 const ResetPassword    = lazy(() => import("./pages/ResetPassword"));
 const Dira             = lazy(() => import("./pages/Dira"));
-const CreviaLink       = lazy(() => import("./pages/CreviaLink"));
-const CreviaStudio     = lazy(() => import("./pages/CreviaStudio"));
-const CreviaInvoice    = lazy(() => import("./pages/CreviaInvoice"));
+const KaizenLink       = lazy(() => import("./pages/KaizenLink"));
+const KaizenStudio     = lazy(() => import("./pages/KaizenStudio"));
+const KaizenInvoice    = lazy(() => import("./pages/KaizenInvoice"));
 const PublicProfile    = lazy(() => import("./pages/PublicProfile"));
 const ReceivedDocuments = lazy(() => import("./pages/ReceivedDocuments"));
 const PaymentsBilling  = lazy(() => import("./pages/profile/PaymentsBilling"));
@@ -59,10 +59,10 @@ const PageLoader = () => (
 
 const MaintenancePage = () => (
   <div className="min-h-dvh bg-background flex flex-col items-center justify-center px-4 text-center">
-    <img src="/crevia-logo.png" alt="Crevia" className="w-14 h-14 rounded-2xl bg-zinc-950 ring-1 ring-border mb-8" />
+    <span className="font-vollkorn text-2xl font-bold mb-8">Kaizen Afrika</span>
     <h1 className="font-vollkorn text-3xl md:text-4xl font-bold mb-3">Down for maintenance</h1>
     <p className="text-muted-foreground text-sm max-w-sm leading-relaxed">
-      We're making some improvements to Crevia. We'll be back shortly — thank you for your patience.
+      We're making some improvements to Kaizen Afrika. We'll be back shortly — thank you for your patience.
     </p>
   </div>
 );
@@ -118,8 +118,8 @@ function AppContent() {
       const uid = session?.user?.id ?? "";
       setUserId(uid);
       try {
-        if (uid) sessionStorage.setItem("crevia_uid", uid);
-        else sessionStorage.removeItem("crevia_uid");
+        if (uid) sessionStorage.setItem("kaizen_uid", uid);
+        else sessionStorage.removeItem("kaizen_uid");
       } catch { /* IAB (Instagram/LinkedIn) blocks sessionStorage — silently ignore */ }
     });
 
@@ -131,7 +131,7 @@ function AppContent() {
   useEffect(() => {
     if (!userId) return;
     import("./pages/Dira");
-    import("./pages/CreviaStudio");
+    import("./pages/KaizenStudio");
   }, [userId]);
 
   // Background maintenance check — never blocks render
@@ -220,9 +220,9 @@ function AppContent() {
           {/* Protected routes */}
           <Route path="/dashboard" element={<Navigate to="/dira" replace />} />
           <Route path="/dira" element={<ProtectedRoute><AppLayout><Dira /></AppLayout></ProtectedRoute>} />
-          <Route path="/crevia-link" element={<ProtectedRoute><AppLayout><CreviaLink /></AppLayout></ProtectedRoute>} />
-          <Route path="/crevia-studio" element={<ProtectedRoute><AppLayout><CreviaStudio /></AppLayout></ProtectedRoute>} />
-          <Route path="/crevia-invoice" element={<ProtectedRoute><AppLayout><CreviaInvoice /></AppLayout></ProtectedRoute>} />
+          <Route path="/kaizen-link" element={<ProtectedRoute><AppLayout><KaizenLink /></AppLayout></ProtectedRoute>} />
+          <Route path="/kaizen-studio" element={<ProtectedRoute><AppLayout><KaizenStudio /></AppLayout></ProtectedRoute>} />
+          <Route path="/kaizen-invoice" element={<ProtectedRoute><AppLayout><KaizenInvoice /></AppLayout></ProtectedRoute>} />
           <Route path="/mfa-verify" element={<MFAVerify />} />
           <Route path="/received" element={<ProtectedRoute><AppLayout><ReceivedDocuments /></AppLayout></ProtectedRoute>} />
           <Route path="/profile/payments-billing" element={<ProtectedRoute><AppLayout><PaymentsBilling /></AppLayout></ProtectedRoute>} />

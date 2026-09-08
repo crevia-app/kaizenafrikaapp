@@ -12,9 +12,9 @@ import gallery1 from "@/assets/about-gallery-1.jpg";
 import gallery2 from "@/assets/about-gallery-2.jpg";
 import gallery3 from "@/assets/about-gallery-3.jpg";
 import gallery4 from "@/assets/about-gallery-4.jpg";
-import creviaLogo from "@/assets/crevia-logo-full.png";
+import kaizenLogo from "@/assets/kaizen-logo-full.png";
 import founderPhoto from "@/assets/founder-photo.jpg";
-import creviaSummit2026 from "@/assets/crevia-summit-2026.png";
+import kaizenAfrikaSummit2026 from "@/assets/kaizen-afrika-summit-2026.png";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 
 const galleryImages = [gallery1, gallery2, gallery3, gallery4];
@@ -37,26 +37,26 @@ const About = ({ isEmbedded = false }: { isEmbedded?: boolean }) => {
     <div className="min-h-dvh bg-background page-bg-warm overflow-x-clip">
       {!isEmbedded && (
         <SEO
-          title="About Crevia"
-          description="Learn about Crevia — the business operations platform built for businesses and brands to own their story, scale their operations, and build a business that runs as well as it creates."
-          keywords="about Crevia, Crevia company, business operations platform, business infrastructure, who is Crevia"
+          title="About Kaizen Afrika"
+          description="Learn about Kaizen Afrika — the business operations platform built for businesses and brands to make progress every day, scale their operations, and build a business that runs as well as it creates."
+          keywords="about Kaizen Afrika, Kaizen Afrika company, business operations platform, business infrastructure, who is Kaizen Afrika"
           url="/about"
           jsonLd={{
             "@context": "https://schema.org",
             "@type": "AboutPage",
-            "name": "About Crevia",
-            "url": "https://crevia.app/about",
-            "description": "Learn about Crevia — the business operations platform for businesses and brands.",
+            "name": "About Kaizen Afrika",
+            "url": "https://kaizenafrika.app/about",
+            "description": "Learn about Kaizen Afrika — the business operations platform for businesses and brands.",
             "about": {
               "@type": "Organization",
-              "name": "Crevia",
-              "url": "https://crevia.app",
+              "name": "Kaizen Afrika",
+              "url": "https://kaizenafrika.app",
               "foundingDate": "2024",
               "sameAs": [
-                "https://www.instagram.com/creviahq",
-                "https://www.youtube.com/@crevia-hq",
-                "https://www.tiktok.com/@crevia.app",
-                "https://www.linkedin.com/company/creviaapp/"
+                "https://www.instagram.com/kaizenafrika",
+                "https://www.youtube.com/@kaizenafrika",
+                "https://www.tiktok.com/@kaizenafrika",
+                "https://www.linkedin.com/company/kaizenafrika/"
               ]
             }
           }}
@@ -75,7 +75,7 @@ const About = ({ isEmbedded = false }: { isEmbedded?: boolean }) => {
         <div className="container mx-auto max-w-4xl text-center relative z-10">
           <ScrollReveal>
             <p className="text-bronze font-poppins font-semibold text-sm tracking-widest uppercase mb-4">
-              About Crevia
+              About Kaizen Afrika
             </p>
           </ScrollReveal>
           <ScrollReveal delay={0.1}>
@@ -122,7 +122,7 @@ const About = ({ isEmbedded = false }: { isEmbedded?: boolean }) => {
             >
               <img
                 src={src}
-                alt="Crevia community"
+                alt="Kaizen Afrika community"
                 className="w-full h-full object-cover hover:scale-105 transition-transform duration-[600ms] ease-[cubic-bezier(0.16,1,0.3,1)]"
                 draggable={false}
               />
@@ -139,8 +139,8 @@ const About = ({ isEmbedded = false }: { isEmbedded?: boolean }) => {
               <div className="flex justify-center">
                 <div className="relative p-12 md:p-16 rounded-3xl border-gradient-bronze bg-gradient-to-br from-bronze/8 to-background shadow-xl shadow-bronze/10">
                   <img
-                    src={creviaLogo}
-                    alt="Crevia Logo"
+                    src={kaizenLogo}
+                    alt="Kaizen Afrika Logo"
                     className="w-full max-w-xs mx-auto rounded-2xl bg-zinc-950 p-6"
                   />
                 </div>
@@ -149,14 +149,16 @@ const About = ({ isEmbedded = false }: { isEmbedded?: boolean }) => {
             <ScrollReveal delay={0.15} variant="fade-right">
               <div className="space-y-6">
                 <h2 className="font-vollkorn text-3xl md:text-4xl font-bold leading-tight">
-                  Create. Via. Us.
+                  Kaizen. Change, for the better.
                 </h2>
                 <div className="h-1 w-16 bg-gradient-to-r from-bronze to-bronze-light rounded-full" />
                 <p className="text-lg text-muted-foreground leading-relaxed">
-                  Those dots in our logo are not decoration. Each one is a business, a brand,
-                  a story in motion. Some at the start. Some mid-scale. All equal in what they
-                  deserve — the infrastructure to be taken seriously. We do not measure value
-                  by follower counts. We measure it by businesses built and money moved.
+                  Kaizen is a Japanese word for continuous improvement — small, deliberate steps
+                  taken every day that compound into lasting change. That is the philosophy
+                  behind everything we build. Every business on our platform, a story in motion.
+                  Some at the start. Some mid-scale. All equal in what they deserve — the
+                  infrastructure to be taken seriously. We do not measure value by follower
+                  counts. We measure it by businesses built and money moved.
                 </p>
               </div>
             </ScrollReveal>
@@ -169,7 +171,7 @@ const About = ({ isEmbedded = false }: { isEmbedded?: boolean }) => {
         <div className="container mx-auto max-w-5xl">
           <ScrollReveal className="text-center mb-10">
             <p className="text-bronze font-poppins font-semibold text-sm tracking-widest uppercase mb-4">
-              Crevia Events
+              Kaizen Afrika Events
             </p>
             <h2 className="font-vollkorn text-3xl md:text-4xl font-bold mb-6">
               Where <span className="text-gradient-bronze">stories</span> come together.
@@ -204,8 +206,8 @@ const About = ({ isEmbedded = false }: { isEmbedded?: boolean }) => {
               <div className="max-w-md mx-auto">
                 <div className="rounded-2xl overflow-hidden border border-bronze/30 shadow-2xl bg-card">
                   <img
-                    src={creviaSummit2026}
-                    alt="Crevia Summit 2026"
+                    src={kaizenAfrikaSummit2026}
+                    alt="Kaizen Afrika Summit 2026"
                     className="w-full aspect-square object-cover"
                   />
                   <div className="p-6 text-center">
@@ -213,7 +215,7 @@ const About = ({ isEmbedded = false }: { isEmbedded?: boolean }) => {
                       <Calendar className="w-4 h-4" />
                       June 27th, 2026
                     </div>
-                    <h3 className="font-vollkorn text-xl font-bold mb-2">Crevia Summit 2026</h3>
+                    <h3 className="font-vollkorn text-xl font-bold mb-2">Kaizen Afrika Summit 2026</h3>
                     <p className="text-muted-foreground mb-4">Building a successful personal brand</p>
                     <a
                       href="https://vabu.app/l/CS2026"
@@ -272,7 +274,7 @@ const About = ({ isEmbedded = false }: { isEmbedded?: boolean }) => {
                   Give businesses the infrastructure to operate, close deals, and scale — without the chaos.
                 </h3>
                 <p className="text-muted-foreground leading-relaxed">
-                  Dira handles the intelligence. Crevia Studio handles the operations.
+                  Dira handles the intelligence. Kaizen Studio handles the operations.
                   Together, they replace the scattered tools, missed payments, and lost
                   deals that define the industry today.
                 </p>
@@ -288,7 +290,7 @@ const About = ({ isEmbedded = false }: { isEmbedded?: boolean }) => {
                 </h3>
                 <p className="text-muted-foreground leading-relaxed">
                   Where the measure of success is what you built — the deals closed,
-                  the businesses scaled, the value created. Crevia is the infrastructure
+                  the businesses scaled, the value created. Kaizen Afrika is the infrastructure
                   behind that outcome.
                 </p>
               </div>
@@ -309,10 +311,10 @@ const About = ({ isEmbedded = false }: { isEmbedded?: boolean }) => {
                 "Every room I walked into — undeniable talent, real ambition, zero infrastructure.
                 Deals slipping. Payments missed. Serious businesses running on scattered tools
                 and good intentions. The problem was never the people. It was always the foundation.
-                Crevia is that foundation."
+                Kaizen Afrika is that foundation."
               </blockquote>
               <p className="font-poppins font-semibold text-foreground">Amin Hassan Hussein</p>
-              <p className="text-sm text-muted-foreground">Co-Founder & CEO, Crevia</p>
+              <p className="text-sm text-muted-foreground">Co-Founder & CEO, Kaizen Afrika</p>
             </div>
           </ScrollReveal>
         </div>
@@ -324,10 +326,10 @@ const About = ({ isEmbedded = false }: { isEmbedded?: boolean }) => {
         <div className="container mx-auto max-w-3xl text-center relative z-10">
           <ScrollReveal variant="blur">
             <h2 className="font-vollkorn text-3xl sm:text-4xl md:text-5xl font-bold mb-6">
-              Own your <span className="text-gradient-bronze">story.</span>
+              Progress, <span className="text-gradient-bronze">every day.</span>
             </h2>
             <p className="text-lg text-muted-foreground mb-8 max-w-xl mx-auto">
-              Join the movement. Build your business on Crevia.
+              Join the movement. Build your business on Kaizen Afrika.
             </p>
           </ScrollReveal>
           <ScrollReveal delay={0.15} variant="scale">
@@ -335,7 +337,7 @@ const About = ({ isEmbedded = false }: { isEmbedded?: boolean }) => {
               {!isLoggedIn && (
                 <Link to="/auth">
                   <Button size="lg" className="bg-bronze hover:bg-bronze-dark font-poppins font-semibold px-10 py-7 text-lg shadow-lg hover-scale">
-                    Start Your Story <ArrowRight className="ml-2 w-5 h-5" />
+                    Start Making Progress <ArrowRight className="ml-2 w-5 h-5" />
                   </Button>
                 </Link>
               )}

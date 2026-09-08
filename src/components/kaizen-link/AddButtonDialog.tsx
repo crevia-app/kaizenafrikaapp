@@ -54,7 +54,7 @@ export function AddButtonDialog({ open, onOpenChange, onAdd }: AddButtonDialogPr
       <DialogContent className="sm:max-w-[500px]">
         <DialogHeader>
           <DialogTitle className="font-vollkorn text-2xl">Add New Button</DialogTitle>
-          <DialogDescription>Create a new link button for your Crevia Link page</DialogDescription>
+          <DialogDescription>Create a new link button for your Kaizen Link page</DialogDescription>
         </DialogHeader>
 
         <div className="space-y-4 py-4">

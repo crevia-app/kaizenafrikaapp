@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef, useCallback } from "react";
-import { loadGoogleFont, CREVIA_LINK_FONTS } from "@/lib/loadFont";
+import { loadGoogleFont, KAIZEN_LINK_FONTS } from "@/lib/loadFont";
 import { createPortal } from "react-dom";
 import { useNavigate, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
@@ -19,21 +19,21 @@ import {
   AlertDialog, AlertDialogAction, AlertDialogCancel, AlertDialogContent,
   AlertDialogDescription, AlertDialogFooter, AlertDialogHeader, AlertDialogTitle,
 } from "@/components/ui/alert-dialog";
-import LinkIconPicker, { renderLinkIcon } from "@/components/crevia-link/LinkIconPicker";
-import ThemeSelector from "@/components/crevia-link/ThemeSelector";
+import LinkIconPicker, { renderLinkIcon } from "@/components/kaizen-link/LinkIconPicker";
+import ThemeSelector from "@/components/kaizen-link/ThemeSelector";
 import { PRO_THEME_IDS } from "@/lib/linkThemes";
 import { AdvancedColorSelector } from "@/components/ui/AdvancedColorSelector";
-import LinkSidebarDesktop from "@/components/crevia-link/LinkSidebarDesktop";
-import LinkTabsMobile from "@/components/crevia-link/LinkTabsMobile";
-import LivePreview from "@/components/crevia-link/LivePreview";
-import { SocialBadgeRow, getSocialSvg } from "@/components/crevia-link/SocialBrandIcons";
+import LinkSidebarDesktop from "@/components/kaizen-link/LinkSidebarDesktop";
+import LinkTabsMobile from "@/components/kaizen-link/LinkTabsMobile";
+import LivePreview from "@/components/kaizen-link/LivePreview";
+import { SocialBadgeRow, getSocialSvg } from "@/components/kaizen-link/SocialBrandIcons";
 import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
 import { cn } from "@/lib/utils";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { useSubscription } from "@/hooks/use-subscription";
 import { useUpgradeModal } from "@/components/subscription/UpgradeModal";
 
-interface CreviaLinkProps {
+interface KaizenLinkProps {
   isEmbedded?: boolean;
 }
 
@@ -47,7 +47,7 @@ const validateUsername = (username: string): string | null => {
   if (/[._-]{2,}/.test(username)) return "Username cannot have consecutive special characters";
   if (!/^[a-zA-Z0-9._-]+$/.test(username)) return "Only letters, numbers, dots, underscores, and hyphens allowed";
   if (/^\d+$/.test(username)) return "Username cannot be only numbers";
-  const reserved = ["admin", "support", "help", "about", "pricing", "auth", "dashboard", "api", "crevia", "dira", "settings", "profile", "signup", "login"];
+  const reserved = ["admin", "support", "help", "about", "pricing", "auth", "dashboard", "api", "kaizen", "kaizenafrika", "dira", "settings", "profile", "signup", "login"];
   if (reserved.includes(username.toLowerCase())) return "This username is reserved";
   return null;
 };
@@ -124,7 +124,7 @@ const SOCIAL_PLATFORMS = [
   { value: "website",     label: "Website",     placeholder: "https://yourwebsite.com" },
 ];
 
-const CreviaLink = ({ isEmbedded = false }: CreviaLinkProps) => {
+const KaizenLink = ({ isEmbedded = false }: KaizenLinkProps) => {
   const navigate = useNavigate();
   const location = useLocation();
   const { toast } = useToast();
@@ -198,7 +198,7 @@ const CreviaLink = ({ isEmbedded = false }: CreviaLinkProps) => {
     }));
   };
 
-  useEffect(() => { loadGoogleFont(CREVIA_LINK_FONTS); }, []);
+  useEffect(() => { loadGoogleFont(KAIZEN_LINK_FONTS); }, []);
 
   useEffect(() => {
     checkAuth();
@@ -556,7 +556,7 @@ const CreviaLink = ({ isEmbedded = false }: CreviaLinkProps) => {
       clearTimeout(autoSaveTimerRef.current);
       autoSaveTimerRef.current = null;
     }
-    const liveUrl = `${"https://crevia.app"}/${linkProfile.username}`;
+    const liveUrl = `${"https://kaizenafrika.app"}/${linkProfile.username}`;
     try {
       await supabase.from("link_profiles").update({
         username:             linkProfile.username,
@@ -582,13 +582,13 @@ const CreviaLink = ({ isEmbedded = false }: CreviaLinkProps) => {
   };
 
   const handleCopyLink = async () => {
-    const link = `${"https://crevia.app"}/${linkProfile?.username}`;
+    const link = `${"https://kaizenafrika.app"}/${linkProfile?.username}`;
     try {
       await navigator.clipboard.writeText(link);
       setCopied(true);
       toast({
         title: "Link copied!",
-        description: "Your Crevia Link has been copied to clipboard.",
+        description: "Your Kaizen Link has been copied to clipboard.",
       });
       setTimeout(() => setCopied(false), 2000);
     } catch (err) {
@@ -664,7 +664,7 @@ const CreviaLink = ({ isEmbedded = false }: CreviaLinkProps) => {
     <div>
       <Label className="text-sm font-medium mb-2 block">Username</Label>
       <div className="flex items-center gap-2">
-        <span className="text-muted-foreground text-sm whitespace-nowrap">crevia.app/</span>
+        <span className="text-muted-foreground text-sm whitespace-nowrap">kaizenafrika.app/</span>
         <Input
           value={linkProfile?.username || ""}
           onChange={(e) => handleUsernameChange(e.target.value)}
@@ -1014,7 +1014,7 @@ const CreviaLink = ({ isEmbedded = false }: CreviaLinkProps) => {
     );
   }
 
-  // When embedded in Crevia Studio, use a cleaner layout without the sidebar
+  // When embedded in Kaizen Studio, use a cleaner layout without the sidebar
   if (isEmbedded) {
     const embeddedTab = new URLSearchParams(location.search).get("section") || "profile";
     
@@ -1035,7 +1035,7 @@ const CreviaLink = ({ isEmbedded = false }: CreviaLinkProps) => {
                     <div className="mt-3 flex gap-2">
                       <Button
                         className="flex-1 bg-bronze hover:bg-bronze-dark text-white gap-1.5 text-sm h-11"
-                        onClick={() => { navigator.clipboard.writeText(`${"https://crevia.app"}/${linkProfile?.username}`); toast({ title: "Link copied!" }); }}
+                        onClick={() => { navigator.clipboard.writeText(`${"https://kaizenafrika.app"}/${linkProfile?.username}`); toast({ title: "Link copied!" }); }}
                         style={{ touchAction: "manipulation" }}
                       >
                         <Copy className="w-3.5 h-3.5" /> Copy Link
@@ -1343,7 +1343,7 @@ const CreviaLink = ({ isEmbedded = false }: CreviaLinkProps) => {
               <div className="mt-4 flex gap-2">
                 <Button
                   className="flex-1 bg-bronze hover:bg-bronze-dark text-white gap-1.5 text-xs h-9"
-                  onClick={() => { navigator.clipboard.writeText(`${"https://crevia.app"}/${linkProfile?.username}`); toast({ title: "Link copied!" }); }}
+                  onClick={() => { navigator.clipboard.writeText(`${"https://kaizenafrika.app"}/${linkProfile?.username}`); toast({ title: "Link copied!" }); }}
                 >
                   <Copy className="w-3.5 h-3.5" /> Copy Link
                 </Button>
@@ -1477,7 +1477,7 @@ const CreviaLink = ({ isEmbedded = false }: CreviaLinkProps) => {
                     <Eye className="w-4 h-4 text-bronze" />
                   </div>
                   <div>
-                    <p className="font-poppins text-sm font-semibold text-foreground leading-tight">Your Crevia Link</p>
+                    <p className="font-poppins text-sm font-semibold text-foreground leading-tight">Your Kaizen Link</p>
                     <p className="text-[10px] text-amber-500 font-medium leading-tight">Unsaved changes</p>
                   </div>
                 </div>
@@ -1504,13 +1504,13 @@ const CreviaLink = ({ isEmbedded = false }: CreviaLinkProps) => {
               >
                 {/* URL bar — tap to copy */}
                 <button
-                  onClick={() => { navigator.clipboard.writeText(`${"https://crevia.app"}/${linkProfile?.username}`); toast({ title: "Link copied!", description: `${"https://crevia.app"}/${linkProfile?.username}` }); }}
+                  onClick={() => { navigator.clipboard.writeText(`${"https://kaizenafrika.app"}/${linkProfile?.username}`); toast({ title: "Link copied!", description: `${"https://kaizenafrika.app"}/${linkProfile?.username}` }); }}
                   style={{ touchAction: 'manipulation' }}
                   className="w-full flex items-center gap-2.5 px-4 h-11 rounded-xl bg-muted/50 border border-border/50 hover:bg-muted/80 active:bg-muted/90 transition-colors group"
                 >
                   <Link2 className="w-3.5 h-3.5 text-muted-foreground flex-shrink-0" />
                   <span className="flex-1 text-left text-xs text-muted-foreground truncate font-mono tracking-tight">
-                    {"https://crevia.app".replace(/^https?:\/\//, '')}/{linkProfile?.username}
+                    {"https://kaizenafrika.app".replace(/^https?:\/\//, '')}/{linkProfile?.username}
                   </span>
                   <Copy className="w-3.5 h-3.5 text-muted-foreground group-hover:text-foreground transition-colors flex-shrink-0" />
                 </button>
@@ -1673,7 +1673,7 @@ const CreviaLink = ({ isEmbedded = false }: CreviaLinkProps) => {
                   <div>
                     <Label htmlFor="username" className="text-base font-medium mb-3 block">Username</Label>
                     <div className="flex items-center gap-2">
-                      <span className="text-muted-foreground text-sm whitespace-nowrap">crevia.app/</span>
+                      <span className="text-muted-foreground text-sm whitespace-nowrap">kaizenafrika.app/</span>
                       <Input
                         id="username"
                         value={linkProfile?.username || ""}
@@ -2068,7 +2068,7 @@ const CreviaLink = ({ isEmbedded = false }: CreviaLinkProps) => {
               <div className="mt-4 flex gap-2">
                 <Button
                   className="flex-1 bg-bronze hover:bg-bronze-dark text-white gap-1.5 text-xs h-9"
-                  onClick={() => { navigator.clipboard.writeText(`${"https://crevia.app"}/${linkProfile?.username}`); toast({ title: "Link copied!" }); }}
+                  onClick={() => { navigator.clipboard.writeText(`${"https://kaizenafrika.app"}/${linkProfile?.username}`); toast({ title: "Link copied!" }); }}
                 >
                   <Copy className="w-3.5 h-3.5" /> Copy Link
                 </Button>
@@ -2186,4 +2186,4 @@ const CreviaLink = ({ isEmbedded = false }: CreviaLinkProps) => {
   );
 };
 
-export default CreviaLink;
+export default KaizenLink;

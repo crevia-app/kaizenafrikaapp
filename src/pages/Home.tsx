@@ -10,9 +10,9 @@ import ScrollReveal from "@/components/ui/ScrollReveal";
 import { supabase } from "@/integrations/supabase/client";
 
 const OPS_CARDS = [
-  { icon: Link2,         label: "Crevia Link",         path: "/crevia-studio" },
-  { icon: MessageCircle, label: "Crevia Chat",          path: "/crevia-studio" },
-  { icon: Receipt,       label: "Invoices & Receipts",  path: "/crevia-invoice" },
+  { icon: Link2,         label: "Kaizen Link",         path: "/kaizen-studio" },
+  { icon: MessageCircle, label: "Kaizen Chat",          path: "/kaizen-studio" },
+  { icon: Receipt,       label: "Invoices & Receipts",  path: "/kaizen-invoice" },
 ];
 
 const Home = () => {
@@ -34,9 +34,9 @@ const Home = () => {
     <div className="min-h-dvh bg-background page-bg-warm overflow-x-clip">
       <SEO
         url="/"
-        title="Crevia — Invoice, Collaborate & Grow Your Business with AI"
-        description="Crevia is the all-in-one business platform for businesses and brands. Send professional invoices, build your link-in-bio page, and unlock Dira AI — your always-on business intelligence. Free to start."
-        keywords="invoicing software Kenya, online invoice generator, freelance invoice maker, business management platform, AI business assistant, Dira AI, link in bio tool, client workspace, business operations, Crevia app"
+        title="Kaizen Afrika — Invoice, Collaborate & Grow Your Business with AI"
+        description="Kaizen Afrika is the all-in-one business platform for businesses and brands. Send professional invoices, build your link-in-bio page, and unlock Dira AI — your always-on business intelligence. Free to start."
+        keywords="invoicing software Kenya, online invoice generator, freelance invoice maker, business management platform, AI business assistant, Dira AI, link in bio tool, client workspace, business operations, Kaizen Afrika app"
       />
       <Header />
 
@@ -48,7 +48,7 @@ const Home = () => {
           <div className="max-w-3xl space-y-6 md:space-y-8">
             <ScrollReveal delay={0}>
               <p className="text-bronze font-poppins font-semibold text-sm md:text-base tracking-widest uppercase">
-                Own Your Story
+                Progress, Every Day
               </p>
             </ScrollReveal>
             {/* variant="hero" — larger 40px travel, no blur, clean typographic entrance */}
@@ -61,8 +61,8 @@ const Home = () => {
             <ScrollReveal delay={0.26}>
               <p className="text-lg sm:text-xl md:text-2xl text-muted-foreground font-poppins leading-relaxed max-w-2xl">
                 Build a business that runs as well as it creates.
-                Dira brings the intelligence. Crevia Studio handles the operations.
-                Crevia is the infrastructure where both happen — without the chaos.
+                Dira brings the intelligence. Kaizen Studio handles the operations.
+                Kaizen Afrika is the infrastructure where both happen — without the chaos.
               </p>
             </ScrollReveal>
             <ScrollReveal delay={0.38}>
@@ -72,7 +72,7 @@ const Home = () => {
                     size="lg"
                     className="w-full sm:w-auto bg-bronze hover:bg-bronze-dark text-sm sm:text-base md:text-lg px-6 sm:px-10 py-5 sm:py-7 font-poppins font-semibold shadow-lg hover-scale"
                   >
-                    {isLoggedIn ? "Open Crevia" : "Start free"} <ArrowRight className="ml-2 w-5 h-5" />
+                    {isLoggedIn ? "Open Kaizen Afrika" : "Start free"} <ArrowRight className="ml-2 w-5 h-5" />
                   </Button>
                 </Link>
               </div>
@@ -141,7 +141,7 @@ const Home = () => {
             <p className="text-lg md:text-xl text-white leading-relaxed max-w-3xl mx-auto">
               Talent is everywhere. What most businesses lack is the
               infrastructure to convert it into structured, scalable revenue.
-              Crevia closes that gap.
+              Kaizen Afrika closes that gap.
             </p>
           </ScrollReveal>
         </div>
@@ -198,12 +198,12 @@ const Home = () => {
                   </span>
                 </div>
                 <h3 className="font-vollkorn text-3xl md:text-4xl font-bold leading-tight">
-                  Crevia Studio.{" "}
+                  Kaizen Studio.{" "}
                   <span className="text-gradient-bronze">The complete operations layer.</span>
                 </h3>
                 <p className="text-lg text-muted-foreground leading-relaxed">
-                  Crevia Invoice closes the books. Crevia Workspace keeps teams aligned.
-                  Crevia Link puts your brand in front of clients. Every workflow. One system.
+                  Kaizen Invoice closes the books. Kaizen Chat keeps conversations flowing.
+                  Kaizen Link puts your brand in front of clients. Every workflow. One system.
                 </p>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-3 max-w-md">
                   {OPS_CARDS.map(({ icon: Icon, label, path }, i) => (
@@ -246,7 +246,7 @@ const Home = () => {
                   <span className="text-gradient-bronze">a foundation.</span>
                 </h3>
                 <p className="text-muted-foreground text-base md:text-lg leading-relaxed">
-                  Businesses use Crevia to brief, align, and deliver at scale — structured workflows,
+                  Businesses use Kaizen Afrika to brief, align, and deliver at scale — structured workflows,
                   clean invoices, and a vendor experience that kills the back-and-forth that costs
                   momentum. Proposals and invoices that command respect. One platform. No chaos.
                 </p>
@@ -277,7 +277,7 @@ const Home = () => {
                 size="lg"
                 className="w-full sm:w-auto bg-bronze hover:bg-bronze-dark text-sm sm:text-base md:text-lg px-6 sm:px-10 md:px-12 py-5 sm:py-7 font-poppins font-semibold shadow-lg hover-scale"
               >
-                {isLoggedIn ? "Open Crevia" : "Own Your Story"} <ArrowRight className="ml-2 w-5 h-5" />
+                {isLoggedIn ? "Open Kaizen Afrika" : "Progress, Every Day"} <ArrowRight className="ml-2 w-5 h-5" />
               </Button>
             </Link>
           </ScrollReveal>

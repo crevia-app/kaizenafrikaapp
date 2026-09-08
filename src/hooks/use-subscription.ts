@@ -115,7 +115,7 @@ const PLAN_LIMITS: Record<SubscriptionPlan, SubscriptionLimits> = {
     diraActionsPerMonth: Infinity,  // daily cap is what enforces the limit
     diraActionsPerDay: 5,
     isDailyCredit: true,
-    // Invoice — 2/month, no customization, forced Crevia watermark
+    // Invoice — 2/month, no customization, forced Kaizen Afrika watermark
     invoicesPerMonth: 2,
     hasUnlimitedInvoices: false,
     hasInvoiceWatermark: true,
@@ -125,7 +125,7 @@ const PLAN_LIMITS: Record<SubscriptionPlan, SubscriptionLimits> = {
     canCreateWorkspace: false,
     canJoinWorkspace: false,
     hasRBAC: false,
-    // Crevia Link — 4 themes, 2 fonts, sharp layout only, no color override, no analytics
+    // Kaizen Link — 4 themes, 2 fonts, sharp layout only, no color override, no analytics
     hasPremiumThemes: false,
     freeThemesOnly: true,
     freeFontsOnly: true,

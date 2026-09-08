@@ -11,7 +11,7 @@ const TESTIMONIALS = [
   },
   {
     quote:
-      "I sent my first Crevia invoice, got paid in 48 hours, and felt like a proper CEO. I'm 22 running a visual studio. That's not small — it changed my entire mindset.",
+      "I sent my first Kaizen Afrika invoice, got paid in 48 hours, and felt like a proper CEO. I'm 22 running a visual studio. That's not small — it changed my entire mindset.",
     name: "Leila Hassan",
     role: "Visual Artist · Nairobi",
     initials: "LH",

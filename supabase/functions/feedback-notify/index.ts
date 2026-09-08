@@ -1,15 +1,15 @@
 import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
 import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
 
-const FROM_EMAIL = "noreply@crevia.app";
+const FROM_EMAIL = "noreply@kaizenafrika.app";
 const RESEND_URL = "https://api.resend.com/emails";
 
 const ALLOWED_ORIGINS = [
-  "https://crevia.app",
-  "https://www.crevia.app",
+  "https://kaizenafrika.app",
+  "https://www.kaizenafrika.app",
   "http://localhost:8080",
   "http://localhost:5173",
-  "https://crevia.app",
+  "https://kaizenafrika.app",
 ];
 
 function getCorsHeaders(req: Request) {
@@ -149,7 +149,7 @@ serve(async (req: Request) => {
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>New Feedback — Crevia</title>
+<title>New Feedback — Kaizen Afrika</title>
 <style>
   body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #f5f4f0; margin: 0; padding: 32px 16px; color: #1a1a1a; }
   .card { background: #fff; max-width: 560px; margin: 0 auto; border-radius: 16px; overflow: hidden; box-shadow: 0 2px 16px rgba(0,0,0,0.08); }
@@ -168,15 +168,12 @@ serve(async (req: Request) => {
 <div class="card">
   <div class="header">
     <table cellpadding="0" cellspacing="0" style="margin-bottom:12px;"><tr>
-      <td style="vertical-align:middle;padding-right:10px;">
-        <img src="https://crevia.app/crevia-logo.png" alt="Crevia" width="36" height="36" style="display:block;border-radius:50%;border:1px solid #444;" />
-      </td>
       <td style="vertical-align:middle;">
-        <span style="font-size:20px;font-weight:700;color:#c9a96e;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;">Crevia</span>
+        <span style="font-size:20px;font-weight:700;color:#c9a96e;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;">Kaizen Afrika</span>
       </td>
     </tr></table>
     <h1>New Feedback Received</h1>
-    <p>Submitted via Crevia · ${formattedDate}</p>
+    <p>Submitted via Kaizen Afrika · ${formattedDate}</p>
   </div>
   <div class="body">
     <div class="badge">${typeLabel}</div>
@@ -187,7 +184,7 @@ serve(async (req: Request) => {
     <div class="label">Message</div>
     <div class="message-box">${feedbackMessage.replace(/</g, "&lt;").replace(/>/g, "&gt;")}</div>
   </div>
-  <div class="footer">Crevia Admin · Do not reply to this email</div>
+  <div class="footer">Kaizen Afrika Admin · Do not reply to this email</div>
 </div>
 </body>
 </html>`;
@@ -199,9 +196,9 @@ serve(async (req: Request) => {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        from: `Crevia Feedback <${FROM_EMAIL}>`,
+        from: `Kaizen Afrika Feedback <${FROM_EMAIL}>`,
         to: [adminEmail],
-        subject: `[Crevia Feedback] ${typeLabel} from ${submitterName}`,
+        subject: `[Kaizen Afrika Feedback] ${typeLabel} from ${submitterName}`,
         html,
       }),
     });

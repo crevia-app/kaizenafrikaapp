@@ -19,21 +19,21 @@ function getSteps() {
     return [
       { icon: MoreVertical, label: "Tap the 3-dot menu", sub: "Top right corner of Chrome" },
       { icon: PlusSquare,   label: 'Tap "Add to Home Screen"', sub: "Scroll down if you don't see it immediately" },
-      { icon: Share,        label: 'Tap "Add"', sub: "Crevia will appear on your home screen like a native app" },
+      { icon: Share,        label: 'Tap "Add"', sub: "Kaizen Afrika will appear on your home screen like a native app" },
     ];
   }
   if (isEdge()) {
     return [
       { icon: MoreVertical, label: "Click the 3-dot menu", sub: "Top right corner of Edge" },
       { icon: PlusSquare,   label: 'Click "Apps" → "Install this site as an app"', sub: "Or look for the install icon (⊕) in the address bar" },
-      { icon: Share,        label: 'Click "Install"', sub: "Crevia will open as a standalone app" },
+      { icon: Share,        label: 'Click "Install"', sub: "Kaizen Afrika will open as a standalone app" },
     ];
   }
   // Default — Chrome desktop
   return [
     { icon: Chrome,      label: "Look for the install icon", sub: "Click the ⊕ icon on the right side of the address bar" },
-    { icon: PlusSquare,  label: 'Click "Install Crevia"', sub: "A prompt will appear asking you to confirm" },
-    { icon: Share,       label: 'Click "Install"', sub: "Crevia will open as a standalone app on your desktop" },
+    { icon: PlusSquare,  label: 'Click "Install Kaizen Afrika"', sub: "A prompt will appear asking you to confirm" },
+    { icon: Share,       label: 'Click "Install"', sub: "Kaizen Afrika will open as a standalone app on your desktop" },
   ];
 }
 
@@ -48,10 +48,9 @@ export function ManualInstallGuide({ open, onClose }: ManualInstallGuideProps) {
       >
         <SheetHeader className="pb-4">
           <div className="flex items-center gap-3">
-            <img src="/crevia-logo.png" alt="Crevia" className="w-10 h-10 rounded-2xl bg-zinc-950" />
             <div>
               <SheetTitle className="font-vollkorn text-lg text-foreground text-left">
-                Install Crevia
+                Install Kaizen Afrika
               </SheetTitle>
               <p className="text-xs text-muted-foreground font-poppins">
                 Add to your device

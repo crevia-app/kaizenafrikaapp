@@ -28,7 +28,7 @@ const LinkTabsMobile = ({ userType }: LinkTabsMobileProps) => {
             return (
               <Link
                 key={tab.id}
-                to={`/crevia-link?tab=${tab.id}`}
+                to={`/kaizen-link?tab=${tab.id}`}
                 className={cn(
                   "inline-flex items-center justify-center px-5 py-3 min-h-[44px] rounded-lg whitespace-nowrap font-poppins text-sm font-medium transition-all duration-200",
                   isActive

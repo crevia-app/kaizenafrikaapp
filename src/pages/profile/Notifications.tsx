@@ -8,13 +8,13 @@ import { supabase } from "@/integrations/supabase/client";
 import { useNotifications } from "@/hooks/use-notifications";
 import { Bell, MessageSquare, FileText, Sparkles, Shield, BellOff, CheckCheck, Loader2, MessageCircle, Receipt } from "lucide-react";
 import { cn } from "@/lib/utils";
-const SETTINGS_KEY = "crevia_notif_settings";
+const SETTINGS_KEY = "kaizen_notif_settings";
 
 const notificationGroups = [
   {
-    title: "Crevia Studio",
+    title: "Kaizen Studio",
     items: [
-      { id: "chat",     icon: MessageSquare, label: "Chat Messages",        desc: "New messages in Crevia Chat" },
+      { id: "chat",     icon: MessageSquare, label: "Chat Messages",        desc: "New messages in Kaizen Chat" },
       { id: "invoices", icon: FileText,      label: "Invoices", desc: "Status updates on invoices" },
     ],
   },
@@ -34,9 +34,9 @@ const notificationGroups = [
 ];
 
 const TYPE_CONFIG: Record<string, { icon: React.ElementType; nav: string }> = {
-  message:  { icon: MessageCircle, nav: "/crevia-studio?tab=chat" },
-  invoice:  { icon: Receipt,       nav: "/crevia-studio?tab=invoices" },
-  campaign: { icon: Sparkles,      nav: "/crevia-studio" },
+  message:  { icon: MessageCircle, nav: "/kaizen-studio?tab=chat" },
+  invoice:  { icon: Receipt,       nav: "/kaizen-studio?tab=invoices" },
+  campaign: { icon: Sparkles,      nav: "/kaizen-studio" },
   billing:  { icon: Bell,          nav: "/profile/payments-billing" },
   system:   { icon: Bell,          nav: "" },
 };
@@ -132,7 +132,7 @@ const Notifications = () => {
                         setActiveId(n.id);
                         let nav = cfg.nav;
                         if (n.type === "message" && n.data?.room_id) {
-                          nav = `/crevia-studio?tab=chat&roomId=${n.data.room_id}`;
+                          nav = `/kaizen-studio?tab=chat&roomId=${n.data.room_id}`;
                         }
                         if (nav) navigate(nav);
                       }}

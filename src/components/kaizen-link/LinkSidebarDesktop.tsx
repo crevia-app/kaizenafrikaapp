@@ -17,7 +17,7 @@ const LinkSidebarDesktop = ({ userType, onCollapsedChange }: LinkSidebarDesktopP
   const location = useLocation();
   const currentTab = new URLSearchParams(location.search).get("tab") || "profile";
 
-  // Same items for both creators and brands for Crevia Link
+  // Same items for both creators and brands for Kaizen Link
   const items = [
     { id: "profile", label: "Profile", icon: User },
     { id: "buttons", label: "Actions", icon: Link2 },
@@ -37,7 +37,7 @@ const LinkSidebarDesktop = ({ userType, onCollapsedChange }: LinkSidebarDesktopP
           return (
             <Link
               key={item.id}
-              to={`/crevia-link?tab=${item.id}`}
+              to={`/kaizen-link?tab=${item.id}`}
               className={cn(
                 "flex flex-col items-center justify-center gap-1.5 px-3 py-3 transition-all duration-200",
                 isActive

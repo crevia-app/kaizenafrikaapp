@@ -28,14 +28,14 @@ export const useLanguage = () => useContext(LanguageContext);
 
 export const LanguageProvider = ({ children }: { children: React.ReactNode }) => {
   const [language, setLanguageState] = useState(() => {
-    return localStorage.getItem("crevia-language") || "en";
+    return localStorage.getItem("kaizen-language") || "en";
   });
 
   const isRTL = language === "ar";
 
   const setLanguage = useCallback((lang: string) => {
     setLanguageState(lang);
-    localStorage.setItem("crevia-language", lang);
+    localStorage.setItem("kaizen-language", lang);
   }, []);
 
   useEffect(() => {

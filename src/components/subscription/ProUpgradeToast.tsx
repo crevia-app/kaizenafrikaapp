@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { X, Sparkles } from "lucide-react";
 
-const STORAGE_KEY = "crevia_pro_notified";
+const STORAGE_KEY = "kaizen_pro_notified";
 
 const ProUpgradeToast = ({ plan }: { plan?: string }) => {
   const [visible, setVisible] = useState(false);
@@ -27,7 +27,7 @@ const ProUpgradeToast = ({ plan }: { plan?: string }) => {
             <Sparkles className="h-3.5 w-3.5 text-[#F0782F]" />
           </div>
           <div className="flex-1 min-w-0">
-            <p className="text-sm font-semibold text-white leading-snug">Crevia Pro Unlocked.</p>
+            <p className="text-sm font-semibold text-white leading-snug">Kaizen Afrika Pro Unlocked.</p>
             <p className="text-xs text-white/50 mt-1 leading-relaxed">Full access to the infrastructure is now live.</p>
           </div>
           <button

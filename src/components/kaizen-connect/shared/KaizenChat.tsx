@@ -12,9 +12,9 @@ import MessageContextMenu from "./MessageContextMenu";
 import EmojiReactionPicker from "./EmojiReactionPicker";
 import MessageReactions from "./MessageReactions";
 import AttachmentBubble from "@/components/chat/AttachmentBubble";
-import WorkspacePollMessage, { buildPollContent } from "@/components/crevia-connect/shared/WorkspacePollMessage";
-import { VideoMessagePlayer } from "@/components/crevia-connect/shared/VideoMessagePlayer";
-import { MediaLightbox } from "@/components/crevia-connect/shared/MediaLightbox";
+import WorkspacePollMessage, { buildPollContent } from "@/components/kaizen-connect/shared/WorkspacePollMessage";
+import { VideoMessagePlayer } from "@/components/kaizen-connect/shared/VideoMessagePlayer";
+import { MediaLightbox } from "@/components/kaizen-connect/shared/MediaLightbox";
 import { convertVideoToMp4, needsConversion, VIDEO_CONVERT_MAX_BYTES } from "@/lib/videoConverter";
 import {
   Send,
@@ -87,7 +87,7 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { format, isToday, isYesterday } from "date-fns";
 import ChatMediaPanel from "./ChatMediaPanel";
 import { useE2EEncryption } from "@/hooks/use-e2e-encryption";
-import { iconOptions } from "@/components/crevia-link/iconOptions";
+import { iconOptions } from "@/components/kaizen-link/iconOptions";
 // useIOSKeyboardFit removed: same reason as Dira — it applied position:fixed; top:vv.offsetTop
 // which pushes the container DOWN on modern iOS (where position:fixed is already relative to
 // the visual viewport), leaving a black gap above the header.
@@ -211,7 +211,7 @@ function linkifyContent(content: string, isMine = false): (string | JSX.Element)
   return result.length > 0 ? result : [content];
 }
 
-interface CreiaChatProps {
+interface KaizenChatProps {
   externalRoomId?: string;
   hideRoomList?: boolean;
   onBack?: () => void;
@@ -228,7 +228,7 @@ const avatarStyle = (seed: string): React.CSSProperties => {
   return { background: `hsl(${hue},55%,65%)`, color: `hsl(${hue},55%,22%)` };
 };
 
-const CreviaChat = ({ externalRoomId, hideRoomList, onBack, onOpenGroupInfo }: CreiaChatProps = {}) => {
+const KaizenChat = ({ externalRoomId, hideRoomList, onBack, onOpenGroupInfo }: KaizenChatProps = {}) => {
   const navigate = useNavigate();
   const { keyboardOpen, vpHeight } = useVisualViewport();
   const { canCreateWorkspace } = useSubscription();
@@ -743,7 +743,7 @@ const CreviaChat = ({ externalRoomId, hideRoomList, onBack, onOpenGroupInfo }: C
     };
   }, [selectedRoom?.id, currentUserId]);
 
-  // Fetch the other user's Crevia link profile + social links when contact info opens
+  // Fetch the other user's Kaizen Afrika link profile + social links when contact info opens
   useEffect(() => {
     if (!showRoomInfo || !selectedRoom || selectedRoom.is_group) {
       setContactLinkProfile(null);
@@ -2017,7 +2017,7 @@ const CreviaChat = ({ externalRoomId, hideRoomList, onBack, onOpenGroupInfo }: C
               <div className="p-8 text-center text-muted-foreground">
                 <MessageSquare className="h-12 w-12 mx-auto mb-3 opacity-30" />
                 <p className="text-sm font-medium">No conversations yet</p>
-                <p className="text-xs mt-1 opacity-70">Start a new chat with anyone on Crevia</p>
+                <p className="text-xs mt-1 opacity-70">Start a new chat with anyone on Kaizen Afrika</p>
               </div>
             ) : (
               <div className="px-2 pb-2 space-y-0.5">
@@ -2481,7 +2481,7 @@ const CreviaChat = ({ externalRoomId, hideRoomList, onBack, onOpenGroupInfo }: C
                                           )}
                                           {status === "accepted" && (
                                             <button
-                                              onClick={() => inv.workspace_id && navigate(`/crevia-studio?tab=chat&roomId=${inv.workspace_id}`)}
+                                              onClick={() => inv.workspace_id && navigate(`/kaizen-studio?tab=chat&roomId=${inv.workspace_id}`)}
                                               className="flex items-center gap-1.5 w-full hover:opacity-75 active:opacity-50 transition-opacity"
                                             >
                                               <CheckCircle2 className="w-3.5 h-3.5 text-emerald-500 flex-shrink-0" />
@@ -3047,7 +3047,7 @@ const CreviaChat = ({ externalRoomId, hideRoomList, onBack, onOpenGroupInfo }: C
                 <div className="w-20 h-20 rounded-full bg-bronze/10 flex items-center justify-center mx-auto mb-4">
                   <MessageSquare className="h-10 w-10 text-bronze/50" />
                 </div>
-                <p className="text-lg font-semibold mb-1">Crevia Workspace</p>
+                <p className="text-lg font-semibold mb-1">Kaizen Afrika Workspace</p>
                 <p className="text-sm opacity-70 mb-1">End-to-end encrypted messaging</p>
                 <p className="text-xs opacity-50">Chat with brands, creators, or create groups</p>
               </div>
@@ -3107,7 +3107,7 @@ const CreviaChat = ({ externalRoomId, hideRoomList, onBack, onOpenGroupInfo }: C
         <DialogContent className="sm:max-w-[500px]">
           <DialogHeader>
             <DialogTitle>New Conversation</DialogTitle>
-            <DialogDescription>Search for any user on Crevia to start chatting</DialogDescription>
+            <DialogDescription>Search for any user on Kaizen Afrika to start chatting</DialogDescription>
           </DialogHeader>
           <div className="space-y-4">
             <div className="relative">
@@ -3346,17 +3346,17 @@ const CreviaChat = ({ externalRoomId, hideRoomList, onBack, onOpenGroupInfo }: C
                   </div>
                 </div>
 
-                {/* ── DM only: Crevia link + social links ── */}
+                {/* ── DM only: Kaizen Afrika link + social links ── */}
                 {!selectedRoom.is_group && (
                   <>
-                    {/* Crevia Profile link */}
+                    {/* Kaizen Afrika Profile link */}
                     {contactLinkProfile?.username && (
                       <div>
                         <p className="text-[10px] font-semibold text-muted-foreground uppercase tracking-wider mb-2">
-                          Crevia Profile
+                          Kaizen Afrika Profile
                         </p>
                         <a
-                          href={`https://crevia.app/${contactLinkProfile.username}`}
+                          href={`https://kaizenafrika.app/${contactLinkProfile.username}`}
                           target="_blank"
                           rel="noopener noreferrer"
                           className="flex items-center gap-3 p-3 rounded-xl bg-bronze/5 border border-bronze/20 hover:bg-bronze/10 transition-colors"
@@ -3366,7 +3366,7 @@ const CreviaChat = ({ externalRoomId, hideRoomList, onBack, onOpenGroupInfo }: C
                           </div>
                           <div className="flex-1 min-w-0">
                             <p className="text-sm font-semibold text-foreground">
-                              crevia.app/{contactLinkProfile.username}
+                              kaizenafrika.app/{contactLinkProfile.username}
                             </p>
                             {contactLinkProfile.bio && (
                               <p className="text-xs text-muted-foreground truncate mt-0.5">
@@ -3766,4 +3766,4 @@ const CreviaChat = ({ externalRoomId, hideRoomList, onBack, onOpenGroupInfo }: C
   );
 };
 
-export default CreviaChat;
+export default KaizenChat;

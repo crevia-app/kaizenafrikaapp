@@ -1,5 +1,5 @@
 /**
- * End-to-End Encryption for Crevia Chat
+ * End-to-End Encryption for Kaizen Chat
  * RSA-OAEP-2048 / SHA-256 for key exchange, AES-256-GCM for messages.
  *
  * Flow:

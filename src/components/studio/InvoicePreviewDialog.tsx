@@ -485,7 +485,7 @@ const InvoicePreviewDialog = ({ open, onOpenChange, invoice, autoShare = false }
       <p className="text-xs font-medium" style={{ color: accentColor }}>Thank you for your business!</p>
       {!isProUser && (
         <p className="mt-1 text-[10px] text-gray-400">
-          Powered by <span className="font-semibold">Crevia</span>
+          Powered by <span className="font-semibold">Kaizen Afrika</span>
         </p>
       )}
     </div>

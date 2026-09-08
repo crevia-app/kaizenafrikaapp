@@ -67,7 +67,7 @@ const MFAVerify = () => {
       sessionStorage.removeItem("mfa_pending");
       sessionStorage.setItem("biometric_unlocked", "1");
       supabase.functions.invoke("login-alert").catch(() => {});
-      toast({ title: "Verified!", description: "Welcome back to Crevia." });
+      toast({ title: "Verified!", description: "Welcome back to Kaizen Afrika." });
       navigate("/dira", { replace: true });
     } catch (err: any) {
       toast({

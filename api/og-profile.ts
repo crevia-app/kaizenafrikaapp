@@ -31,10 +31,10 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     .single();
 
   const name        = profile?.display_name || username;
-  const description = profile?.bio || `Check out ${name}'s links on Crevia.`;
-  const avatar      = profile?.profile_picture || "https://crevia.app/crevia-logo.png";
-  const pageUrl     = `https://crevia.app/${username}`;
-  const title       = `${name} | crevia.app`;
+  const description = profile?.bio || `Check out ${name}'s links on Kaizen Afrika.`;
+  const avatar      = profile?.profile_picture || "https://kaizenafrika.app/kaizen-logo.png";
+  const pageUrl     = `https://kaizenafrika.app/${username}`;
+  const title       = `${name} | kaizenafrika.app`;
 
   const html = `<!DOCTYPE html>
 <html lang="en">
@@ -52,20 +52,20 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
   <meta property="og:image:width"  content="800" />
   <meta property="og:image:height" content="800" />
   <meta property="og:image:alt"   content="${esc(name)}'s profile picture" />
-  <meta property="og:site_name"   content="Crevia" />
+  <meta property="og:site_name"   content="Kaizen Afrika" />
 
   <!-- Twitter / X -->
   <meta name="twitter:card"        content="summary" />
   <meta name="twitter:title"       content="${esc(title)}" />
   <meta name="twitter:description" content="${esc(description)}" />
   <meta name="twitter:image"       content="${avatar}" />
-  <meta name="twitter:site"        content="@creviahq" />
+  <meta name="twitter:site"        content="@kaizenafrika" />
 
   <!-- Redirect real users to the SPA immediately -->
   <meta http-equiv="refresh" content="0;url=${pageUrl}" />
 </head>
 <body>
-  <p>Redirecting to <a href="${pageUrl}">${esc(name)}'s Crevia Link</a>…</p>
+  <p>Redirecting to <a href="${pageUrl}">${esc(name)}'s Kaizen Link</a>…</p>
 </body>
 </html>`;
 

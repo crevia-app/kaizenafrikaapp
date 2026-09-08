@@ -61,7 +61,7 @@ const TopBar = ({ profile, hideRightElements = false }: TopBarProps) => {
   const location = useLocation();
   const [searchParams] = useSearchParams();
   const isDira   = location.pathname === "/dira";
-  const isStudio = location.pathname.startsWith("/crevia-studio");
+  const isStudio = location.pathname.startsWith("/kaizen-studio");
   const studioTab     = isStudio ? (searchParams.get("tab") || "link") : "link";
   const studioTabMeta = STUDIO_TAB_META[studioTab] ?? STUDIO_TAB_META.link;
   const [sheetOpen, setSheetOpen] = useState(false);
@@ -138,7 +138,7 @@ const TopBar = ({ profile, hideRightElements = false }: TopBarProps) => {
               </button>
               <div className="flex items-center gap-1.5 min-w-0">
                 <Link
-                  to="/crevia-studio"
+                  to="/kaizen-studio"
                   className="font-vollkorn text-base font-semibold text-foreground hover:text-bronze transition-colors duration-200"
                 >
                   Studio
@@ -153,16 +153,12 @@ const TopBar = ({ profile, hideRightElements = false }: TopBarProps) => {
               </div>
             </div>
           ) : (
-            /* All other pages: Crevia logo */
+            /* All other pages: Kaizen Afrika wordmark */
             <Link
               to="/dashboard"
               className="flex items-center hover:opacity-80 transition-opacity"
             >
-              <img
-                src="/crevia-logo.png"
-                alt="Crevia"
-                className="w-9 h-9 md:w-11 md:h-11 rounded-2xl bg-zinc-950 ring-1 ring-border"
-              />
+              <span className="font-vollkorn text-lg md:text-xl font-bold">Kaizen Afrika</span>
             </Link>
           )}
         </div>

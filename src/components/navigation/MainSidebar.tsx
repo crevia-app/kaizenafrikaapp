@@ -57,7 +57,7 @@ const MainSidebar = ({ profile, onProfileClick }: MainSidebarProps) => {
 
   const navItems = [
     { id: "dira",   label: "Dira AI",       Icon: DiraIcon,   path: "/dira",           prefetch: () => import("@/pages/Dira") },
-    { id: "studio", label: "Studio",        Icon: StudioIcon, path: "/crevia-studio",  prefetch: () => import("@/pages/CreviaStudio") },
+    { id: "studio", label: "Studio",        Icon: StudioIcon, path: "/kaizen-studio",  prefetch: () => import("@/pages/KaizenStudio") },
   ];
 
   const isActive = (path: string) => {
@@ -122,7 +122,7 @@ const MainSidebar = ({ profile, onProfileClick }: MainSidebarProps) => {
                   className="gap-2 cursor-pointer text-foreground hover:text-bronze focus:text-bronze hover:bg-bronze/10 focus:bg-bronze/10"
                 >
                   <Download className="h-4 w-4 text-bronze" />
-                  Install Crevia
+                  Install Kaizen Afrika
                 </DropdownMenuItem>
                 <DropdownMenuSeparator />
               </>

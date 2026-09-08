@@ -191,12 +191,11 @@ serve(async (req) => {
               'Content-Type': 'application/json',
             },
             body: JSON.stringify({
-              from:    'Crevia <notifications@crevia.app>',
+              from:    'Kaizen Afrika <notifications@kaizenafrika.app>',
               to:      ['anthonypeterodhiambo@gmail.com'],
               subject: `🎉 New ${planLabel} upgrade — ${userName}`,
               html: `
                 <div style="font-family:sans-serif;max-width:520px;margin:0 auto;padding:32px 24px;background:#fff;border-radius:12px;border:1px solid #e5e7eb">
-                  <img src="https://crevia.app/crevia-logo.png" alt="Crevia" style="width:48px;height:48px;border-radius:50%;margin-bottom:20px"/>
                   <h2 style="margin:0 0 8px;font-size:20px;color:#111">New plan upgrade</h2>
                   <p style="margin:0 0 20px;color:#555;font-size:15px">A user just upgraded to <strong>${planLabel}</strong>.</p>
                   <table style="width:100%;border-collapse:collapse;font-size:14px;color:#333">
@@ -206,7 +205,7 @@ serve(async (req) => {
                     <tr><td style="padding:8px 0;color:#888">Amount</td><td style="padding:8px 0">KES ${amountKES.toLocaleString()}</td></tr>
                     <tr><td style="padding:8px 0;color:#888">Date</td><td style="padding:8px 0">${new Date().toLocaleString('en-KE', { timeZone: 'Africa/Nairobi' })}</td></tr>
                   </table>
-                  <a href="https://crevia.app/admin" style="display:inline-block;margin-top:24px;padding:10px 20px;background:#b45309;color:#fff;text-decoration:none;border-radius:8px;font-size:14px;font-weight:600">Open Admin Portal</a>
+                  <a href="https://kaizenafrika.app/admin" style="display:inline-block;margin-top:24px;padding:10px 20px;background:#b45309;color:#fff;text-decoration:none;border-radius:8px;font-size:14px;font-weight:600">Open Admin Portal</a>
                 </div>
               `,
             }),

@@ -28,7 +28,7 @@
    only (added/removed by the hook). On screen the document uses responsive
    widths; only during PDF generation does this class force true A4 dimensions.
    Padding is intentionally omitted — the document's own content div owns it. */
-.crevia-print-capture {
+.kaizen-print-capture {
   width: 794px !important;
   min-height: 1123px !important;
   background-color: #ffffff !important;
@@ -69,7 +69,7 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* Crevia Brand Colors */
+    /* Kaizen Afrika Brand Colors */
     --background: 0 0% 100%;
     --foreground: 0 0% 0%;
     
@@ -117,7 +117,7 @@ All colors MUST be HSL.
     /* Transitions */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 
-    /* Mobile bottom nav — offset for <main> padding and Kira input area.
+    /* Mobile bottom nav — offset for <main> padding and Dira input area.
        Desktop default is 0px (no bottom nav).
        The @media block below sets the correct mobile initial value so there
        is NO layout flash when the page first loads on a phone. */

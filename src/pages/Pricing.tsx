@@ -39,8 +39,8 @@ const PLANS = (billingCycle: "monthly" | "yearly", proPrice: number, businessPri
       description: "Start building your professional footprint.",
       features: [
         { product: "Dira AI", detail: "5 Daily Credits", note: "Refreshed daily" },
-        { product: "Crevia Invoice", detail: "2 standard invoices / month", lockNote: "Customization excluded" },
-        { product: "Crevia Link", detail: "Core profile engine & basic themes", lockNote: "Analytics excluded" },
+        { product: "Kaizen Invoice", detail: "2 standard invoices / month", lockNote: "Customization excluded" },
+        { product: "Kaizen Link", detail: "Core profile engine & basic themes", lockNote: "Analytics excluded" },
       ] as PlanFeature[],
       cta: "Get Started",
       highlighted: false,
@@ -59,8 +59,8 @@ const PLANS = (billingCycle: "monthly" | "yearly", proPrice: number, businessPri
       features: [
         { product: "Verified badge", detail: "" },
         { product: "Dira AI", detail: "500 Monthly Credits" },
-        { product: "Crevia Invoice", detail: "Unlimited customized invoices", note: "Remove branding, add your logo, add brand colors" },
-        { product: "Crevia Link", detail: "Premium themes, custom brand colors, and advanced visitor analytics" },
+        { product: "Kaizen Invoice", detail: "Unlimited customized invoices", note: "Remove branding, add your logo, add brand colors" },
+        { product: "Kaizen Link", detail: "Premium themes, custom brand colors, and advanced visitor analytics" },
       ] as PlanFeature[],
       cta: "Go Pro",
       highlighted: true,
@@ -79,8 +79,8 @@ const PLANS = (billingCycle: "monthly" | "yearly", proPrice: number, businessPri
       features: [
         { product: "Verified badge", detail: "" },
         { product: "Dira AI", detail: "Unlimited priority processing" },
-        { product: "Crevia Invoice", detail: "Unlimited invoices", note: "Removed branding, add your brand colors and logo" },
-        { product: "Crevia Link", detail: "Brand colors, logos, and advanced visitor analytics" },
+        { product: "Kaizen Invoice", detail: "Unlimited invoices", note: "Removed branding, add your brand colors and logo" },
+        { product: "Kaizen Link", detail: "Brand colors, logos, and advanced visitor analytics" },
         { product: "Support", detail: "Priority support" },
       ] as PlanFeature[],
       cta: "Get Business",
@@ -158,8 +158,8 @@ const Pricing = () => {
     <div className="min-h-dvh bg-background page-bg-warm overflow-x-clip">
       <SEO
         title="Pricing"
-        description="Simple, transparent pricing for businesses and brands. Free plan forever. Crevia Pro from $14.99/month — unlimited invoices, 500 Dira AI credits, premium analytics. Business from $74.99/month."
-        keywords="Crevia pricing, invoicing software price, AI business tool cost, Crevia Pro plan, Crevia Business plan, affordable invoicing Kenya"
+        description="Simple, transparent pricing for businesses and brands. Free plan forever. Kaizen Afrika Pro from $14.99/month — unlimited invoices, 500 Dira AI credits, premium analytics. Business from $74.99/month."
+        keywords="Kaizen Afrika pricing, invoicing software price, AI business tool cost, Kaizen Afrika Pro plan, Kaizen Afrika Business plan, affordable invoicing Kenya"
         url="/pricing"
         jsonLd={{
           "@context": "https://schema.org",
@@ -167,18 +167,18 @@ const Pricing = () => {
           "mainEntity": [
             {
               "@type": "Question",
-              "name": "Is Crevia free to use?",
+              "name": "Is Kaizen Afrika free to use?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "Yes. Crevia has a permanent Free plan that includes 5 Dira AI credits per day, 2 invoices per month, and a basic CreviaLink profile — no credit card required."
+                "text": "Yes. Kaizen Afrika has a permanent Free plan that includes 5 Dira AI credits per day, 2 invoices per month, and a basic Kaizen Link profile — no credit card required."
               }
             },
             {
               "@type": "Question",
-              "name": "How much does Crevia Pro cost?",
+              "name": "How much does Kaizen Afrika Pro cost?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "Crevia Pro starts at $14.99 per month. It includes 500 Dira AI credits per month, unlimited invoices, and premium CreviaLink analytics."
+                "text": "Kaizen Afrika Pro starts at $14.99 per month. It includes 500 Dira AI credits per month, unlimited invoices, and premium Kaizen Link analytics."
               }
             },
             {
@@ -194,7 +194,7 @@ const Pricing = () => {
               "name": "Can I cancel my subscription anytime?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "Yes. You can cancel your Crevia subscription at any time. Your plan remains active until the end of the billing period."
+                "text": "Yes. You can cancel your Kaizen Afrika subscription at any time. Your plan remains active until the end of the billing period."
               }
             },
             {
@@ -202,7 +202,7 @@ const Pricing = () => {
               "name": "What is Dira AI?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "Dira is Crevia's built-in AI business intelligence assistant. It helps with invoice drafting, deal structuring, business strategy, and operational advice — directly inside your Crevia workspace."
+                "text": "Dira is Kaizen Afrika's built-in AI business intelligence assistant. It helps with invoice drafting, deal structuring, business strategy, and operational advice — directly inside your Kaizen Afrika workspace."
               }
             }
           ]
@@ -419,7 +419,7 @@ const Pricing = () => {
             {[
               {
                 q: "What's included in the free plan?",
-                a: "Crevia Link with basic templates, 5 Dira AI actions per day, and 2 invoices per month. No credit card required.",
+                a: "Kaizen Link with basic templates, 5 Dira AI actions per day, and 2 invoices per month. No credit card required.",
               },
               {
                 q: "Can I switch plans anytime?",
@@ -447,7 +447,7 @@ const Pricing = () => {
         <div className="container mx-auto max-w-3xl text-center relative z-10">
           <ScrollReveal variant="blur">
             <h2 className="font-vollkorn text-3xl sm:text-4xl md:text-5xl font-bold mb-6">
-              Ready to <span className="text-gradient-bronze">own your story?</span>
+              Ready to <span className="text-gradient-bronze">progress, every day?</span>
             </h2>
             <p className="text-lg text-muted-foreground mb-8 max-w-xl mx-auto">
               Start free today. No credit card. No friction.

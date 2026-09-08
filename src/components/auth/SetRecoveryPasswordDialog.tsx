@@ -84,7 +84,7 @@ export function SetRecoveryPasswordDialog({
           </div>
           <DialogDescription className="text-sm text-muted-foreground">
             This password encrypts your private key in the cloud so you can restore access
-            on any device. It is never sent to Crevia — only you know it.
+            on any device. It is never sent to Kaizen Afrika — only you know it.
           </DialogDescription>
         </DialogHeader>
 

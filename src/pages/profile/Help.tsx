@@ -161,7 +161,7 @@ const Help = () => {
                   {tk.admin_reply && (
                     <div className="bg-bronze/5 border border-bronze/20 rounded-xl p-4">
                       <p className="text-[11px] text-bronze font-semibold mb-1.5">
-                        Response from Crevia · {tk.replied_at ? format(new Date(tk.replied_at), "dd MMM yyyy") : ""}
+                        Response from Kaizen Afrika · {tk.replied_at ? format(new Date(tk.replied_at), "dd MMM yyyy") : ""}
                       </p>
                       <p className="text-sm whitespace-pre-wrap leading-relaxed">{tk.admin_reply}</p>
                     </div>

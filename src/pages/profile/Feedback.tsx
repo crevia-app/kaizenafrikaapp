@@ -30,7 +30,7 @@ const Feedback = () => {
         .single();
       if (error) throw error;
       if (created?.id) notifyAdmin(created.id);
-      toast.success("Thank you for your feedback!", { description: "Your voice shapes Crevia's future." });
+      toast.success("Thank you for your feedback!", { description: "Your voice shapes Kaizen Afrika's future." });
       setMessage("");
     } catch {
       toast.error("Failed to submit feedback. Please try again.");
@@ -75,7 +75,7 @@ const Feedback = () => {
             Feedback
           </h1>
           <p className="text-muted-foreground text-sm md:text-base">
-            Help us make Crevia better for everyone.
+            Help us make Kaizen Afrika better for everyone.
           </p>
         </div>
       </div>
@@ -133,7 +133,7 @@ const Feedback = () => {
             <Card className="p-5 sm:p-6 md:p-8 border-border/40">
               <h2 className="font-vollkorn text-lg md:text-xl font-bold mb-1">Request a Feature</h2>
               <p className="text-xs md:text-sm text-muted-foreground mb-5 md:mb-6">
-                Got an idea that would make Crevia better?
+                Got an idea that would make Kaizen Afrika better?
               </p>
 
               <div className="space-y-4">

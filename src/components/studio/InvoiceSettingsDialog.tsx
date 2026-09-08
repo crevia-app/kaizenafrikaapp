@@ -23,9 +23,9 @@ import { toast } from "sonner";
 import { cn } from "@/lib/utils";
 import { AdvancedColorSelector } from "@/components/ui/AdvancedColorSelector";
 
-// Accent colours derived from Crevia Link themes — all free
+// Accent colours derived from Kaizen Link themes — all free
 export const INVOICE_ACCENT_COLORS = [
-  { name: "Bronze",   hex: "#B07D3A" }, // Crevia / Matte Bronze
+  { name: "Bronze",   hex: "#B07D3A" }, // Kaizen Afrika / Matte Bronze
   { name: "Onyx",     hex: "#18181B" }, // Obsidian
   { name: "Slate",    hex: "#1A1C24" }, // Exec Slate
   { name: "Navy",     hex: "#07092A" }, // Studio Navy

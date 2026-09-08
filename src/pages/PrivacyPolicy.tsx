@@ -4,7 +4,7 @@ import { SEO } from "@/components/SEO";
 const PrivacyPolicy = () => {
   return (
     <div className="min-h-dvh bg-background">
-      <SEO title="Privacy Policy" description="Read Crevia's Privacy Policy. Learn how we collect, use, and protect your personal data in compliance with the Kenya Data Protection Act, 2019." keywords="Crevia privacy policy, data protection, Kenya Data Protection Act, personal data" url="/privacy-policy" />
+      <SEO title="Privacy Policy" description="Read Kaizen Afrika's Privacy Policy. Learn how we collect, use, and protect your personal data in compliance with the Kenya Data Protection Act, 2019." keywords="Kaizen Afrika privacy policy, data protection, Kenya Data Protection Act, personal data" url="/privacy-policy" />
 
       <main className="container max-w-4xl px-4 py-8 md:py-16">
         <div className="mb-8 md:mb-12">
@@ -19,7 +19,7 @@ const PrivacyPolicy = () => {
           <section>
             <h2 className="font-vollkorn text-2xl md:text-3xl font-bold mb-4">1. Introduction</h2>
             <p className="text-muted-foreground leading-relaxed">
-              Crevia Ventures Limited ("we," "us," "our") respects your privacy. This Privacy Policy explains how we collect, use, and protect your personal and corporate data when you use the Crevia platform and any other current or future products we provide. We operate in compliance with the Kenya Data Protection Act, 2019.
+              Kaizen Afrika Ventures Limited ("we," "us," "our") respects your privacy. This Privacy Policy explains how we collect, use, and protect your personal and corporate data when you use the Kaizen Afrika platform and any other current or future products we provide. We operate in compliance with the Kenya Data Protection Act, 2019.
             </p>
           </section>
 
@@ -30,9 +30,9 @@ const PrivacyPolicy = () => {
               <ul className="list-disc pl-6 space-y-2">
                 <li><strong>Account Data:</strong> Name, email address, phone number, and billing information.</li>
                 <li><strong>Business Data:</strong> Client rosters, brand assets, and organizational hierarchies.</li>
-                <li><strong>Operational &amp; Financial Data:</strong> Information inputted into Crevia Studio and Crevia Invoice (line items, pricing, counterparty details).</li>
+                <li><strong>Operational &amp; Financial Data:</strong> Information inputted into Kaizen Studio and Kaizen Invoice (line items, pricing, counterparty details).</li>
                 <li><strong>AI Interaction Data:</strong> Prompts, queries, and contextual data submitted to our AI assistant (Dira) to improve business structuring and platform functionality.</li>
-                <li><strong>Usage Data:</strong> Analytics regarding your interaction with Crevia Link pages, including visitor tracking.</li>
+                <li><strong>Usage Data:</strong> Analytics regarding your interaction with Kaizen Link pages, including visitor tracking.</li>
               </ul>
             </div>
           </section>
@@ -96,7 +96,7 @@ const PrivacyPolicy = () => {
             </p>
             <div className="mt-4 p-4 bg-muted/50 rounded-lg">
               <p className="font-poppins text-sm">
-                <strong>Email:</strong> hi@crevia.app<br />
+                <strong>Email:</strong> hi@kaizenafrika.app<br />
                 <strong>Location:</strong> Nairobi, Kenya
               </p>
             </div>
@@ -105,7 +105,7 @@ const PrivacyPolicy = () => {
           <section>
             <h2 className="font-vollkorn text-2xl md:text-3xl font-bold mb-4">9. Changes to this Privacy Policy</h2>
             <p className="text-muted-foreground leading-relaxed">
-              We may update this Privacy Policy from time to time to reflect changes in our technology, legal requirements, or business operations. We will notify you of any significant changes by posting the new Privacy Policy on this page and updating the "Last Updated" date. We encourage you to review this Privacy Policy periodically. Continued use of Crevia after updates are published constitutes your acknowledgment and consent to the revised policy.
+              We may update this Privacy Policy from time to time to reflect changes in our technology, legal requirements, or business operations. We will notify you of any significant changes by posting the new Privacy Policy on this page and updating the "Last Updated" date. We encourage you to review this Privacy Policy periodically. Continued use of Kaizen Afrika after updates are published constitutes your acknowledgment and consent to the revised policy.
             </p>
           </section>
 

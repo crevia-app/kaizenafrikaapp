@@ -19,7 +19,7 @@ import { supabase } from "@/integrations/supabase/client";
 const CLIENT_VERSION = import.meta.env.VITE_APP_VERSION as string | undefined;
 
 /** Fired on every detected version change — listeners can re-fetch their data. */
-export const VERSION_CHANGED_EVENT = "crevia:version-changed";
+export const VERSION_CHANGED_EVENT = "kaizen:version-changed";
 
 export interface VersionCheckResult {
   /** True when the client bundle is stale and a page reload is recommended. */

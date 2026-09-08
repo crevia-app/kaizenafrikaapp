@@ -113,7 +113,7 @@ export const ProjectDetailSheet = ({
     setIsSaving(true);
     try {
       const { data, error } = await supabase
-        .from("kira_projects")
+        .from("dira_projects")
         .update({
           name: editName.trim(),
           description: editDescription.trim() || null,
@@ -154,7 +154,7 @@ export const ProjectDetailSheet = ({
         .eq("project_id", project.id);
 
       const { error } = await supabase
-        .from("kira_projects")
+        .from("dira_projects")
         .delete()
         .eq("id", project.id);
 

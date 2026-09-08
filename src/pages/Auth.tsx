@@ -33,7 +33,7 @@ const Auth = () => {
   const [isResetting, setIsResetting] = useState(false);
   const [isGoogleLoading, setIsGoogleLoading] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
-  const [termsAccepted, setTermsAccepted] = useState(() => !!localStorage.getItem("crevia_terms_v1"));
+  const [termsAccepted, setTermsAccepted] = useState(() => !!localStorage.getItem("kaizen_terms_v1"));
   const [passwordErrors, setPasswordErrors] = useState<string[]>([]);
   const [emailConfirmPending, setEmailConfirmPending] = useState(false);
   const [showWelcomeScreen, setShowWelcomeScreen] = useState(false);
@@ -93,7 +93,7 @@ const Auth = () => {
         }).then(null, () => {});
 
         // Ensure terms flag is set in localStorage and the database
-        localStorage.setItem("crevia_terms_v1", "1");
+        localStorage.setItem("kaizen_terms_v1", "1");
 
         const { data: { user } } = await supabase.auth.getUser();
 
@@ -257,7 +257,7 @@ const Auth = () => {
           const msg = error.message.toLowerCase();
           if (msg.includes("invalid login") || msg.includes("invalid credentials") || msg.includes("wrong password")) {
             // Distinguish "no account" from "wrong password" via a silent profile lookup.
-            // Profiles are publicly readable (Crevia Link), so this works pre-auth.
+            // Profiles are publicly readable (Kaizen Link), so this works pre-auth.
             const { data: profileCheck } = await supabase
               .from("profiles")
               .select("id")
@@ -389,15 +389,14 @@ const Auth = () => {
         <PageBg />
         <div className="relative z-10 w-full max-w-sm animate-fade-in">
           <div className="flex items-center justify-center gap-2.5 mb-10">
-            <img src="/crevia-logo.png" alt="Crevia" className="w-9 h-9 rounded-2xl bg-zinc-950 ring-1 ring-border" />
-            <span className="font-vollkorn text-2xl font-bold text-foreground">Crevia</span>
+            <span className="font-vollkorn text-2xl font-bold text-foreground">Kaizen Afrika</span>
           </div>
 
           <div className="bg-card border border-border rounded-2xl p-8 text-center backdrop-blur-sm shadow-xl">
             <div className="w-20 h-20 rounded-2xl bg-bronze/15 border border-bronze/25 flex items-center justify-center mx-auto mb-6">
               <BadgeCheck className="w-10 h-10 text-bronze" />
             </div>
-            <h1 className="font-vollkorn text-2xl font-bold text-foreground mb-2">Welcome to Crevia!</h1>
+            <h1 className="font-vollkorn text-2xl font-bold text-foreground mb-2">Welcome to Kaizen Afrika!</h1>
             <p className="text-muted-foreground text-sm font-poppins mb-8 leading-relaxed">
               Your account has been created. You're all set to start building.
             </p>
@@ -411,7 +410,7 @@ const Auth = () => {
           </div>
 
           <p className="text-center text-muted-foreground/50 text-xs font-poppins mt-8">
-            © {new Date().getFullYear()} Crevia. All rights reserved.
+            © {new Date().getFullYear()} Kaizen Afrika. All rights reserved.
           </p>
         </div>
       </div>
@@ -425,8 +424,7 @@ const Auth = () => {
         <PageBg />
         <div className="relative z-10 w-full max-w-sm animate-fade-in">
           <div className="flex items-center justify-center gap-2.5 mb-10">
-            <img src="/crevia-logo.png" alt="Crevia" className="w-9 h-9 rounded-2xl bg-zinc-950 ring-1 ring-border" />
-            <span className="font-vollkorn text-2xl font-bold text-foreground">Crevia</span>
+            <span className="font-vollkorn text-2xl font-bold text-foreground">Kaizen Afrika</span>
           </div>
 
           <div className="bg-card border border-border rounded-2xl p-8 text-center backdrop-blur-sm shadow-xl">
@@ -448,7 +446,7 @@ const Auth = () => {
 
             <div className="space-y-3 mb-8 text-left">
               {[
-                { n: "1", label: "Open the email from Crevia" },
+                { n: "1", label: "Open the email from Kaizen Afrika" },
                 { n: "2", label: "Click the confirmation link" },
                 { n: "3", label: "You're in — the app opens automatically" },
               ].map(({ n, label }) => (
@@ -477,7 +475,7 @@ const Auth = () => {
           </div>
 
           <p className="text-center text-muted-foreground/40 text-xs font-poppins mt-8">
-            © {new Date().getFullYear()} Crevia. All rights reserved.
+            © {new Date().getFullYear()} Kaizen Afrika. All rights reserved.
           </p>
         </div>
       </div>
@@ -492,8 +490,7 @@ const Auth = () => {
       <div className="relative z-10 w-full max-w-md animate-fade-in">
         {/* Logo */}
         <Link to="/" className="flex items-center justify-center gap-2.5 mb-8 hover:opacity-80 transition-opacity">
-          <img src="/crevia-logo.png" alt="Crevia" className="w-9 h-9 rounded-2xl bg-zinc-950 ring-1 ring-border transition-transform hover:scale-105" />
-          <span className="font-vollkorn text-2xl font-bold text-foreground">Crevia</span>
+          <span className="font-vollkorn text-2xl font-bold text-foreground">Kaizen Afrika</span>
         </Link>
 
         {/* Card */}
@@ -505,8 +502,8 @@ const Auth = () => {
             </h1>
             <p className="text-sm text-muted-foreground font-poppins">
               {isSignup
-                ? "Built for those who are ready to own their story."
-                : "Your story continues here."}
+                ? "Built for those who are ready for progress, every day."
+                : "Your progress continues here."}
             </p>
           </div>
 
@@ -619,8 +616,8 @@ const Auth = () => {
                   onCheckedChange={(checked) => {
                     const accepted = checked === true;
                     setTermsAccepted(accepted);
-                    if (accepted) localStorage.setItem("crevia_terms_v1", "1");
-                    else localStorage.removeItem("crevia_terms_v1");
+                    if (accepted) localStorage.setItem("kaizen_terms_v1", "1");
+                    else localStorage.removeItem("kaizen_terms_v1");
                   }}
                   className="mt-0.5 shrink-0 h-5 w-5 rounded-md border-2 border-gray-400 dark:border-white/60 bg-transparent dark:bg-white/10 data-[state=checked]:bg-[#F0782F] data-[state=checked]:border-[#F0782F]"
                 />
@@ -681,7 +678,7 @@ const Auth = () => {
         </div>
 
         <p className="text-center text-muted-foreground/40 text-xs font-poppins mt-6">
-          © {new Date().getFullYear()} Crevia. All rights reserved.
+          © {new Date().getFullYear()} Kaizen Afrika. All rights reserved.
         </p>
       </div>
 

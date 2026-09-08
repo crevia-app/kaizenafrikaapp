@@ -10,5 +10,5 @@ export function loadGoogleFont(href: string): void {
   injected.add(href);
 }
 
-export const CREVIA_LINK_FONTS =
+export const KAIZEN_LINK_FONTS =
   "https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;600;700&family=DM+Serif+Display&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Outfit:wght@300;400;500;600;700&family=Syne:wght@400;500;600;700;800&display=swap";

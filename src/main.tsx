@@ -7,17 +7,17 @@ import "./index.css";
 // React mounts. They bypass the ErrorBoundary entirely, leaving #root-shell
 // spinning forever. This handler kills the spinner and shows a fallback UI.
 
-const PRE_REACT_RELOAD_KEY = "crevia_pre_react_reload";
+const PRE_REACT_RELOAD_KEY = "kaizen_pre_react_reload";
 
 function injectFallbackUI() {
   const root = document.getElementById("root");
   if (!root) return;
   root.innerHTML = `
     <div style="min-height:100dvh;background:#09090b;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:24px;text-align:center;font-family:system-ui,-apple-system,sans-serif;">
-      <img src="/crevia-logo.png" alt="Crevia" style="width:56px;height:56px;border-radius:14px;background:#09090b;margin-bottom:24px;" />
+      <p style="color:#fff;font-size:20px;font-weight:700;margin:0 0 24px 0;">Kaizen Afrika</p>
       <h1 style="color:#fff;font-size:20px;font-weight:700;margin:0 0 8px 0;">System error</h1>
       <p style="color:rgba(255,255,255,0.45);font-size:14px;margin:0 0 24px 0;max-width:300px;line-height:1.6;">
-        Crevia encountered an unexpected error. A quick refresh usually resolves this.
+        Kaizen Afrika encountered an unexpected error. A quick refresh usually resolves this.
       </p>
       <button
         onclick="sessionStorage.removeItem('${PRE_REACT_RELOAD_KEY}');if('caches' in window){caches.keys().then(function(k){return Promise.all(k.map(function(c){return caches.delete(c)}))}).finally(function(){location.reload()})}else{location.reload()}"

@@ -12,7 +12,7 @@ const fr = {
 
   "nav.home": "Accueil",
   "nav.dashboard": "Tableau de bord",
-  "nav.connect": "Crevia Connect",
+  "nav.connect": "Kaizen Afrika Connect",
   "nav.studio": "Studio",
   "nav.dira": "Dira AI",
   "nav.pricing": "Tarifs",
@@ -104,13 +104,13 @@ const fr = {
 
   "studio.title": "Studio",
   "studio.subtitle": "Votre boîte à outils créative",
-  "studio.tab.link": "Crevia Link",
+  "studio.tab.link": "Kaizen Link",
 
   "studio.tab.invoice": "Facture",
   "studio.tab.canvas": "Canvas",
 
   "sidebar.studio": "Studio",
-  "sidebar.connect": "Crevia Connect",
+  "sidebar.connect": "Kaizen Afrika Connect",
   "sidebar.dira": "Dira AI",
   "sidebar.wallet": "Portefeuille",
 
@@ -118,7 +118,7 @@ const fr = {
   "settings.dangerZoneDesc": "Supprimez définitivement votre compte et toutes les données associées. Cette action est irréversible.",
   "settings.deleteAccount": "Supprimer le Compte",
   "settings.deleteAccountConfirmTitle": "Supprimer définitivement votre compte ?",
-  "settings.deleteAccountConfirmDesc": "Cela supprimera définitivement votre profil, tous vos Canvas, factures, conversations Dira, Crevia Link et données d'espace de travail. Cette action est irréversible.",
+  "settings.deleteAccountConfirmDesc": "Cela supprimera définitivement votre profil, tous vos Canvas, factures, conversations Dira, Kaizen Link et données d'espace de travail. Cette action est irréversible.",
   "settings.deleteAccountConfirmLabel": "Tapez DELETE pour confirmer",
   "settings.deleteAccountConfirmPlaceholder": "DELETE",
   "settings.deleteAccountConfirm": "Oui, Supprimer Mon Compte",

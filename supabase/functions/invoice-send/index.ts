@@ -2,11 +2,11 @@ import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
 import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
 
 const ALLOWED_ORIGINS = [
-  "https://crevia.app",
-  "https://www.crevia.app",
+  "https://kaizenafrika.app",
+  "https://www.kaizenafrika.app",
   "http://localhost:8080",
   "http://localhost:5173",
-  "https://crevia.app",
+  "https://kaizenafrika.app",
 ];
 
 function getCorsHeaders(req: Request) {
@@ -131,7 +131,7 @@ serve(async (req) => {
       userClient.from("profiles").select("display_name, email").single(),
     ]);
 
-    const senderName = biz?.business_name || profile?.display_name || "Crevia User";
+    const senderName = biz?.business_name || profile?.display_name || "Kaizen Afrika User";
     const senderEmail = biz?.business_email || profile?.email || "";
     const currency = invoice.currency || "KES";
 
@@ -178,11 +178,8 @@ serve(async (req) => {
               <table width="100%"><tr>
                 <td>
                   <table cellpadding="0" cellspacing="0"><tr>
-                    <td style="vertical-align:middle;padding-right:10px;">
-                      <img src="https://crevia.app/crevia-logo.png" alt="Crevia" width="40" height="40" style="display:block;border-radius:50%;border:1px solid #333;" />
-                    </td>
                     <td style="vertical-align:middle;">
-                      <span style="font-size:22px;font-weight:700;color:#c9a96e;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;">Crevia</span>
+                      <span style="font-size:22px;font-weight:700;color:#c9a96e;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;">Kaizen Afrika</span>
                     </td>
                   </tr></table>
                 </td>
@@ -300,7 +297,7 @@ serve(async (req) => {
           <tr>
             <td style="padding:28px 40px 32px;margin-top:24px;border-top:1px solid #f0ede8;margin-top:28px;">
               <p style="margin:0;font-size:12px;color:#aaa;line-height:1.7;">
-                This invoice was sent via <strong style="color:#c9a96e;">Crevia</strong> · crevia.app<br/>
+                This invoice was sent via <strong style="color:#c9a96e;">Kaizen Afrika</strong> · kaizenafrika.app<br/>
                 Please reference invoice number <strong>${invoice.invoice_number}</strong> in your payment.
               </p>
             </td>
@@ -321,7 +318,7 @@ serve(async (req) => {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        from: `${senderName} via Crevia <invoices@crevia.app>`,
+        from: `${senderName} via Kaizen Afrika <invoices@kaizenafrika.app>`,
         to: invoice.client_email,
         reply_to: senderEmail || undefined,
         subject: `Invoice ${invoice.invoice_number} from ${senderName} — ${formatCurrency(invoice.total, currency)} due ${formatDate(invoice.due_date)}`,
@@ -345,7 +342,7 @@ serve(async (req) => {
       .update({ status: "sent" })
       .eq("id", invoice_id);
 
-    // Notify client if they have a Crevia account
+    // Notify client if they have a Kaizen Afrika account
     const { data: clientProfile } = await adminClient
       .from("profiles")
       .select("id")

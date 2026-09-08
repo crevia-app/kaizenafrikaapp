@@ -80,8 +80,7 @@ const AuthCallback = () => {
       <div className="relative z-10 w-full max-w-sm text-center">
         {/* Logo */}
         <div className="flex items-center justify-center gap-2.5 mb-10">
-          <img src="/crevia-logo.png" alt="Crevia" className="w-9 h-9 rounded-2xl bg-zinc-950 ring-1 ring-white/10" />
-          <span className="font-vollkorn text-2xl font-bold text-white">Crevia</span>
+          <span className="font-vollkorn text-2xl font-bold text-white">Kaizen Afrika</span>
         </div>
 
         {/* Verifying / success — silent spinner, no text */}
@@ -114,9 +113,9 @@ const AuthCallback = () => {
           </div>
         )}
 
-        {/* Crevia footer */}
+        {/* Kaizen Afrika footer */}
         <p className="absolute bottom-8 left-0 right-0 text-center text-xs text-white/20 font-poppins">
-          © {new Date().getFullYear()} Crevia. All rights reserved.
+          © {new Date().getFullYear()} Kaizen Afrika. All rights reserved.
         </p>
       </div>
     </div>
