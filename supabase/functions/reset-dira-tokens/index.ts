@@ -18,13 +18,17 @@ serve(async (req) => {
   const supabase = createClient(supabaseUrl, supabaseServiceKey);
 
   try {
-    // Reset all users' daily token counters and update last_reset timestamp
+    // Reset all users' daily Dira action counters.
+    // NOTE: this previously wrote to "dira_tokens_used_today" and "kira_last_reset",
+    // neither of which exists on the profiles table (confirmed against
+    // src/integrations/supabase/types.ts and the kira->dira column-rename migration) —
+    // every run of this cron job was silently failing. The real daily counter is
+    // dira_actions_used (paired with dira_actions_limit).
     //added select() so that i can how many users were reset
     const { data, error } = await supabase
       .from("profiles")
       .update({
-        dira_tokens_used_today: 0,
-        kira_last_reset: new Date().toISOString(),
+        dira_actions_used: 0,
       })
     //   .neq("id", ""); // Update all rows
     .not("id", "is", null) // a more reliable way to select rows in Supabase

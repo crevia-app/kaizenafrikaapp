@@ -61,7 +61,11 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
     <meta name="apple-mobile-web-app-title" content="Kaizen Afrika" />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-    <link rel="manifest" href="/manifest.json" />
+    <!-- vite-plugin-pwa auto-injects the real <link rel="manifest" href="/manifest.webmanifest">
+         at build time — a stale hardcoded /manifest.json link used to sit here, pointing at a
+         file that doesn't exist (Vercel's SPA catch-all rewrite served it the HTML shell instead,
+         which browsers fail to parse as JSON). Browsers use the first manifest link they find, so
+         that stale tag was silently shadowing the correct one. -->
 
     <!-- ── Favicons ───────────────────────────────────────────────────────── -->
     <link rel="shortcut icon" href="/favicon.ico" />
