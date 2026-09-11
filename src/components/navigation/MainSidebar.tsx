@@ -22,7 +22,7 @@ import { ManualInstallGuide } from "@/components/pwa/ManualInstallGuide";
 import { useSubscription } from "@/hooks/use-subscription";
 import { VerifiedBadge } from "@/components/ui/VerifiedBadge";
 
-const DiraIcon = ({ active }: { active: boolean }) => (
+const KiraIcon = ({ active }: { active: boolean }) => (
   <svg viewBox="0 0 24 24" width="26" height="26" aria-hidden="true"
     fill={active ? "currentColor" : "none"}
     stroke={active ? "none" : "currentColor"}
@@ -56,7 +56,7 @@ const MainSidebar = ({ profile, onProfileClick }: MainSidebarProps) => {
   const subscription = useSubscription();
 
   const navItems = [
-    { id: "dira",   label: "Dira AI",       Icon: DiraIcon,   path: "/dira",           prefetch: () => import("@/pages/Dira") },
+    { id: "kira",   label: "Kira AI",       Icon: KiraIcon,   path: "/kira",           prefetch: () => import("@/pages/Kira") },
     { id: "studio", label: "Studio",        Icon: StudioIcon, path: "/kaizen-studio",  prefetch: () => import("@/pages/KaizenStudio") },
   ];
 

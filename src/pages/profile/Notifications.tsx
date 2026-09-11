@@ -19,9 +19,9 @@ const notificationGroups = [
     ],
   },
   {
-    title: "Dira AI",
+    title: "Kira AI",
     items: [
-      { id: "dira", icon: Sparkles, label: "Dira Suggestions", desc: "AI-powered tips and recommendations" },
+      { id: "kira", icon: Sparkles, label: "Kira Suggestions", desc: "AI-powered tips and recommendations" },
     ],
   },
   {
@@ -58,9 +58,9 @@ const Notifications = () => {
   const [settings, setSettings] = useState<Record<string, boolean>>(() => {
     try {
       const saved = localStorage.getItem(SETTINGS_KEY);
-      return saved ? JSON.parse(saved) : { chat: true, invoices: true, dira: true, billing: true, security: true, muteAll: false };
+      return saved ? JSON.parse(saved) : { chat: true, invoices: true, kira: true, billing: true, security: true, muteAll: false };
     } catch {
-      return { chat: true, invoices: true, dira: true, billing: true, security: true, muteAll: false };
+      return { chat: true, invoices: true, kira: true, billing: true, security: true, muteAll: false };
     }
   });
 

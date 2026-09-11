@@ -21,7 +21,7 @@ const en = {
   "nav.dashboard": "Dashboard",
   "nav.connect": "Kaizen Afrika Connect",
   "nav.studio": "Studio",
-  "nav.dira": "Dira AI",
+  "nav.dira": "Kira AI",
   "nav.pricing": "Pricing",
   "nav.about": "About",
   "nav.helpSupport": "Help & Support",
@@ -105,8 +105,8 @@ const en = {
   "payments.freePlan": "Free Plan",
   "payments.upgradePlan": "Upgrade Plan",
   "payments.upgradeTitle": "Unlock More of Kaizen Afrika",
-  "payments.creatorUpgradeDesc": "Get the most out of Dira AI and Kaizen Studio",
-  "payments.brandUpgradeDesc": "Scale with advanced Dira AI insights and full Kaizen Studio tools",
+  "payments.creatorUpgradeDesc": "Get the most out of Kira AI and Kaizen Studio",
+  "payments.brandUpgradeDesc": "Scale with advanced Kira AI insights and full Kaizen Studio tools",
   "payments.free": "Starter",
   "payments.pro": "Pro",
   "payments.month": "/month",
@@ -119,9 +119,9 @@ const en = {
   "payments.basicProfile": "Kaizen Link page & basic profile",
   "payments.browseCampaigns": "Kaizen Afrika Chat & basic invoicing",
   "payments.postCampaigns": "Kaizen Afrika Chat & basic invoicing",
-  "payments.creviaChat": "Basic Dira AI assistant",
-  "payments.priorityPlacement": "Dira AI-powered insights & suggestions",
-  "payments.unlimitedCampaigns": "Dira AI-powered insights & suggestions",
+  "payments.creviaChat": "Basic Kira AI assistant",
+  "payments.priorityPlacement": "Kira AI-powered insights & suggestions",
+  "payments.unlimitedCampaigns": "Kira AI-powered insights & suggestions",
   "payments.advancedAnalytics": "Smart Canvas & advanced invoicing",
   "payments.customThemes": "Custom Kaizen Link themes & analytics",
   "payments.creatorDiscovery": "Custom Kaizen Link themes & detailed reports",
@@ -136,7 +136,7 @@ const en = {
   "notifications.messagesDesc": "New messages and responses",
   "notifications.paymentUpdates": "Payment Updates",
   "notifications.paymentUpdatesDesc": "Payouts and billing notifications",
-  "notifications.diraRecommendations": "Dira Recommendations",
+  "notifications.diraRecommendations": "Kira Recommendations",
   "notifications.diraRecommendationsDesc": "AI-powered insights and suggestions",
   "notifications.verificationAlerts": "Verification Alerts",
   "notifications.verificationAlertsDesc": "Updates about verification status",
@@ -221,7 +221,7 @@ const en = {
   "feedback.featureSubmittedDesc": "Great idea! We'll evaluate this for our roadmap.",
   "feedback.diraBugMsg": "Don't worry—bugs happen! Our engineering team takes every report seriously and works quickly to fix issues.",
   "feedback.diraFeedbackMsg": "Every single piece of feedback gets read by our team. You're directly influencing what we build next!",
-  "feedback.diraSays": "Dira says:",
+  "feedback.diraSays": "Kira says:",
 
   // Feedback categories
   "feedback.cat.dashboard": "Dashboard",
@@ -237,7 +237,7 @@ const en = {
   "feedback.cat.discovery": "Creator/Brand Discovery",
   "feedback.cat.campaignTools": "Campaign Tools",
   "feedback.cat.messagingSystem": "Messaging System",
-  "feedback.cat.dira": "Dira AI Assistant",
+  "feedback.cat.dira": "Kira AI Assistant",
 
   // Integrations
   "integrations.title": "Integrations",
@@ -273,7 +273,7 @@ const en = {
   // Sidebar
   "sidebar.studio": "Studio",
   "sidebar.connect": "Kaizen Afrika Connect",
-  "sidebar.dira": "Dira AI",
+  "sidebar.dira": "Kira AI",
   "sidebar.wallet": "Wallet",
 
   // Danger Zone
@@ -281,7 +281,7 @@ const en = {
   "settings.dangerZoneDesc": "Permanently delete your account and all associated data. This action cannot be undone.",
   "settings.deleteAccount": "Delete Account",
   "settings.deleteAccountConfirmTitle": "Delete your account permanently?",
-  "settings.deleteAccountConfirmDesc": "This will permanently delete your profile, all your Canvases, invoices, Dira conversations, Kaizen Link, and workspace data. This action is irreversible.",
+  "settings.deleteAccountConfirmDesc": "This will permanently delete your profile, all your Canvases, invoices, Kira conversations, Kaizen Link, and workspace data. This action is irreversible.",
   "settings.deleteAccountConfirmLabel": "Type DELETE to confirm",
   "settings.deleteAccountConfirmPlaceholder": "DELETE",
   "settings.deleteAccountConfirm": "Yes, Delete My Account",

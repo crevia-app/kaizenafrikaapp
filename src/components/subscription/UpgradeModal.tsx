@@ -71,14 +71,14 @@ export const useFeatureGate = (feature: string, requiredPlan: "pro" | "business"
 // ── The Dialog ────────────────────────────────────────────────────────────────
 
 const PRO_HIGHLIGHTS = [
-  "500 Monthly Power Credits for Dira AI",
+  "500 Monthly Power Credits for Kira AI",
   "Unlimited customized invoices — no Kaizen Afrika branding",
   "10 Collaborative Workspaces",
   "Premium themes, custom brand colors & analytics",
 ];
 
 const BUSINESS_HIGHLIGHTS = [
-  "Unlimited Dira AI — priority processing",
+  "Unlimited Kira AI — priority processing",
   "Unlimited Workspaces with full RBAC",
   "3 seats included · add more at $19.99/seat",
   "Priority support escalation",

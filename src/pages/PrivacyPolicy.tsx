@@ -31,7 +31,7 @@ const PrivacyPolicy = () => {
                 <li><strong>Account Data:</strong> Name, email address, phone number, and billing information.</li>
                 <li><strong>Business Data:</strong> Client rosters, brand assets, and organizational hierarchies.</li>
                 <li><strong>Operational &amp; Financial Data:</strong> Information inputted into Kaizen Studio and Kaizen Invoice (line items, pricing, counterparty details).</li>
-                <li><strong>AI Interaction Data:</strong> Prompts, queries, and contextual data submitted to our AI assistant (Dira) to improve business structuring and platform functionality.</li>
+                <li><strong>AI Interaction Data:</strong> Prompts, queries, and contextual data submitted to our AI assistant (Kira) to improve business structuring and platform functionality.</li>
                 <li><strong>Usage Data:</strong> Analytics regarding your interaction with Kaizen Link pages, including visitor tracking.</li>
               </ul>
             </div>
@@ -43,7 +43,7 @@ const PrivacyPolicy = () => {
               <p>We use your data strictly to operate and improve the platform:</p>
               <ul className="list-disc pl-6 space-y-2">
                 <li>To facilitate platform operations and invoice routing.</li>
-                <li>To provide contextual intelligence via Dira.</li>
+                <li>To provide contextual intelligence via Kira.</li>
                 <li>To manage subscription billing and enforce Role-Based Access Control.</li>
                 <li>To track usage metrics for Pro and Business tier analytics.</li>
               </ul>
@@ -65,7 +65,7 @@ const PrivacyPolicy = () => {
           <section>
             <h2 className="font-vollkorn text-2xl md:text-3xl font-bold mb-4">5. Artificial Intelligence and Data Privacy</h2>
             <p className="text-muted-foreground leading-relaxed">
-              When you interact with Dira, your prompts and uploaded context are processed to generate immediate responses. We implement strict siloing for Business tiers to ensure that one brand's proprietary business data, operational structures, or financial information is never used to train the AI models answering queries for a different brand.
+              When you interact with Kira, your prompts and uploaded context are processed to generate immediate responses. We implement strict siloing for Business tiers to ensure that one brand's proprietary business data, operational structures, or financial information is never used to train the AI models answering queries for a different brand.
             </p>
           </section>
 

@@ -38,7 +38,7 @@ const PLANS = (billingCycle: "monthly" | "yearly", proPrice: number, businessPri
       seatNote: null,
       description: "Start building your professional footprint.",
       features: [
-        { product: "Dira AI", detail: "5 Daily Credits", note: "Refreshed daily" },
+        { product: "Kira AI", detail: "5 Daily Credits", note: "Refreshed daily" },
         { product: "Kaizen Invoice", detail: "2 standard invoices / month", lockNote: "Customization excluded" },
         { product: "Kaizen Link", detail: "Core profile engine & basic themes", lockNote: "Analytics excluded" },
       ] as PlanFeature[],
@@ -58,7 +58,7 @@ const PLANS = (billingCycle: "monthly" | "yearly", proPrice: number, businessPri
       description: "Scale your operations with an elite toolkit.",
       features: [
         { product: "Verified badge", detail: "" },
-        { product: "Dira AI", detail: "500 Monthly Credits" },
+        { product: "Kira AI", detail: "500 Monthly Credits" },
         { product: "Kaizen Invoice", detail: "Unlimited customized invoices", note: "Remove branding, add your logo, add brand colors" },
         { product: "Kaizen Link", detail: "Premium themes, custom brand colors, and advanced visitor analytics" },
       ] as PlanFeature[],
@@ -78,7 +78,7 @@ const PLANS = (billingCycle: "monthly" | "yearly", proPrice: number, businessPri
       description: "Centralize your external team and client roster.",
       features: [
         { product: "Verified badge", detail: "" },
-        { product: "Dira AI", detail: "Unlimited priority processing" },
+        { product: "Kira AI", detail: "Unlimited priority processing" },
         { product: "Kaizen Invoice", detail: "Unlimited invoices", note: "Removed branding, add your brand colors and logo" },
         { product: "Kaizen Link", detail: "Brand colors, logos, and advanced visitor analytics" },
         { product: "Support", detail: "Priority support" },
@@ -158,7 +158,7 @@ const Pricing = () => {
     <div className="min-h-dvh bg-background page-bg-warm overflow-x-clip">
       <SEO
         title="Pricing"
-        description="Simple, transparent pricing for businesses and brands. Free plan forever. Kaizen Afrika Pro from $14.99/month — unlimited invoices, 500 Dira AI credits, premium analytics. Business from $74.99/month."
+        description="Simple, transparent pricing for businesses and brands. Free plan forever. Kaizen Afrika Pro from $14.99/month — unlimited invoices, 500 Kira AI credits, premium analytics. Business from $74.99/month."
         keywords="Kaizen Afrika pricing, invoicing software price, AI business tool cost, Kaizen Afrika Pro plan, Kaizen Afrika Business plan, affordable invoicing Kenya"
         url="/pricing"
         jsonLd={{
@@ -170,7 +170,7 @@ const Pricing = () => {
               "name": "Is Kaizen Afrika free to use?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "Yes. Kaizen Afrika has a permanent Free plan that includes 5 Dira AI credits per day, 2 invoices per month, and a basic Kaizen Link profile — no credit card required."
+                "text": "Yes. Kaizen Afrika has a permanent Free plan that includes 5 Kira AI credits per day, 2 invoices per month, and a basic Kaizen Link profile — no credit card required."
               }
             },
             {
@@ -178,7 +178,7 @@ const Pricing = () => {
               "name": "How much does Kaizen Afrika Pro cost?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "Kaizen Afrika Pro starts at $14.99 per month. It includes 500 Dira AI credits per month, unlimited invoices, and premium Kaizen Link analytics."
+                "text": "Kaizen Afrika Pro starts at $14.99 per month. It includes 500 Kira AI credits per month, unlimited invoices, and premium Kaizen Link analytics."
               }
             },
             {
@@ -186,7 +186,7 @@ const Pricing = () => {
               "name": "What is the Business plan?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "The Business plan is $74.99 per month and includes 3 seats, unlimited Dira AI, and unlimited invoices. Additional seats are $19.99 each."
+                "text": "The Business plan is $74.99 per month and includes 3 seats, unlimited Kira AI, and unlimited invoices. Additional seats are $19.99 each."
               }
             },
             {
@@ -199,10 +199,10 @@ const Pricing = () => {
             },
             {
               "@type": "Question",
-              "name": "What is Dira AI?",
+              "name": "What is Kira AI?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "Dira is Kaizen Afrika's built-in AI business intelligence assistant. It helps with invoice drafting, deal structuring, business strategy, and operational advice — directly inside your Kaizen Afrika workspace."
+                "text": "Kira is Kaizen Afrika's built-in AI business intelligence assistant. It helps with invoice drafting, deal structuring, business strategy, and operational advice — directly inside your Kaizen Afrika workspace."
               }
             }
           ]
@@ -391,7 +391,7 @@ const Pricing = () => {
                       }
                     </Button>
                   ) : (
-                    <Link to={isLoggedIn ? "/dira" : "/auth?mode=signup"}>
+                    <Link to={isLoggedIn ? "/kira" : "/auth?mode=signup"}>
                       <Button
                         className="w-full font-poppins font-semibold bg-secondary hover:bg-secondary/80 text-foreground"
                         size="lg"
@@ -419,7 +419,7 @@ const Pricing = () => {
             {[
               {
                 q: "What's included in the free plan?",
-                a: "Kaizen Link with basic templates, 5 Dira AI actions per day, and 2 invoices per month. No credit card required.",
+                a: "Kaizen Link with basic templates, 5 Kira AI actions per day, and 2 invoices per month. No credit card required.",
               },
               {
                 q: "Can I switch plans anytime?",
@@ -454,7 +454,7 @@ const Pricing = () => {
             </p>
           </ScrollReveal>
           <ScrollReveal delay={0.15} variant="scale">
-            <Link to={isLoggedIn ? "/dira" : "/auth?mode=signup"}>
+            <Link to={isLoggedIn ? "/kira" : "/auth?mode=signup"}>
               <Button
                 size="lg"
                 className="bg-bronze hover:bg-bronze-dark text-lg px-12 py-7 font-poppins font-semibold shadow-lg hover-scale"

@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { supabase } from "@/integrations/supabase/client";
 import { useToast } from "@/hooks/use-toast";
 import { motion, AnimatePresence } from "framer-motion";
-import DiraMessage from "@/components/onboarding/DiraMessage";
+import KiraMessage from "@/components/onboarding/KiraMessage";
 import UserResponse from "@/components/onboarding/UserResponse";
 import OptionButtons from "@/components/onboarding/OptionButtons";
 import TypingIndicator from "@/components/onboarding/TypingIndicator";
@@ -15,7 +15,7 @@ import TextInput from "@/components/onboarding/TextInput";
 const creatorSteps = [
   {
     id: "welcome",
-    diraMessage: (name: string, _?: string) => `Hi 👋 ${name || "there"}! I'm Dira, your creative companion at Kaizen Afrika. I'm so excited to meet you! Let's go through a few quick steps so I can personalize your experience. Ready?`,
+    kiraMessage: (name: string, _?: string) => `Hi 👋 ${name || "there"}! I'm Kira, your creative companion at Kaizen Afrika. I'm so excited to meet you! Let's go through a few quick steps so I can personalize your experience. Ready?`,
     options: [
       { label: "Let's do this! 🚀", value: "ready" },
       { label: "Sure thing! ✨", value: "ready" }
@@ -24,7 +24,7 @@ const creatorSteps = [
   },
   {
     id: "creator_type",
-    diraMessage: (_?: string, __?: string) => "Amazing! First things first — what kind of creator are you? Pick all that fit you 🎨",
+    kiraMessage: (_?: string, __?: string) => "Amazing! First things first — what kind of creator are you? Pick all that fit you 🎨",
     options: [
       { label: "Content Creator", value: "content_creator" },
       { label: "UGC Creator", value: "ugc_creator" },
@@ -41,7 +41,7 @@ const creatorSteps = [
   },
   {
     id: "goals",
-    diraMessage: (_?: string, __?: string) => "Love it! 💪 Now tell me — what are you hoping to achieve with Kaizen Afrika?",
+    kiraMessage: (_?: string, __?: string) => "Love it! 💪 Now tell me — what are you hoping to achieve with Kaizen Afrika?",
     options: [
       { label: "Find brand deals 💰", value: "brand_deals" },
       { label: "Earn from my skills 💼", value: "earn_skills" },
@@ -55,21 +55,21 @@ const creatorSteps = [
   },
   {
     id: "handle",
-    diraMessage: (_?: string, __?: string) => "Awesome goals! 🎯 Now let's set up your Kaizen Link. What should your username be? This will be your public profile URL (kaizenafrika.app/yourname)",
+    kiraMessage: (_?: string, __?: string) => "Awesome goals! 🎯 Now let's set up your Kaizen Link. What should your username be? This will be your public profile URL (kaizenafrika.app/yourname)",
     type: "text" as const,
     placeholder: "yourname",
     prefix: "kaizenafrika.app/"
   },
   {
     id: "bio",
-    diraMessage: (_, handle: string) => `Nice choice, @${handle}! 🌟 Now write a short bio to introduce yourself to brands and other creators. Keep it snappy!`,
+    kiraMessage: (_, handle: string) => `Nice choice, @${handle}! 🌟 Now write a short bio to introduce yourself to brands and other creators. Keep it snappy!`,
     type: "textarea" as const,
     placeholder: "I'm a creative soul who loves...",
     optional: true
   },
   {
     id: "complete",
-    diraMessage: (name: string, _?: string) => `You're officially part of the Kaizen Afrika family, ${name || "friend"}! 🎉\n\nI've set up your profile and I'm ready to help you find amazing opportunities, grow your audience, and make your creative dreams come true.\n\nLet's go make some magic happen! ✨🦁`,
+    kiraMessage: (name: string, _?: string) => `You're officially part of the Kaizen Afrika family, ${name || "friend"}! 🎉\n\nI've set up your profile and I'm ready to help you find amazing opportunities, grow your audience, and make your creative dreams come true.\n\nLet's go make some magic happen! ✨🦁`,
     type: "final" as const
   }
 ];
@@ -78,7 +78,7 @@ const creatorSteps = [
 const brandSteps = [
   {
     id: "welcome",
-    diraMessage: (name: string, _?: string) => `Hey there 👋 ${name || ""}! I'm Dira, and I'll be helping you discover amazing creators for your brand. Let's set up your profile real quick!`,
+    kiraMessage: (name: string, _?: string) => `Hey there 👋 ${name || ""}! I'm Kira, and I'll be helping you discover amazing creators for your brand. Let's set up your profile real quick!`,
     options: [
       { label: "Let's get started! 🚀", value: "ready" },
       { label: "Sounds good! ✨", value: "ready" }
@@ -87,7 +87,7 @@ const brandSteps = [
   },
   {
     id: "business_type",
-    diraMessage: (_?: string, __?: string) => "First up — what type of business are you? 🏢",
+    kiraMessage: (_?: string, __?: string) => "First up — what type of business are you? 🏢",
     options: [
       { label: "Startup", value: "startup" },
       { label: "Agency", value: "agency" },
@@ -101,7 +101,7 @@ const brandSteps = [
   },
   {
     id: "goals",
-    diraMessage: (_?: string, __?: string) => "Perfect! 💼 What are you hoping to achieve with Kaizen Afrika?",
+    kiraMessage: (_?: string, __?: string) => "Perfect! 💼 What are you hoping to achieve with Kaizen Afrika?",
     options: [
       { label: "Discover creators faster 🔍", value: "discover_creators" },
       { label: "Run organized campaigns 📊", value: "campaigns" },
@@ -115,39 +115,39 @@ const brandSteps = [
   },
   {
     id: "brand_name",
-    diraMessage: (_?: string, __?: string) => "Exciting goals! 🎯 What's your brand name?",
+    kiraMessage: (_?: string, __?: string) => "Exciting goals! 🎯 What's your brand name?",
     type: "text" as const,
     placeholder: "Your Brand Name"
   },
   {
     id: "handle",
-    diraMessage: (_?: string, brandName?: string) => `${brandName || "Your brand"} — love it! 💜 Now let's pick your Kaizen Afrika handle. This will be your public profile where creators can learn about you.`,
+    kiraMessage: (_?: string, brandName?: string) => `${brandName || "Your brand"} — love it! 💜 Now let's pick your Kaizen Afrika handle. This will be your public profile where creators can learn about you.`,
     type: "text" as const,
     placeholder: "yourbrand",
     prefix: "kaizenafrika.app/"
   },
   {
     id: "description",
-    diraMessage: (_?: string, __?: string) => "Almost there! Write a quick description about your brand so creators know who you are 📝",
+    kiraMessage: (_?: string, __?: string) => "Almost there! Write a quick description about your brand so creators know who you are 📝",
     type: "textarea" as const,
     placeholder: "We're a brand that...",
     optional: true
   },
   {
     id: "complete",
-    diraMessage: (name: string, _?: string) => `Welcome to Kaizen Afrika, ${name || "friend"}! 🎉\n\nYour brand profile is all set up. I'm here to help you find the perfect creators for your campaigns and make collaboration seamless.\n\nLet's build something amazing together! 🦁✨`,
+    kiraMessage: (name: string, _?: string) => `Welcome to Kaizen Afrika, ${name || "friend"}! 🎉\n\nYour brand profile is all set up. I'm here to help you find the perfect creators for your campaigns and make collaboration seamless.\n\nLet's build something amazing together! 🦁✨`,
     type: "final" as const
   }
 ];
 
 interface Message {
   id: string;
-  type: "dira" | "user";
+  type: "kira" | "user";
   content: string;
   timestamp: Date;
 }
 
-const DiraOnboarding = () => {
+const KiraOnboarding = () => {
   const navigate = useNavigate();
   const { toast } = useToast();
   const chatEndRef = useRef<HTMLDivElement>(null);
@@ -235,11 +235,11 @@ const DiraOnboarding = () => {
   // Start conversation when userType is set
   useEffect(() => {
     if (userType && !isLoading && messages.length === 0) {
-      showDiraMessage(0);
+      showKiraMessage(0);
     }
   }, [userType, isLoading]);
 
-  const showDiraMessage = async (stepIndex: number) => {
+  const showKiraMessage = async (stepIndex: number) => {
     const step = steps[stepIndex];
     if (!step) return;
 
@@ -250,20 +250,20 @@ const DiraOnboarding = () => {
     
     let messageContent = "";
     if (step.id === "welcome") {
-      messageContent = step.diraMessage(userName);
+      messageContent = step.kiraMessage(userName);
     } else if (step.id === "bio") {
-      messageContent = step.diraMessage(userName, collectedData.handle || "");
+      messageContent = step.kiraMessage(userName, collectedData.handle || "");
     } else if (step.id === "handle" && userType === "brand") {
-      messageContent = step.diraMessage(userName, collectedData.brand_name || "");
+      messageContent = step.kiraMessage(userName, collectedData.brand_name || "");
     } else if (step.id === "complete") {
-      messageContent = step.diraMessage(userName);
+      messageContent = step.kiraMessage(userName);
     } else {
-      messageContent = step.diraMessage(userName);
+      messageContent = step.kiraMessage(userName);
     }
 
     setMessages(prev => [...prev, {
-      id: `dira-${stepIndex}-${Date.now()}`,
-      type: "dira",
+      id: `kira-${stepIndex}-${Date.now()}`,
+      type: "kira",
       content: messageContent,
       timestamp: new Date()
     }]);
@@ -359,7 +359,7 @@ const DiraOnboarding = () => {
     
     if (nextStep < steps.length) {
       setCurrentStep(nextStep);
-      setTimeout(() => showDiraMessage(nextStep), 500);
+      setTimeout(() => showKiraMessage(nextStep), 500);
     }
   };
 
@@ -474,7 +474,7 @@ const DiraOnboarding = () => {
               Hey {userName || "there"}! 
             </h1>
             <p className="text-muted-foreground text-lg">
-              I'm Dira. Before we begin, are you joining as a...
+              I'm Kira. Before we begin, are you joining as a...
             </p>
           </div>
 
@@ -548,8 +548,8 @@ const DiraOnboarding = () => {
                 exit={{ opacity: 0, y: -10 }}
                 transition={{ type: "spring", damping: 25, stiffness: 300 }}
               >
-                {message.type === "dira" ? (
-                  <DiraMessage content={message.content} />
+                {message.type === "kira" ? (
+                  <KiraMessage content={message.content} />
                 ) : (
                   <UserResponse content={message.content} />
                 )}
@@ -657,4 +657,4 @@ const DiraOnboarding = () => {
   );
 };
 
-export default DiraOnboarding;
+export default KiraOnboarding;

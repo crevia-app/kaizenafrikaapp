@@ -36,7 +36,7 @@ const AuthCallback = () => {
       if (navigated) return;
       navigated = true;
       setStatus("success");
-      navigate("/dira", { replace: true });
+      navigate("/kira", { replace: true });
     };
 
     // Subscribe FIRST so we never miss the SIGNED_IN event that fires when

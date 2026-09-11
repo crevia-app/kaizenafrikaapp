@@ -19,7 +19,7 @@ const it = {
   "nav.dashboard": "Dashboard",
   "nav.connect": "Kaizen Afrika Connect",
   "nav.studio": "Studio",
-  "nav.dira": "Dira AI",
+  "nav.dira": "Kira AI",
   "nav.pricing": "Prezzi",
   "nav.about": "Chi siamo",
   "nav.helpSupport": "Aiuto e supporto",
@@ -116,7 +116,7 @@ const it = {
   "payments.creviaChat": "Messaggistica Kaizen Afrika Chat",
   "payments.priorityPlacement": "Posizionamento prioritario campagne",
   "payments.unlimitedCampaigns": "Campagne illimitate",
-  "payments.advancedAnalytics": "Analisi avanzate e insights Dira AI",
+  "payments.advancedAnalytics": "Analisi avanzate e insights Kira AI",
   "payments.customThemes": "Temi profilo personalizzati",
   "payments.creatorDiscovery": "Scoperta e abbinamento creatori",
 
@@ -129,7 +129,7 @@ const it = {
   "notifications.messagesDesc": "Nuovi messaggi e risposte",
   "notifications.paymentUpdates": "Aggiornamenti pagamenti",
   "notifications.paymentUpdatesDesc": "Notifiche pagamenti e fatturazione",
-  "notifications.diraRecommendations": "Raccomandazioni di Dira",
+  "notifications.diraRecommendations": "Raccomandazioni di Kira",
   "notifications.diraRecommendationsDesc": "Insights e suggerimenti basati su IA",
   "notifications.verificationAlerts": "Avvisi di verifica",
   "notifications.verificationAlertsDesc": "Aggiornamenti sullo stato di verifica",
@@ -212,7 +212,7 @@ const it = {
   "feedback.featureSubmittedDesc": "Ottima idea! La valuteremo per la nostra roadmap.",
   "feedback.diraBugMsg": "Non preoccuparti, i bug capitano! Il nostro team tecnico prende ogni segnalazione sul serio.",
   "feedback.diraFeedbackMsg": "Ogni feedback viene letto dal nostro team. Stai influenzando direttamente ciò che costruiamo!",
-  "feedback.diraSays": "Dira dice:",
+  "feedback.diraSays": "Kira dice:",
 
   "feedback.cat.dashboard": "Dashboard",
   "feedback.cat.campaigns": "Campagne",
@@ -227,7 +227,7 @@ const it = {
   "feedback.cat.discovery": "Scoperta creatori/brand",
   "feedback.cat.campaignTools": "Strumenti campagna",
   "feedback.cat.messagingSystem": "Sistema messaggistica",
-  "feedback.cat.dira": "Assistente Dira AI",
+  "feedback.cat.dira": "Assistente Kira AI",
 
   "integrations.title": "Integrazioni",
   "integrations.subtitle": "Collega le tue piattaforme preferite per semplificare il tuo flusso di lavoro.",
@@ -253,7 +253,7 @@ const it = {
 
   "sidebar.studio": "Studio",
   "sidebar.connect": "Kaizen Afrika Connect",
-  "sidebar.dira": "Dira AI",
+  "sidebar.dira": "Kira AI",
   "sidebar.wallet": "Portafoglio",
 };
 

@@ -50,7 +50,7 @@ interface CreateInvoiceDialogProps {
   onSuccess: (invoice?: any) => void;
   onCreated?: (id: string) => void;
   folderId?: string | null;
-  diraContext?: Record<string, unknown> | null;
+  kiraContext?: Record<string, unknown> | null;
 }
 
 interface PaymentDetails {
@@ -103,7 +103,7 @@ const CreateInvoiceDialog = ({
   onSuccess,
   onCreated,
   folderId,
-  diraContext,
+  kiraContext,
 }: CreateInvoiceDialogProps) => {
   const { limits } = useSubscription();
   const { openUpgradeModal } = useUpgradeModal();
@@ -176,15 +176,15 @@ const CreateInvoiceDialog = ({
       setPaymentDetails(defaultPaymentDetails);
       setShowPaymentDetails(false);
 
-      // Dira context
-      if (diraContext) {
-        if (diraContext.client_name) setClientName(diraContext.client_name as string);
-        if (diraContext.client_email) setClientEmail(diraContext.client_email as string);
-        if (diraContext.currency) setCurrency(diraContext.currency as string);
-        if (diraContext.notes) setNotes(diraContext.notes as string);
-        if (Array.isArray(diraContext.items) && diraContext.items.length > 0) {
+      // Kira context
+      if (kiraContext) {
+        if (kiraContext.client_name) setClientName(kiraContext.client_name as string);
+        if (kiraContext.client_email) setClientEmail(kiraContext.client_email as string);
+        if (kiraContext.currency) setCurrency(kiraContext.currency as string);
+        if (kiraContext.notes) setNotes(kiraContext.notes as string);
+        if (Array.isArray(kiraContext.items) && kiraContext.items.length > 0) {
           setItems(
-            (diraContext.items as Array<{ description: string; quantity: number; unit_price: number }>).map(
+            (kiraContext.items as Array<{ description: string; quantity: number; unit_price: number }>).map(
               (item) => ({
                 description: item.description || "",
                 quantity: String(item.quantity || 1),
@@ -196,7 +196,7 @@ const CreateInvoiceDialog = ({
         }
       }
     }
-  }, [open, editingInvoice, diraContext]);
+  }, [open, editingInvoice, kiraContext]);
 
   // Effect 2 — async settings fetch for currency and payment terms defaults only
   useEffect(() => {

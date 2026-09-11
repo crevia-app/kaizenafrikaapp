@@ -5,7 +5,7 @@ interface ActiveProject {
   description?: string | null;
 }
 
-interface DiraEmptyStateProps {
+interface KiraEmptyStateProps {
   userName?: string | null;
   activeProject?: ActiveProject | null;
   onChipClick?: (text: string) => void;
@@ -71,10 +71,10 @@ function getDailyGreeting(): string {
   return DAILY_GREETINGS[dayOfYear % DAILY_GREETINGS.length];
 }
 
-const DiraEmptyState = ({
+const KiraEmptyState = ({
   activeProject,
   onChipClick,
-}: DiraEmptyStateProps) => {
+}: KiraEmptyStateProps) => {
   const chips = activeProject ? PROJECT_CHIPS : [];
   const greeting = getDailyGreeting();
 
@@ -84,7 +84,7 @@ const DiraEmptyState = ({
       {/* ── Content layer (aura is rendered by parent — no internal orbs) ──── */}
       <div className="relative z-10 flex flex-col items-center text-center max-w-lg w-full">
 
-        {/* Dira icon badge + premium aura */}
+        {/* Kira icon badge + premium aura */}
         <div className="relative mb-6">
           {/* Massive aura orb — 300px centered on the icon, blur-[72px] creates the
               "expensive" atmospheric glow. Light mode: 25% opacity (warm peach on white).
@@ -122,7 +122,7 @@ const DiraEmptyState = ({
         {activeProject ? (
           <>
             <h1
-              className="font-vollkorn text-3xl md:text-4xl font-bold mb-3 animate-dira-greeting"
+              className="font-vollkorn text-3xl md:text-4xl font-bold mb-3 animate-kira-greeting"
               style={{
                 background: "linear-gradient(135deg, #F0782F 0%, #FF9A5C 50%, #CF5A1A 100%)",
                 WebkitBackgroundClip: "text",
@@ -133,15 +133,15 @@ const DiraEmptyState = ({
               {activeProject.name}
             </h1>
             <p
-              className="font-poppins text-sm md:text-base text-muted-foreground mb-10 leading-relaxed animate-dira-greeting"
+              className="font-poppins text-sm md:text-base text-muted-foreground mb-10 leading-relaxed animate-kira-greeting"
               style={{ animationDelay: "0.1s" }}
             >
-              {activeProject.description || "Let's get to work. What do you need from Dira today?"}
+              {activeProject.description || "Let's get to work. What do you need from Kira today?"}
             </p>
           </>
         ) : (
           <h1
-            className="font-vollkorn text-3xl md:text-[2.25rem] font-bold mb-3 leading-tight text-foreground animate-dira-greeting"
+            className="font-vollkorn text-3xl md:text-[2.25rem] font-bold mb-3 leading-tight text-foreground animate-kira-greeting"
           >
             {greeting}
           </h1>
@@ -149,7 +149,7 @@ const DiraEmptyState = ({
 
         {/* Prompt chips */}
         <div
-          className="flex flex-wrap gap-2.5 justify-center animate-dira-greeting"
+          className="flex flex-wrap gap-2.5 justify-center animate-kira-greeting"
           style={{ animationDelay: "0.22s" }}
         >
           {chips.map((chip) => (
@@ -174,4 +174,4 @@ const DiraEmptyState = ({
   );
 };
 
-export default DiraEmptyState;
+export default KiraEmptyState;

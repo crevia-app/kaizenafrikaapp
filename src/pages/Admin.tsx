@@ -440,7 +440,7 @@ const UsersSection = () => {
   const changePlan = async (plan: string) => {
     const isFreeDowngrade = !plan || plan === "free";
     const isPaid = ["pro", "creative_pro", "business", "brand_workspace"].includes(plan);
-    const diraLimit =
+    const kiraLimit =
       plan === "business" || plan === "brand_workspace" ? null
       : plan === "pro" || plan === "creative_pro"       ? 500
       : 15;
@@ -450,7 +450,7 @@ const UsersSection = () => {
       subscription_plan:       plan || null,
       subscription_status:     isFreeDowngrade ? "inactive" : "active",
       subscription_expires_at: isFreeDowngrade ? null : expires.toISOString(),
-      dira_actions_limit:      isFreeDowngrade ? 15 : diraLimit,
+      dira_actions_limit:      isFreeDowngrade ? 15 : kiraLimit,
     }, `Plan changed to ${plan || "free"}`);
     // Sync branding visibility on link_profiles — paid users hide "powered by Kaizen Afrika"
     await supabase
@@ -606,7 +606,7 @@ const UsersSection = () => {
               </p>
               {[
                 {
-                  label: "Dira prompts",
+                  label: "Kira prompts",
                   used: selected.dira_actions_used ?? 0,
                   limit: selected.dira_actions_limit == null ? "∞" : String(selected.dira_actions_limit),
                   pct: selected.dira_actions_limit == null ? 0
@@ -1138,7 +1138,7 @@ const BillingSection = () => {
               border: "border-amber-500/20",
               bg: "bg-amber-500/5",
               accent: "bg-amber-500/10",
-              features: ["Everything in Pro", "3 seats included", "RBAC permissions", "Clause library", "200 Dira msgs/day"],
+              features: ["Everything in Pro", "3 seats included", "RBAC permissions", "Clause library", "200 Kira msgs/day"],
             },
           ]).map(plan => (
             <div key={plan.key} className={cn("border rounded-2xl p-5 space-y-4", plan.border, plan.bg)}>
@@ -1725,7 +1725,7 @@ const FONTS: Record<string, string> = {
 
 const PLAN_FEATURES = [
   { label: "Seats",                  free: "1",    pro: "1",         biz: "3+"        },
-  { label: "Dira AI actions / day",  free: "10",   pro: "40",        biz: "200"       },
+  { label: "Kira AI actions / day",  free: "10",   pro: "40",        biz: "200"       },
   { label: "Invoices / month",       free: "2",    pro: "Unlimited", biz: "Unlimited" },
   { label: "No invoice watermark",   free: false,  pro: true,        biz: true        },
   { label: "E-Signature",            free: false,  pro: true,        biz: true        },
@@ -2676,7 +2676,7 @@ const SecuritySection = () => {
           {[
             { label: "RLS enabled on all tables",              done: true  },
             { label: "Privilege escalation blocked (profiles)", done: true  },
-            { label: "Dira memory RPC secured",                done: true  },
+            { label: "Kira memory RPC secured",                done: true  },
             { label: "Prompt injection sanitization",          done: true  },
             { label: "Storage bucket ownership enforced",      done: true  },
             { label: "Secret leak CI check",                   done: true  },

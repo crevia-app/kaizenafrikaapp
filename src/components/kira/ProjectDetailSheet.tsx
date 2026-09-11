@@ -301,7 +301,7 @@ export const ProjectDetailSheet = ({
                       <Textarea
                         value={editInstructions}
                         onChange={(e) => setEditInstructions(e.target.value)}
-                        placeholder="How should Dira respond in this project? (e.g., tone, format, expertise)"
+                        placeholder="How should Kira respond in this project? (e.g., tone, format, expertise)"
                         className="min-h-[120px] resize-none"
                       />
                       <p className="text-xs text-muted-foreground">

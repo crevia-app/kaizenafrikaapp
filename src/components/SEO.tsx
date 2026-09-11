@@ -7,7 +7,7 @@ const OG_IMAGE_H    = 630;
 
 const DEFAULT_TITLE       = "Kaizen Afrika | The infrastructure to scale your business operations";
 const DEFAULT_DESCRIPTION = "Kaizen Afrika gives creatives and founders the infrastructure to scale business operations — invoicing, AI, and link pages in one place.";
-const DEFAULT_KEYWORDS    = "invoicing software, invoice generator, business management, AI business assistant, Dira AI, link in bio, client workspace, team collaboration, creative business tools, Kaizen Afrika";
+const DEFAULT_KEYWORDS    = "invoicing software, invoice generator, business management, AI business assistant, Kira AI, link in bio, client workspace, team collaboration, creative business tools, Kaizen Afrika";
 
 interface SEOProps {
   title?:       string;

@@ -68,7 +68,7 @@ const MFAVerify = () => {
       sessionStorage.setItem("biometric_unlocked", "1");
       supabase.functions.invoke("login-alert").catch(() => {});
       toast({ title: "Verified!", description: "Welcome back to Kaizen Afrika." });
-      navigate("/dira", { replace: true });
+      navigate("/kira", { replace: true });
     } catch (err: any) {
       toast({
         title: "Invalid code",

@@ -88,7 +88,7 @@ import { format, isToday, isYesterday } from "date-fns";
 import ChatMediaPanel from "./ChatMediaPanel";
 import { useE2EEncryption } from "@/hooks/use-e2e-encryption";
 import { iconOptions } from "@/components/kaizen-link/iconOptions";
-// useIOSKeyboardFit removed: same reason as Dira — it applied position:fixed; top:vv.offsetTop
+// useIOSKeyboardFit removed: same reason as Kira — it applied position:fixed; top:vv.offsetTop
 // which pushes the container DOWN on modern iOS (where position:fixed is already relative to
 // the visual viewport), leaving a black gap above the header.
 // AppLayout h-dvh + flex chain + the keyboardOpen padding on the input handle it correctly.

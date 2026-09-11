@@ -14,7 +14,7 @@ const de = {
   "nav.dashboard": "Dashboard",
   "nav.connect": "Kaizen Afrika Connect",
   "nav.studio": "Studio",
-  "nav.dira": "Dira AI",
+  "nav.dira": "Kira AI",
   "nav.pricing": "Preise",
   "nav.about": "Über uns",
 
@@ -104,7 +104,7 @@ const de = {
 
   "sidebar.studio": "Studio",
   "sidebar.connect": "Kaizen Afrika Connect",
-  "sidebar.dira": "Dira AI",
+  "sidebar.dira": "Kira AI",
   "sidebar.wallet": "Geldbörse",
 };
 

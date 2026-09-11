@@ -21,7 +21,7 @@ const sw = {
   "nav.dashboard": "Dashibodi",
   "nav.connect": "Kaizen Afrika Connect",
   "nav.studio": "Studio",
-  "nav.dira": "Dira AI",
+  "nav.dira": "Kira AI",
   "nav.pricing": "Bei",
   "nav.about": "Kuhusu",
   "nav.helpSupport": "Msaada na Usaidizi",
@@ -122,7 +122,7 @@ const sw = {
   "payments.creviaChat": "Ujumbe wa Kaizen Afrika Chat",
   "payments.priorityPlacement": "Nafasi ya kipaumbele ya kampeni",
   "payments.unlimitedCampaigns": "Kampeni zisizo na kikomo",
-  "payments.advancedAnalytics": "Uchambuzi wa hali ya juu na maarifa ya Dira AI",
+  "payments.advancedAnalytics": "Uchambuzi wa hali ya juu na maarifa ya Kira AI",
   "payments.customThemes": "Mandhari maalum ya wasifu",
   "payments.creatorDiscovery": "Ugunduzi na kulinganisha waundaji",
 
@@ -136,7 +136,7 @@ const sw = {
   "notifications.messagesDesc": "Ujumbe mpya na majibu",
   "notifications.paymentUpdates": "Sasisho za Malipo",
   "notifications.paymentUpdatesDesc": "Arifa za malipo na ankara",
-  "notifications.diraRecommendations": "Mapendekezo ya Dira",
+  "notifications.diraRecommendations": "Mapendekezo ya Kira",
   "notifications.diraRecommendationsDesc": "Maarifa na mapendekezo ya AI",
   "notifications.verificationAlerts": "Arifa za Uthibitisho",
   "notifications.verificationAlertsDesc": "Sasisho kuhusu hali ya uthibitisho",
@@ -221,7 +221,7 @@ const sw = {
   "feedback.featureSubmittedDesc": "Wazo zuri! Tutalitathimini kwa mpango wetu.",
   "feedback.diraBugMsg": "Usijali—hitilafu hutokea! Timu yetu ya uhandisi inashughulikia kila ripoti kwa uzito.",
   "feedback.diraFeedbackMsg": "Kila maoni yanasomwa na timu yetu. Unaathiri moja kwa moja tunachokijenga!",
-  "feedback.diraSays": "Dira anasema:",
+  "feedback.diraSays": "Kira anasema:",
 
   // Feedback categories
   "feedback.cat.dashboard": "Dashibodi",
@@ -237,7 +237,7 @@ const sw = {
   "feedback.cat.discovery": "Ugunduzi wa Muundaji/Chapa",
   "feedback.cat.campaignTools": "Zana za Kampeni",
   "feedback.cat.messagingSystem": "Mfumo wa Ujumbe",
-  "feedback.cat.dira": "Msaidizi wa Dira AI",
+  "feedback.cat.dira": "Msaidizi wa Kira AI",
 
   // Integrations
   "integrations.title": "Viunganishi",
@@ -266,7 +266,7 @@ const sw = {
   // Sidebar
   "sidebar.studio": "Studio",
   "sidebar.connect": "Kaizen Afrika Connect",
-  "sidebar.dira": "Dira AI",
+  "sidebar.dira": "Kira AI",
   "sidebar.wallet": "Pochi",
 };
 

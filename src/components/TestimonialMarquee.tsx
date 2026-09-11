@@ -3,7 +3,7 @@ import ScrollReveal from "@/components/ui/ScrollReveal";
 const TESTIMONIALS = [
   {
     quote:
-      "Dira gave me the vocabulary to walk into brand deals and actually justify my rates. First campaign after using it — $4,500, no apology for the number.",
+      "Kira gave me the vocabulary to walk into brand deals and actually justify my rates. First campaign after using it — $4,500, no apology for the number.",
     name: "Amara Osei",
     role: "Content Creator · Lagos",
     initials: "AO",

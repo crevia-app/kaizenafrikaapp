@@ -117,7 +117,7 @@ All colors MUST be HSL.
     /* Transitions */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 
-    /* Mobile bottom nav — offset for <main> padding and Dira input area.
+    /* Mobile bottom nav — offset for <main> padding and Kira input area.
        Desktop default is 0px (no bottom nav).
        The @media block below sets the correct mobile initial value so there
        is NO layout flash when the page first loads on a phone. */

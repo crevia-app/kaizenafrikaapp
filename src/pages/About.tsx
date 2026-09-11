@@ -274,7 +274,7 @@ const About = ({ isEmbedded = false }: { isEmbedded?: boolean }) => {
                   Give businesses the infrastructure to operate, close deals, and scale — without the chaos.
                 </h3>
                 <p className="text-muted-foreground leading-relaxed">
-                  Dira handles the intelligence. Kaizen Studio handles the operations.
+                  Kira handles the intelligence. Kaizen Studio handles the operations.
                   Together, they replace the scattered tools, missed payments, and lost
                   deals that define the industry today.
                 </p>

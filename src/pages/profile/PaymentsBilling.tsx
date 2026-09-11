@@ -174,7 +174,7 @@ const PaymentsBilling = () => {
   const isFree     = !isPaidPlan(subscription);
 
   const starterFeatures = [
-    "5 Dira AI credits per day",
+    "5 Kira AI credits per day",
     "2 standard invoices per month",
     "Kaizen Link — core profile & basic templates",
     "Workspaces not included (Pro feature)",
@@ -182,7 +182,7 @@ const PaymentsBilling = () => {
 
   const proFeatures = [
     "Verified badge",
-    "500 Dira AI credits per month",
+    "500 Kira AI credits per month",
     "Unlimited customized invoices — remove branding, add your logo",
     "10 collaborative workspaces per month",
     "Kaizen Link — premium themes, custom brand colors & advanced analytics",
@@ -191,7 +191,7 @@ const PaymentsBilling = () => {
   const businessFeatures = [
     "Verified badge",
     "3 seats included · +$19.99 per additional seat",
-    "Unlimited Dira AI — priority processing",
+    "Unlimited Kira AI — priority processing",
     "Unlimited workspaces with RBAC",
     "Unlimited invoices — removed branding, add your logo & brand colors",
     "Kaizen Link — brand colors, logos & advanced visitor analytics",

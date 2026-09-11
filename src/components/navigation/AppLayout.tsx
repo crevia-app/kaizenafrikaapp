@@ -67,7 +67,7 @@ const AppLayout = ({ children }: AppLayoutProps) => {
 
   const isKaizenAI  = location.pathname === "/kaizen-ai";
   const isStudio    = location.pathname === "/kaizen-studio";
-  const isChatRoute = location.pathname === "/dira";
+  const isChatRoute = location.pathname === "/kira";
   const isSubPage   = ["/profile/", "/privacy-policy", "/terms-of-service", "/app/about", "/admin2005"].some(
     (p) => location.pathname.startsWith(p)
   );
@@ -103,7 +103,7 @@ const AppLayout = ({ children }: AppLayoutProps) => {
         >
           {isSubPage && (
             <div className="px-4 md:px-6 pt-3 pb-1">
-              <BackButton fallback="/dira" />
+              <BackButton fallback="/kira" />
             </div>
           )}
           {children}

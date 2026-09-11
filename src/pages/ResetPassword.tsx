@@ -83,7 +83,7 @@ const ResetPassword = () => {
         title: "Password updated! 🔒",
         description: "Your password has been securely updated.",
       });
-      navigate("/dira");
+      navigate("/kira");
     }
   };
 

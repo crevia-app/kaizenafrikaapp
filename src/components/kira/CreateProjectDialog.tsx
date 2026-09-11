@@ -105,7 +105,7 @@ export const CreateProjectDialog = ({
             <p className="text-sm text-muted-foreground leading-relaxed">
               Projects help organize your work and leverage knowledge across
               multiple conversations. Set custom instructions and context that
-              Dira can reference again and again.
+              Kira can reference again and again.
             </p>
             <p className="text-sm text-muted-foreground leading-relaxed">
               Start by creating a memorable title and description to organize
@@ -148,11 +148,11 @@ export const CreateProjectDialog = ({
               <Textarea
                 value={customInstructions}
                 onChange={(e) => setCustomInstructions(e.target.value)}
-                placeholder="How should Dira respond in this project? (e.g. tone, format, expertise level)"
+                placeholder="How should Kira respond in this project? (e.g. tone, format, expertise level)"
                 className="min-h-[90px] resize-none text-base"
               />
               <p className="text-xs text-muted-foreground">
-                Dira will follow these in every conversation within this project.
+                Kira will follow these in every conversation within this project.
               </p>
             </div>
           </div>

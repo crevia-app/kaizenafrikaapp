@@ -64,17 +64,17 @@ import {
   DropdownMenuSubTrigger,
   DropdownMenuSubContent,
 } from "@/components/ui/dropdown-menu";
-import { CreateProjectDialog } from "@/components/dira/CreateProjectDialog";
-import { ProjectDetailSheet } from "@/components/dira/ProjectDetailSheet";
-import { ProjectsView } from "@/components/dira/ProjectsView";
+import { CreateProjectDialog } from "@/components/kira/CreateProjectDialog";
+import { ProjectDetailSheet } from "@/components/kira/ProjectDetailSheet";
+import { ProjectsView } from "@/components/kira/ProjectsView";
 import CreateInvoiceDialog from "@/components/studio/CreateInvoiceDialog";
-import { ApproveActionDialog } from "@/components/dira/ApproveActionDialog";
-import { DiraSettingsPanel } from "@/components/dira/DiraSettingsPanel";
-import DiraEmptyState from "@/components/dira/DiraEmptyState";
+import { ApproveActionDialog } from "@/components/kira/ApproveActionDialog";
+import { KiraSettingsPanel } from "@/components/kira/KiraSettingsPanel";
+import KiraEmptyState from "@/components/kira/KiraEmptyState";
 import { motion, AnimatePresence } from "framer-motion";
 import { cn } from "@/lib/utils";
 import { useUpgradeModal } from "@/components/subscription/UpgradeModal";
-// useIOSKeyboardFit removed: it set position:fixed on the Dira container,
+// useIOSKeyboardFit removed: it set position:fixed on the Kira container,
 // which overlapped and hid the TopBar on iOS Safari (z-index conflict).
 // The absolute/inset-0 scroll container + 100dvh AppLayout + useVisualViewport
 // input padding handle the iOS keyboard layout correctly without that hook.
@@ -310,7 +310,7 @@ interface Project {
 
 type ViewMode = "chat" | "projects";
 
-function detectDiraIntent(_text: string): string | null {
+function detectKiraIntent(_text: string): string | null {
   // Action cards are disabled — users navigate to Kaizen Studio directly.
   return null;
 }
@@ -346,12 +346,12 @@ const markdownComponents: Components = {
   hr:     () => <hr className="border-border my-4" />,
 };
 
-const Dira = () => {
+const Kira = () => {
   const { toast } = useToast();
-  const { diraActionsToday, diraActionsLimit, showDiraCounter, isFree } = useSubscription();
+  const { kiraActionsToday, kiraActionsLimit, showKiraCounter, isFree } = useSubscription();
   const { openUpgradeModal } = useUpgradeModal();
   const { keyboardOpen } = useVisualViewport();
-  const isAtDiraLimit = diraActionsToday >= diraActionsLimit;
+  const isAtKiraLimit = kiraActionsToday >= kiraActionsLimit;
   const [userType, setUserType] = useState<'creator' | 'brand' | null>(null);
   const [userId, setUserId] = useState<string | null>(null);
   const [isLoading, setIsLoading] = useState(false);
@@ -391,7 +391,7 @@ const Dira = () => {
   const [invoiceDialogOpen, setInvoiceDialogOpen] = useState(false);
   const [approveDialogOpen, setApproveDialogOpen] = useState(false);
   const [pendingAction, setPendingAction] = useState<string | null>(null);
-  const [diraInvoiceContext, setDiraInvoiceContext] = useState<Record<string, unknown> | null>(null);
+  const [kiraInvoiceContext, setKiraInvoiceContext] = useState<Record<string, unknown> | null>(null);
 
   const [chatToDelete, setChatToDelete] = useState<string | null>(null);
   const [memoryPanelOpen, setMemoryPanelOpen] = useState(false);
@@ -525,15 +525,15 @@ const Dira = () => {
         setSidebarCollapsed(prev => !prev);
       }
     };
-    window.addEventListener("dira:toggle-sidebar", handler);
-    return () => window.removeEventListener("dira:toggle-sidebar", handler);
+    window.addEventListener("kira:toggle-sidebar", handler);
+    return () => window.removeEventListener("kira:toggle-sidebar", handler);
   }, []);
 
-  // TopBar "Dira" wordmark fires this — resets to the new-chat landing state
+  // TopBar "Kira" wordmark fires this — resets to the new-chat landing state
   useEffect(() => {
     const handler = () => handleNewChat(null);
-    window.addEventListener("dira:new-chat", handler);
-    return () => window.removeEventListener("dira:new-chat", handler);
+    window.addEventListener("kira:new-chat", handler);
+    return () => window.removeEventListener("kira:new-chat", handler);
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   // ── Scroll path 1: non-streaming message updates ─────────────────────────
@@ -664,10 +664,10 @@ const Dira = () => {
   // Broadcast streaming state so the bottom nav visibility hook can lock
   // itself and stop evaluating scroll deltas during AI response generation.
   useEffect(() => {
-    window.dispatchEvent(new CustomEvent("dira:streaming", { detail: { active: isStreaming || isLoading } }));
+    window.dispatchEvent(new CustomEvent("kira:streaming", { detail: { active: isStreaming || isLoading } }));
   }, [isStreaming, isLoading]);
 
-  const streamDiraResponse = useCallback(async (
+  const streamKiraResponse = useCallback(async (
     userMessages: Message[],
     conversationId: string,
     attachContent?: string | null,
@@ -691,6 +691,10 @@ const Dira = () => {
     }
 
     const response = await fetch(
+      // NOTE: intentionally still "dira-gpt" — the live, deployed edge function.
+      // This page and the rest of the UI now display "Kira" as the assistant's
+      // name, but the backend function itself has not been renamed/redeployed,
+      // so this call must keep pointing at the function that actually exists.
       `${import.meta.env.VITE_SUPABASE_URL}/functions/v1/dira-gpt`,
       {
         method: 'POST',
@@ -704,7 +708,7 @@ const Dira = () => {
     );
 
     if (!response.ok) {
-      let msg = "Couldn't reach Dira right now. Please try again!";
+      let msg = "Couldn't reach Kira right now. Please try again!";
       try {
         const body = await response.json();
         if (body?.error) msg = body.error;
@@ -748,7 +752,7 @@ const Dira = () => {
     // Fallback: JSON (prompt-abuse reply or unexpected content-type)
     const data = await response.json();
     const assistantContent = data.reply;
-    if (!assistantContent) throw new Error("Dira didn't respond. Please try again!");
+    if (!assistantContent) throw new Error("Kira didn't respond. Please try again!");
     setMessages(prev => [...prev, { role: 'assistant', content: assistantContent, timestamp: new Date() }]);
     await saveMessage(conversationId, 'assistant', assistantContent);
     return assistantContent;
@@ -768,18 +772,18 @@ const Dira = () => {
     if (!userId) {
       toast({
         title: "Please sign in",
-        description: "You need to be logged in to chat with Dira",
+        description: "You need to be logged in to chat with Kira",
         variant: "destructive",
       });
       return;
     }
-    if (isAtDiraLimit) {
+    if (isAtKiraLimit) {
       if (isFree) {
-        openUpgradeModal("Dira AI – Power Credits");
+        openUpgradeModal("Kira AI – Power Credits");
       } else {
         toast({
           title: "Monthly limit reached",
-          description: "You've reached your monthly Dira limit. It resets on the 1st of next month.",
+          description: "You've reached your monthly Kira limit. It resets on the 1st of next month.",
           variant: "destructive",
         });
       }
@@ -840,7 +844,7 @@ const Dira = () => {
     setSelectedFileContent(null);
     setSelectedFileType(null);
     setPendingAction(null);
-    setDiraInvoiceContext(null);
+    setKiraInvoiceContext(null);
     setIsLoading(true);
 
     await saveMessage(conversationId, "user", newMessage.content, newMessage.file);
@@ -855,10 +859,10 @@ const Dira = () => {
         ? { name: activeProject.name, description: activeProject.description, custom_instructions: activeProject.custom_instructions }
         : null;
 
-      const responseContent = await streamDiraResponse(updatedMessages, conversationId, attachContent, attachType, projectCtx);
+      const responseContent = await streamKiraResponse(updatedMessages, conversationId, attachContent, attachType, projectCtx);
 
       if (responseContent) {
-        const intent = detectDiraIntent(responseContent);
+        const intent = detectKiraIntent(responseContent);
         if (intent) setPendingAction(intent);
       }
 
@@ -889,7 +893,7 @@ const Dira = () => {
       setIsStreaming(false);
       toast({
         title: "Oops!",
-        description: error instanceof Error ? error.message : "Couldn't reach Dira right now. Please try again!",
+        description: error instanceof Error ? error.message : "Couldn't reach Kira right now. Please try again!",
         variant: "destructive",
       });
       setMessages(prev => [...prev, {
@@ -976,10 +980,10 @@ const Dira = () => {
   };
 
   const handleShareChat = async (chatId: string, chatTitle: string) => {
-    const url = `${window.location.origin}/dira`;
+    const url = `${window.location.origin}/kira`;
     const shareData = {
       title: chatTitle,
-      text: `Dira AI conversation: "${chatTitle}"`,
+      text: `Kira AI conversation: "${chatTitle}"`,
       url,
     };
     if (typeof navigator.share === 'function') {
@@ -1366,7 +1370,7 @@ const Dira = () => {
                 onClick={() => { handleNewChat(null); setMobileSidebarOpen(false); }}
                 className="font-vollkorn text-2xl font-bold text-foreground tracking-tight cursor-pointer hover:opacity-70 transition-opacity"
               >
-                Dira
+                Kira
               </button>
             </SheetTitle>
           </SheetHeader>
@@ -1622,11 +1626,11 @@ const Dira = () => {
               100%-reliable cross-browser way to get overflow-y: auto to scroll
               on Android Chrome and iOS Safari inside a deep flex chain. */}
           <div className="flex-1 min-h-0 flex flex-col overflow-hidden relative z-10">
-            {showDiraCounter && (
+            {showKiraCounter && (
               <UsageLimitBanner
-                current={diraActionsToday}
-                limit={diraActionsLimit}
-                feature="Dira AI prompts"
+                current={kiraActionsToday}
+                limit={kiraActionsLimit}
+                feature="Kira AI prompts"
               />
             )}
             <div className="relative flex-1 min-h-0">
@@ -1643,7 +1647,7 @@ const Dira = () => {
             >
               {messages.length === 0 ? (
                 /* ── Premium animated empty state ────────────────────────── */
-                <DiraEmptyState
+                <KiraEmptyState
                   userName={userName}
                   activeProject={activeProject ?? null}
                   onChipClick={(text) => setInput(text)}
@@ -1955,7 +1959,7 @@ const Dira = () => {
                   onKeyDown={(e) => {
                     if (e.key === "Enter") {
                       if (isMobileDevice) return; // mobile: natural newline
-                      if (!e.shiftKey && !isLoading && !isAtDiraLimit) {
+                      if (!e.shiftKey && !isLoading && !isAtKiraLimit) {
                         e.preventDefault();
                         handleSend();
                       }
@@ -1963,17 +1967,17 @@ const Dira = () => {
                     }
                   }}
                   placeholder={
-                    isAtDiraLimit
+                    isAtKiraLimit
                       ? "Daily limit reached · Upgrade to continue"
                       : isLoading
-                        ? "Dira is responding..."
+                        ? "Kira is responding..."
                         : activeProject
-                          ? `Ask Dira about ${activeProject.name}...`
-                          : "Ask Dira anything..."
+                          ? `Ask Kira about ${activeProject.name}...`
+                          : "Ask Kira anything..."
                   }
                   onPaste={handlePaste}
                   className="border-none outline-none ring-0 focus:ring-0 focus:outline-none bg-transparent text-base px-2 flex-1 min-w-0 resize-none overflow-hidden leading-relaxed py-1.5 min-h-[36px] max-h-[120px] placeholder:text-muted-foreground/60"
-                  disabled={isAtDiraLimit}
+                  disabled={isAtKiraLimit}
                   autoComplete="off"
                   autoCorrect="off"
                   autoCapitalize="sentences"
@@ -1984,7 +1988,7 @@ const Dira = () => {
                 {/* Send button — always visible; disabled when nothing to send */}
                 <Button
                   onClick={() => handleSend()}
-                  disabled={isLoading || isAtDiraLimit || (!input.trim() && !selectedFile)}
+                  disabled={isLoading || isAtKiraLimit || (!input.trim() && !selectedFile)}
                   size="icon"
                   className="h-11 w-11 rounded-full bg-bronze hover:bg-bronze/90 text-background flex-shrink-0 disabled:opacity-30 transition-opacity"
                 >
@@ -2020,7 +2024,7 @@ const Dira = () => {
         open={invoiceDialogOpen}
         onOpenChange={setInvoiceDialogOpen}
         onSuccess={() => setInvoiceDialogOpen(false)}
-        diraContext={diraInvoiceContext}
+        kiraContext={kiraInvoiceContext}
       />
 
       <ApproveActionDialog
@@ -2029,7 +2033,7 @@ const Dira = () => {
       />
 
       {userId && (
-        <DiraSettingsPanel
+        <KiraSettingsPanel
           open={memoryPanelOpen}
           onOpenChange={setMemoryPanelOpen}
           userId={userId}
@@ -2118,4 +2122,4 @@ const Dira = () => {
   );
 };
 
-export default Dira;
+export default Kira;

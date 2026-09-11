@@ -32,7 +32,7 @@ const AuthCallback     = lazy(() => import("./pages/AuthCallback"));
 const NotFound         = lazy(() => import("./pages/NotFound"));
 const MFAVerify        = lazy(() => import("./components/auth/MFAVerify"));
 const ResetPassword    = lazy(() => import("./pages/ResetPassword"));
-const Dira             = lazy(() => import("./pages/Dira"));
+const Kira             = lazy(() => import("./pages/Kira"));
 const KaizenLink       = lazy(() => import("./pages/KaizenLink"));
 const KaizenStudio     = lazy(() => import("./pages/KaizenStudio"));
 const KaizenInvoice    = lazy(() => import("./pages/KaizenInvoice"));
@@ -130,7 +130,7 @@ function AppContent() {
   // the SW precache so subsequent navigations are instant (no network waterfall).
   useEffect(() => {
     if (!userId) return;
-    import("./pages/Dira");
+    import("./pages/Kira");
     import("./pages/KaizenStudio");
   }, [userId]);
 
@@ -218,8 +218,8 @@ function AppContent() {
           <Route path="/:username" element={<PublicPageWrapper><PublicProfile /></PublicPageWrapper>} />
 
           {/* Protected routes */}
-          <Route path="/dashboard" element={<Navigate to="/dira" replace />} />
-          <Route path="/dira" element={<ProtectedRoute><AppLayout><Dira /></AppLayout></ProtectedRoute>} />
+          <Route path="/dashboard" element={<Navigate to="/kira" replace />} />
+          <Route path="/kira" element={<ProtectedRoute><AppLayout><Kira /></AppLayout></ProtectedRoute>} />
           <Route path="/kaizen-link" element={<ProtectedRoute><AppLayout><KaizenLink /></AppLayout></ProtectedRoute>} />
           <Route path="/kaizen-studio" element={<ProtectedRoute><AppLayout><KaizenStudio /></AppLayout></ProtectedRoute>} />
           <Route path="/kaizen-invoice" element={<ProtectedRoute><AppLayout><KaizenInvoice /></AppLayout></ProtectedRoute>} />

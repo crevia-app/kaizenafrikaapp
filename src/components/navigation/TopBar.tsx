@@ -25,7 +25,7 @@ const STUDIO_TAB_META: Record<string, { shortLabel: string; color: string }> = {
   invoices: { shortLabel: "Invoice",   color: "#2BA577" },
 };
 
-const DiraMenuIcon = () => (
+const KiraMenuIcon = () => (
   <div className="flex flex-col gap-[5px]">
     <span className="block h-[1.5px] w-[18px] rounded-full bg-current" />
     <span className="block h-[1.5px] w-[12px] rounded-full bg-current" />
@@ -60,7 +60,7 @@ const StudioMenuIcon = () => (
 const TopBar = ({ profile, hideRightElements = false }: TopBarProps) => {
   const location = useLocation();
   const [searchParams] = useSearchParams();
-  const isDira   = location.pathname === "/dira";
+  const isKira   = location.pathname === "/kira";
   const isStudio = location.pathname.startsWith("/kaizen-studio");
   const studioTab     = isStudio ? (searchParams.get("tab") || "link") : "link";
   const studioTabMeta = STUDIO_TAB_META[studioTab] ?? STUDIO_TAB_META.link;
@@ -100,11 +100,11 @@ const TopBar = ({ profile, hideRightElements = false }: TopBarProps) => {
       <div className="flex h-14 items-center justify-between px-4 md:px-6">
         {/* Left side */}
         <div className="flex items-center gap-2">
-          {isDira ? (
-            /* Dira: sidebar toggle + wordmark */
+          {isKira ? (
+            /* Kira: sidebar toggle + wordmark */
             <div className="flex items-center gap-2">
               <button
-                onClick={() => window.dispatchEvent(new CustomEvent("dira:toggle-sidebar"))}
+                onClick={() => window.dispatchEvent(new CustomEvent("kira:toggle-sidebar"))}
                 className="flex items-center justify-center w-9 h-9 rounded-lg text-muted-foreground hover:text-foreground hover:bg-muted/50 active:bg-muted/70 transition-colors flex-shrink-0"
                 aria-label="Toggle sidebar"
                 style={{ touchAction: "manipulation" }}
@@ -112,10 +112,10 @@ const TopBar = ({ profile, hideRightElements = false }: TopBarProps) => {
                 <PanelLeft className="w-5 h-5" />
               </button>
               <button
-                onClick={() => window.dispatchEvent(new CustomEvent("dira:new-chat"))}
+                onClick={() => window.dispatchEvent(new CustomEvent("kira:new-chat"))}
                 className="font-vollkorn text-xl font-bold text-foreground tracking-tight hover:opacity-70 transition-opacity cursor-pointer"
-                aria-label="New Dira chat"
-              >Dira</button>
+                aria-label="New Kira chat"
+              >Kira</button>
             </div>
           ) : isStudio ? (
             /* Studio: premium sidebar toggle + breadcrumb */

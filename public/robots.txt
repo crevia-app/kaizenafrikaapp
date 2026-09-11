@@ -12,7 +12,7 @@ Disallow: /kaizen-link
 Disallow: /kaizen-studio
 Disallow: /kaizen-invoice
 Disallow: /kaizen-contracts
-Disallow: /dira
+Disallow: /kira
 Disallow: /profile/
 Disallow: /received
 Disallow: /kaizen-ai

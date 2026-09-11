@@ -14,7 +14,7 @@ const pt = {
   "nav.dashboard": "Painel",
   "nav.connect": "Kaizen Afrika Connect",
   "nav.studio": "Studio",
-  "nav.dira": "Dira AI",
+  "nav.dira": "Kira AI",
   "nav.pricing": "Preços",
   "nav.about": "Sobre",
 
@@ -111,14 +111,14 @@ const pt = {
 
   "sidebar.studio": "Studio",
   "sidebar.connect": "Kaizen Afrika Connect",
-  "sidebar.dira": "Dira AI",
+  "sidebar.dira": "Kira AI",
   "sidebar.wallet": "Carteira",
 
   "settings.dangerZone": "Zona de Perigo",
   "settings.dangerZoneDesc": "Exclua permanentemente sua conta e todos os dados associados. Esta ação não pode ser desfeita.",
   "settings.deleteAccount": "Excluir Conta",
   "settings.deleteAccountConfirmTitle": "Excluir sua conta permanentemente?",
-  "settings.deleteAccountConfirmDesc": "Isso excluirá permanentemente seu perfil, todos os seus Canvas, faturas, conversas com Dira, Kaizen Link e dados do workspace. Esta ação é irreversível.",
+  "settings.deleteAccountConfirmDesc": "Isso excluirá permanentemente seu perfil, todos os seus Canvas, faturas, conversas com Kira, Kaizen Link e dados do workspace. Esta ação é irreversível.",
   "settings.deleteAccountConfirmLabel": "Digite DELETE para confirmar",
   "settings.deleteAccountConfirmPlaceholder": "DELETE",
   "settings.deleteAccountConfirm": "Sim, Excluir Minha Conta",

@@ -21,7 +21,7 @@ const Auth = () => {
   const navigate = useNavigate();
   const [searchParams] = useSearchParams();
   const { toast } = useToast();
-  const redirectTo = searchParams.get("redirect") || "/dira";
+  const redirectTo = searchParams.get("redirect") || "/kira";
 
   const [isSignup, setIsSignup] = useState(searchParams.get("mode") === "signup");
   const [email, setEmail] = useState("");
@@ -354,7 +354,7 @@ const Auth = () => {
       toast({ title: "Password updated", description: "You're now logged in." });
       setShowForgotPassword(false);
       clearResetState();
-      navigate("/dira", { replace: true });
+      navigate("/kira", { replace: true });
     }
   };
 

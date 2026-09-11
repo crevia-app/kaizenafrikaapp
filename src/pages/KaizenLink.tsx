@@ -47,7 +47,7 @@ const validateUsername = (username: string): string | null => {
   if (/[._-]{2,}/.test(username)) return "Username cannot have consecutive special characters";
   if (!/^[a-zA-Z0-9._-]+$/.test(username)) return "Only letters, numbers, dots, underscores, and hyphens allowed";
   if (/^\d+$/.test(username)) return "Username cannot be only numbers";
-  const reserved = ["admin", "support", "help", "about", "pricing", "auth", "dashboard", "api", "kaizen", "kaizenafrika", "dira", "settings", "profile", "signup", "login"];
+  const reserved = ["admin", "support", "help", "about", "pricing", "auth", "dashboard", "api", "kaizen", "kaizenafrika", "kira", "settings", "profile", "signup", "login"];
   if (reserved.includes(username.toLowerCase())) return "This username is reserved";
   return null;
 };

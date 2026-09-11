@@ -35,8 +35,8 @@ const Home = () => {
       <SEO
         url="/"
         title="Kaizen Afrika — Invoice, Collaborate & Grow Your Business with AI"
-        description="Kaizen Afrika is the all-in-one business platform for businesses and brands. Send professional invoices, build your link-in-bio page, and unlock Dira AI — your always-on business intelligence. Free to start."
-        keywords="invoicing software Kenya, online invoice generator, freelance invoice maker, business management platform, AI business assistant, Dira AI, link in bio tool, client workspace, business operations, Kaizen Afrika app"
+        description="Kaizen Afrika is the all-in-one business platform for businesses and brands. Send professional invoices, build your link-in-bio page, and unlock Kira AI — your always-on business intelligence. Free to start."
+        keywords="invoicing software Kenya, online invoice generator, freelance invoice maker, business management platform, AI business assistant, Kira AI, link in bio tool, client workspace, business operations, Kaizen Afrika app"
       />
       <Header />
 
@@ -61,13 +61,13 @@ const Home = () => {
             <ScrollReveal delay={0.26}>
               <p className="text-lg sm:text-xl md:text-2xl text-muted-foreground font-poppins leading-relaxed max-w-2xl">
                 Build a business that runs as well as it creates.
-                Dira brings the intelligence. Kaizen Studio handles the operations.
+                Kira brings the intelligence. Kaizen Studio handles the operations.
                 Kaizen Afrika is the infrastructure where both happen — without the chaos.
               </p>
             </ScrollReveal>
             <ScrollReveal delay={0.38}>
               <div className="flex flex-col sm:flex-row gap-3 pt-2">
-                <Link to={isLoggedIn ? "/dira" : "/auth?mode=signup"} className="w-full sm:w-auto">
+                <Link to={isLoggedIn ? "/kira" : "/auth?mode=signup"} className="w-full sm:w-auto">
                   <Button
                     size="lg"
                     className="w-full sm:w-auto bg-bronze hover:bg-bronze-dark text-sm sm:text-base md:text-lg px-6 sm:px-10 py-5 sm:py-7 font-poppins font-semibold shadow-lg hover-scale"
@@ -161,7 +161,7 @@ const Home = () => {
             </ScrollReveal>
           </div>
 
-          {/* DIRA */}
+          {/* KIRA */}
           <ScrollReveal variant="fade-up" className="mb-20 md:mb-28">
             <div className="border-gradient-bronze bg-gradient-to-br from-bronze/8 to-background shadow-lg shadow-bronze/10 rounded-2xl p-8 md:p-10">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 md:gap-16 items-center">
@@ -173,12 +173,12 @@ const Home = () => {
                   </span>
                 </div>
                 <h3 className="font-vollkorn text-3xl md:text-4xl font-bold leading-tight">
-                  Meet Dira.{" "}
+                  Meet Kira.{" "}
                   <span className="text-gradient-bronze">Your AI Chief of Staff.</span>
                 </h3>
                 <p className="text-lg text-muted-foreground leading-relaxed">
                   Whether you're a business scaling your operations or a brand building
-                  your empire — Dira is the intelligent partner in your corner.
+                  your empire — Kira is the intelligent partner in your corner.
                   Strategy, scoping, and guidance, exactly when you need it.
                 </p>
               </div>
@@ -272,7 +272,7 @@ const Home = () => {
             </p>
           </ScrollReveal>
           <ScrollReveal delay={0.24} variant="scale">
-            <Link to={isLoggedIn ? "/dira" : "/auth?mode=signup"} className="w-full sm:w-auto inline-block">
+            <Link to={isLoggedIn ? "/kira" : "/auth?mode=signup"} className="w-full sm:w-auto inline-block">
               <Button
                 size="lg"
                 className="w-full sm:w-auto bg-bronze hover:bg-bronze-dark text-sm sm:text-base md:text-lg px-6 sm:px-10 md:px-12 py-5 sm:py-7 font-poppins font-semibold shadow-lg hover-scale"
